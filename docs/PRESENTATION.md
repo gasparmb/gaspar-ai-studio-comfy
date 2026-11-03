@@ -2,7 +2,7 @@
 
 Une web app de génération d'images et de vidéos, façon Higgsfield, branchée sur un **ComfyUI local**.
 Elle a été écrite pour un usage réel : préparer des plans de publicité (luxe, beauté, mode), les montrer à un
-client, et garder la trace de ce qui a marché. **41 outils, 42 modèles, cinq espaces de travail, tout sur une
+client, et garder la trace de ce qui a marché. **43 outils, 42 modèles, cinq espaces de travail, tout sur une
 machine** — aucun appel à une API, aucun nœud de service en ligne dans les graphes.
 
 ---
@@ -89,7 +89,7 @@ Une idée par plan, aucune explication d'interface, un résultat à chaque fois.
 | **1:42–1:54** | Le storyboard du projet, puis le dossier disque : chaque média rangé dans son plan. Un lien client : le client valide, commente | « Chaque image vit dans le dossier de son plan, nommée toute seule. Et le client a son lien : il valide, il commente, il ne voit que son projet. » |
 | **1:54–2:00** | L'assistant : « propose 5 variations » → la liste d'actions → VALIDER → cinq générations partent. Carte de fin | « Et un assistant, local lui aussi, qui regarde mes rendus et propose. Je valide d'un clic. Une commande pour l'installer. Open source. » |
 
-**Carte de fin** — `AI STUDIO · 41 outils · 42 modèles · 100 % local · GPL-3 · <adresse du dépôt>`
+**Carte de fin** — `AI STUDIO · 43 outils · 42 modèles · 100 % local · GPL-3 · <adresse du dépôt>`
 
 ### Notes de tournage
 

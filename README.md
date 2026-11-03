@@ -3,7 +3,7 @@
 Interface de génération image et vidéo façon Higgsfield, branchée sur un
 ComfyUI local. Sa direction artistique (titres en MADE Outer Sans) est celle de l'auteur ; cette police
 commerciale n'est pas incluse, voir **Licences**.
-**41 outils, 42 modèles**, en 5 espaces : IMAGE, RETOUCHE IMAGE, VIDÉO,
+**43 outils, 42 modèles**, en 5 espaces : IMAGE, RETOUCHE IMAGE, VIDÉO,
 RETOUCHE VIDÉO, POST-PRODUCTION. Tout tourne sur la machine : aucun appel à une
 API, aucun nœud de service en ligne dans les graphes.
 
