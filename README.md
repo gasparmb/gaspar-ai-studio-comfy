@@ -7,10 +7,27 @@ commerciale n'est pas incluse, voir **Licences**.
 RETOUCHE VIDÉO, POST-PRODUCTION. Tout tourne sur la machine : aucun appel à une
 API, aucun nœud de service en ligne dans les graphes.
 
+> **A web app that drives local ComfyUI: image & video tools with film-style controls, all offline.**
+
+## Démo
+
+[![Démo d'AI STUDIO (1 min 58)](docs/demo-poster.jpg)](docs/demo.mp4)
+
+*Cliquer sur l'image pour lancer la vidéo (1 min 58, son pendant le dialogue).* Images, animation d'une photo,
+une même prise transformée de plusieurs façons, dialogue, projets et plans, direction photo, vue d'ensemble des
+outils, assistant local.
+
+| | |
+|---|---|
+| ![Projets](docs/screenshots/01-projects.jpg) **Projets** | ![Storyboard](docs/screenshots/02-storyboard.jpg) **Un projet = un storyboard de plans** |
+| ![Plan](docs/screenshots/03-shot.jpg) **Chaque plan, son bac à sable de prises** | ![Réglages caméra](docs/screenshots/04-camera-settings.jpg) **Direction photo : caméra, optique, lumière…** |
+| ![Casting](docs/screenshots/05-casting.jpg) **Personnages cohérents** | ![Outils](docs/screenshots/06-tools.jpg) **Tous les outils, avec un exemple** |
+| ![Assistant](docs/screenshots/07-assistant.jpg) **L'assistant propose, tu valides** | ![Installation](docs/screenshots/08-install.jpg) **Installation et ComfyUI depuis l'app** |
+
 ## Installer (Linux + carte NVIDIA, sans sudo)
 
 ```bash
-git clone <URL du dépôt> && cd <dossier> && ./installer.sh
+git clone https://github.com/gasparmb/gaspar-ai-studio-comfy.git && cd gaspar-ai-studio-comfy && ./installer.sh
 ```
 
 Installe ce qui manque, aux versions testées : ComfyUI et PyTorch pour CUDA, les 11 extensions de ComfyUI dont les
