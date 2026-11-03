@@ -1,0 +1,8 @@
+[
+ {"key": "B1v2", "shot": "00 BASES", "workspace": "image", "model": "z-image-turbo", "method": "text", "aspect": "16:9", "batch": 3,
+  "camera": "film35", "style": "portra", "lens": "35",
+  "prompt": "Editorial fashion photograph, a young woman with long dark wavy hair in a black one-piece swimsuit walks barefoot on the wide curved pale stone terrace that runs along a round turquoise infinity pool, the terrace clearly continues in front of her, behind her the smooth organic oval opening of a white sculptural concrete villa frames the Mediterranean sea, red rocky cliffs and umbrella pines far below, hazy summer afternoon light, soft pale sky, cinematic film still, subtle visible film grain, gentle halation, no lens flare, no light streaks, realistic, natural skin"},
+ {"key": "B2v2", "shot": "00 BASES", "workspace": "image", "model": "z-image-turbo", "method": "text", "aspect": "16:9", "batch": 3,
+  "camera": "film35", "style": "portra", "lens": "50",
+  "prompt": "Realistic close-up portrait of a young woman with long brown hair resting her chin on her crossed arms on the open window of a vintage car, looking softly into the distance, the sea out of focus behind her, warm late afternoon sun, a subtle warm orange light leak on the edge of the frame, real skin texture with pores and freckles, natural imperfections, documentary realism, 1970s film photograph, cinematic film still, fine film grain"}
+]

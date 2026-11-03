@@ -1,0 +1,62 @@
+[
+ {
+  "key": "C_sheet",
+  "shot": "01 IMAGE",
+  "workspace": "image",
+  "model": "qwen-edit-2511",
+  "method": "charsheet",
+  "refs": [
+   "@B3",
+   "@E_angles"
+  ],
+  "slots": [
+   "@B3",
+   "@E_angles"
+  ],
+  "sheet": "full",
+  "aspect": "16:9"
+ },
+ {
+  "key": "E_inpaint2",
+  "shot": "02 IMAGE EDIT",
+  "workspace": "image-edit",
+  "model": "qwen-inpaint",
+  "method": "inpaint",
+  "image": "@B1",
+  "slots": [
+   "@B1"
+  ],
+  "mask": "@M1",
+  "quality": true,
+  "seed": 777,
+  "prompt": "a small white sailboat with one tall white triangular sail on the calm sea far away, no people, no surfboard, cinematic film grain"
+ },
+ {
+  "key": "E_outpaint2",
+  "shot": "02 IMAGE EDIT",
+  "workspace": "image-edit",
+  "model": "qwen-outpaint",
+  "method": "outpaint",
+  "image": "@B1",
+  "slots": [
+   "@B1"
+  ],
+  "aspect": "21:9",
+  "quality": true,
+  "prompt": "the hazy Mediterranean sea and red rocky coastline continue on the left, the white sculptural villa wall continues on the right, same light, same film grain"
+ },
+ {
+  "key": "E_recipe2",
+  "shot": "02 IMAGE EDIT",
+  "workspace": "image-edit",
+  "model": "qwen-edit-2511",
+  "method": "recipe",
+  "slots": [
+   "@B4",
+   "@B5"
+  ],
+  "recipe": "hold",
+  "seed": 4242,
+  "prompt": "the amber perfume bottle exactly as in image 2, plain smoked glass with no label and no text, keep the film grain"
+ }
+]

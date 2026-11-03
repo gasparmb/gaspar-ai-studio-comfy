@@ -1,0 +1,23 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=ComfyUI
+GenericName=Génération d'images IA
+Comment=Démarrer, surveiller et arrêter ComfyUI
+Exec=/usr/bin/python3 @LAUNCHER@
+Path=@COMFY@
+Icon=comfyui
+Terminal=false
+StartupNotify=true
+StartupWMClass=Comfyui
+Categories=Graphics;2DGraphics;
+Keywords=ComfyUI;IA;AI;image;vidéo;génération;
+Actions=OpenUI;Stop;
+
+[Desktop Action OpenUI]
+Name=Ouvrir l'interface web
+Exec=@CTL@ open
+
+[Desktop Action Stop]
+Name=Arrêter ComfyUI
+Exec=@CTL@ stop

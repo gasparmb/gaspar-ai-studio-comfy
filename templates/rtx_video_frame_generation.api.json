@@ -1,0 +1,115 @@
+{
+ "6": {
+  "inputs": {
+   "file": "example.mp4"
+  },
+  "class_type": "LoadVideo",
+  "_meta": {
+   "title": "Charger une vidéo"
+  }
+ },
+ "7": {
+  "inputs": {
+   "video": [
+    "6",
+    0
+   ]
+  },
+  "class_type": "GetVideoComponents",
+  "_meta": {
+   "title": "Obtenir les composants vidéo"
+  }
+ },
+ "8": {
+  "inputs": {
+   "fps": [
+    "11",
+    0
+   ],
+   "bit_depth": [
+    "7",
+    3
+   ],
+   "color_space": [
+    "7",
+    4
+   ],
+   "codec": "none",
+   "images": [
+    "10",
+    0
+   ],
+   "audio": [
+    "7",
+    1
+   ]
+  },
+  "class_type": "CreateVideo",
+  "_meta": {
+   "title": "Créer une vidéo"
+  }
+ },
+ "9": {
+  "inputs": {
+   "filename_prefix": "video/ComfyUI",
+   "format": "auto",
+   "format.codec": "auto",
+   "codec": "auto",
+   "video": [
+    "8",
+    0
+   ]
+  },
+  "class_type": "SaveVideo",
+  "_meta": {
+   "title": "Enregistrer la vidéo"
+  }
+ },
+ "10": {
+  "inputs": {
+   "generation_type": "frame rate multiplier",
+   "generation_type.multiplier": [
+    "12",
+    0
+   ],
+   "mode": "MEDIUM",
+   "automatic_shot_change_detection": true,
+   "shot_change": false,
+   "image_encoding": "8-bit RGB",
+   "images": [
+    "7",
+    0
+   ]
+  },
+  "class_type": "RTXVideoFrameGeneration",
+  "_meta": {
+   "title": "RTX Video Frame Generation"
+  }
+ },
+ "11": {
+  "inputs": {
+   "expression": "a * b",
+   "values.a": [
+    "7",
+    2
+   ],
+   "values.b": [
+    "12",
+    0
+   ]
+  },
+  "class_type": "ComfyMathExpression",
+  "_meta": {
+   "title": "Expression mathématique"
+  }
+ },
+ "12": {
+  "inputs": {
+   "value": 2
+  },
+  "class_type": "PrimitiveInt",
+  "_meta": {
+   "title": "Multiplier"
+  }
+ }
+}

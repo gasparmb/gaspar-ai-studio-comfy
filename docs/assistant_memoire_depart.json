@@ -1,0 +1,218 @@
+[
+ {
+  "id": "dep01",
+  "date": "2026-11-02",
+  "kind": "preference",
+  "subject": "prompts",
+  "text": "Un prompt différent pour chaque image, même quand on change seulement de modèle.",
+  "source": "savoir de départ"
+ },
+ {
+  "id": "dep02",
+  "date": "2026-11-02",
+  "kind": "preference",
+  "subject": "tenues personnages",
+  "text": "Varier les tenues, même avec un personnage récurrent (@prénom).",
+  "source": "savoir de départ"
+ },
+ {
+  "id": "dep03",
+  "date": "2026-11-02",
+  "kind": "preference",
+  "subject": "regard objectif",
+  "text": "Personne ne regarde l'objectif : nommer ce que chaque personne regarde.",
+  "source": "savoir de départ"
+ },
+ {
+  "id": "dep04",
+  "date": "2026-11-02",
+  "kind": "preference",
+  "subject": "integration",
+  "text": "Les personnages doivent être bien intégrés au décor : échelle, lumière et ombres justes.",
+  "source": "savoir de départ"
+ },
+ {
+  "id": "dep05",
+  "date": "2026-11-02",
+  "kind": "preference",
+  "subject": "univers tests",
+  "text": "Tester dans un univers fixe (villa blanche à piscine ronde sur la Riviera, village méditerranéen, voiture 70s, Alpes, studio blanc), jamais une scène quelconque ; un projet par test.",
+  "source": "savoir de départ"
+ },
+ {
+  "id": "dep06",
+  "date": "2026-11-02",
+  "kind": "preference",
+  "subject": "jugement visuel",
+  "text": "Le jugement visuel prime : montrer des comparaisons côte à côte et le laisser choisir.",
+  "source": "savoir de départ"
+ },
+ {
+  "id": "dep07",
+  "date": "2026-11-02",
+  "kind": "preference",
+  "subject": "attendre avis",
+  "text": "Après une série de tests, attendre les commentaires de l'utilisateur avant de continuer.",
+  "source": "savoir de départ"
+ },
+ {
+  "id": "dep08",
+  "date": "2026-11-02",
+  "kind": "preference",
+  "subject": "on oublie corbeille",
+  "text": "« On oublie » = corbeille sans refaire ; sinon refaire en corrigeant, de zéro (texte → image), jamais en retouchant l'ancienne.",
+  "source": "savoir de départ"
+ },
+ {
+  "id": "dep09",
+  "date": "2026-11-02",
+  "kind": "preference",
+  "subject": "qwen qualite exemples",
+  "text": "Pour les images d'exemple : Qwen 2.1 en mode qualité (le plus naturel) ; FLUX.3 en mode rapide (la qualité ne change rien).",
+  "source": "savoir de départ"
+ },
+ {
+  "id": "dep10",
+  "date": "2026-11-02",
+  "kind": "preference",
+  "subject": "serie lifestyle",
+  "text": "Série lifestyle : jeunes adultes plutôt européens qui profitent de la vie ; la version « reportage jetable » a été jugée trop grunge : image plus propre, plus fraîche, moins grise, instagrammable.",
+  "source": "savoir de départ"
+ },
+ {
+  "id": "dep11",
+  "date": "2026-11-02",
+  "kind": "preference",
+  "subject": "reglages tests",
+  "text": "Tests de réglages : une famille à la fois, même scène et même lumière, un endroit et une pose par option, un plan par famille, rien dans le prompt qui contredit l'option.",
+  "source": "savoir de départ"
+ },
+ {
+  "id": "dep12",
+  "date": "2026-11-02",
+  "kind": "preference",
+  "subject": "expressions",
+  "text": "Varier les expressions : pas toujours la blonde qui rit et la brune sérieuse.",
+  "source": "savoir de départ"
+ },
+ {
+  "id": "dep13",
+  "date": "2026-11-02",
+  "kind": "a_eviter",
+  "subject": "mineurs teenage",
+  "text": "Ne jamais écrire « teenage » : des mineurs sont apparus. Écrire « young adults in their twenties ».",
+  "source": "savoir de départ"
+ },
+ {
+  "id": "dep14",
+  "date": "2026-11-02",
+  "kind": "a_eviter",
+  "subject": "camera mot",
+  "text": "Ne jamais écrire « camera » ni « smartphone » dans un prompt : les modèles dessinent l'appareil.",
+  "source": "savoir de départ"
+ },
+ {
+  "id": "dep15",
+  "date": "2026-11-02",
+  "kind": "a_eviter",
+  "subject": "z-image personne en trop",
+  "text": "Z-Image ajoute parfois une 3e personne : commencer par « Only two people in the picture ».",
+  "source": "savoir de départ"
+ },
+ {
+  "id": "dep16",
+  "date": "2026-11-02",
+  "kind": "a_eviter",
+  "subject": "style contredit reglage",
+  "text": "Le style « éditorial / magazine / 35 mm / ciel orange » écrase les réglages caméra et étalonnage : le retirer du prompt.",
+  "source": "savoir de départ"
+ },
+ {
+  "id": "dep17",
+  "date": "2026-11-02",
+  "kind": "a_eviter",
+  "subject": "ltx lumiere fin",
+  "text": "Une vidéo LTX s'est assombrie à la fin : écrire que la lumière reste la même du début à la fin.",
+  "source": "savoir de départ"
+ },
+ {
+  "id": "dep18",
+  "date": "2026-11-02",
+  "kind": "a_eviter",
+  "subject": "qwen-edit premiere image h3",
+  "text": "Pour Changer de personnage avec H3, la 1re image préparée par Qwen-Edit gardait la tenue de l'original : ne pas l'utiliser.",
+  "source": "savoir de départ"
+ },
+ {
+  "id": "dep19",
+  "date": "2026-11-02",
+  "kind": "methode",
+  "subject": "camera reglage modele",
+  "text": "Réglages CAMÉRA : Z-Image donne le rendu le plus naturel ; RED et VHS retouchés le 27/10.",
+  "source": "savoir de départ"
+ },
+ {
+  "id": "dep20",
+  "date": "2026-11-02",
+  "kind": "methode",
+  "subject": "etalonnage modele",
+  "text": "Réglages ÉTALONNAGE : Qwen 2.1 qualité suit le mieux ; noir & blanc sans couleurs nommées dans la scène.",
+  "source": "savoir de départ"
+ },
+ {
+  "id": "dep21",
+  "date": "2026-11-02",
+  "kind": "methode",
+  "subject": "zenithal flux",
+  "text": "Plongée zénithale : FLUX.3 (les autres modèles ne montrent pas vraiment le dessus).",
+  "source": "savoir de départ"
+ },
+ {
+  "id": "dep22",
+  "date": "2026-11-02",
+  "kind": "methode",
+  "subject": "optiques qwen 2.1",
+  "text": "Optiques Helios, Petzval, Lensbaby, tilt-shift, et subjectif, clair-obscur : Qwen 2.1.",
+  "source": "savoir de départ"
+ },
+ {
+  "id": "dep23",
+  "date": "2026-11-02",
+  "kind": "methode",
+  "subject": "silhouette ras du sol",
+  "text": "Silhouette et ras du sol : Qwen 2512.",
+  "source": "savoir de départ"
+ },
+ {
+  "id": "dep24",
+  "date": "2026-11-02",
+  "kind": "methode",
+  "subject": "ouverture flux",
+  "text": "Ouverture (f/1.4 → f/11) : FLUX.3, le seul où le flou d'arrière-plan change vraiment.",
+  "source": "savoir de départ"
+ },
+ {
+  "id": "dep25",
+  "date": "2026-11-02",
+  "kind": "methode",
+  "subject": "character swap h3",
+  "text": "Changer de personnage : MiniMax H3 Character Swap par défaut (fidèle au personnage, tenue comprise, son gardé).",
+  "source": "savoir de départ"
+ },
+ {
+  "id": "dep26",
+  "date": "2026-11-02",
+  "kind": "methode",
+  "subject": "vfx edit h3",
+  "text": "Effets vidéo libres : MiniMax H3 VFX Edit, « vfx_edit: » + l'effet + ce qui ne change pas ; version standard pour garder la lumière.",
+  "source": "savoir de départ"
+ },
+ {
+  "id": "dep27",
+  "date": "2026-11-02",
+  "kind": "info",
+  "subject": "licences",
+  "text": "Licences : Qwen 2.1 et FLUX.2 dev non commerciaux ; H3 hors UE ; LTX et FLUX.3 gratuits sous un seuil de CA.",
+  "source": "savoir de départ"
+ }
+]

@@ -1,0 +1,4 @@
+[
+ {"_name": "Qwen 2.1 + NOIR & BLANC, couleurs nommées", "workspace": "image", "model": "qwen-2.1", "method": "text", "aspect": "16:9", "resolution": "1k",
+  "prompt": "A young woman in a green-and-cream striped bikini and a red sarong sits on a white wall above the sea at sunset.", "dp_etalonnage": "nb", "seed": 7116}
+]

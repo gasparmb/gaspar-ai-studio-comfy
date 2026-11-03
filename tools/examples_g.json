@@ -1,0 +1,19 @@
+[
+ {"key": "V1", "shot": "03 VIDÉO", "workspace": "video", "model": "ltx-2.5", "method": "first", "first": "@B1", "slots": ["@B1"], "aspect": "16:9", "duration": 5,
+  "prompt": "The woman walks slowly toward the camera on the pale stone terrace beside the infinity pool, the turquoise water ripples gently, a light sea breeze moves her hair, static camera, cinematic 35mm film look with soft grain"},
+ {"key": "V2", "shot": "03 VIDÉO", "workspace": "video", "model": "wan-2.2", "method": "first", "first": "@B2", "slots": ["@B2"], "aspect": "16:9", "duration": 5,
+  "prompt": "She slowly lifts her chin from her arms and turns her gaze toward the sea, warm sunlight flickers on her face, her hair moves in the wind, 1970s film look with grain"},
+ {"key": "V_camera", "shot": "03 VIDÉO", "workspace": "video", "model": "wan-camera", "method": "camera", "first": "@B1", "slots": ["@B1"], "campose": "Pan Left", "aspect": "16:9",
+  "prompt": "the camera pans slowly to the left along the infinity pool and the sea while the woman keeps walking"},
+ {"key": "V_tracks", "shot": "03 VIDÉO", "workspace": "video", "model": "wan-move", "method": "tracks", "first": "@B1", "slots": ["@B1"], "tracks": [[0.5, 0.55, 0.58, 0.75]], "aspect": "16:9",
+  "prompt": "the woman walks toward the camera on the stone terrace, cinematic film look"},
+ {"key": "V_cine", "shot": "03 VIDÉO", "workspace": "video", "model": "ltx-cinemagraph", "method": "cinemagraph", "first": "@B1", "slots": ["@B1"], "aspect": "16:9", "duration": 5,
+  "prompt": "only the turquoise pool water ripples and shimmers in the sun, the woman and everything else stay perfectly still"},
+ {"key": "V_refs", "shot": "03 VIDÉO", "workspace": "video", "model": "minimax-h3", "method": "refs", "refs": ["@B6", "@B3"], "slots": ["@B6", "@B3"], "aspect": "16:9", "duration": 5,
+  "prompt": "The woman from image 1, with her short black bob haircut, now wears the steel-blue hooded down jacket from image 2 and walks slowly through a snowy alpine village, she looks back over her shoulder, soft crunch of snow and wind, cinematic 35mm film look with grain"},
+ {"key": "A_voice_vid", "shot": "03 VIDÉO", "workspace": "video", "model": "ltx-2.5", "method": "text", "aspect": "16:9", "duration": 5, "camera": "film35", "style": "portra",
+  "prompt": "Close-up of a young woman with long brown hair sitting in a sunlit vintage car, she looks into the camera and says softly in French: « Je t'ai attendu tout l'été, au bord de la mer. » Natural calm female voice, clear speech, quiet sound of waves in the background"},
+ {"key": "A_voice", "_audio": "@A_voice_vid"},
+ {"key": "V_talk", "shot": "03 VIDÉO", "workspace": "video", "model": "ltx-a2v", "method": "talk", "first": "@B2", "slots": ["@B2", "@A_voice"], "aspect": "16:9", "duration": 5,
+  "prompt": "The woman leaning on the car window speaks softly to the camera, natural lip movement, warm afternoon light, 1970s film look"}
+]

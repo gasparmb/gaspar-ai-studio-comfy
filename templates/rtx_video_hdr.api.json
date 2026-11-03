@@ -1,0 +1,80 @@
+{
+ "6": {
+  "inputs": {
+   "file": "example.mp4"
+  },
+  "class_type": "LoadVideo",
+  "_meta": {
+   "title": "Charger une vidéo"
+  }
+ },
+ "7": {
+  "inputs": {
+   "video": [
+    "6",
+    0
+   ]
+  },
+  "class_type": "GetVideoComponents",
+  "_meta": {
+   "title": "Obtenir les composants vidéo"
+  }
+ },
+ "8": {
+  "inputs": {
+   "fps": [
+    "7",
+    2
+   ],
+   "bit_depth": "auto",
+   "color_space": "HDR",
+   "codec": "none",
+   "images": [
+    "11",
+    0
+   ],
+   "audio": [
+    "7",
+    1
+   ]
+  },
+  "class_type": "CreateVideo",
+  "_meta": {
+   "title": "Créer une vidéo"
+  }
+ },
+ "9": {
+  "inputs": {
+   "filename_prefix": "video/ComfyUI",
+   "format": "auto",
+   "format.codec": "auto",
+   "codec": "auto",
+   "video": [
+    "8",
+    0
+   ]
+  },
+  "class_type": "SaveVideo",
+  "_meta": {
+   "title": "Enregistrer la vidéo"
+  }
+ },
+ "11": {
+  "inputs": {
+   "contrast": 100,
+   "saturation": 100,
+   "middle_gray": 50,
+   "luminance": 650,
+   "debanding": true,
+   "output_colorspace": "HDR",
+   "images": [
+    "7",
+    0
+   ]
+  },
+  "class_type": "RTXTrueHDR",
+  "_meta": {
+   "title": "RTX Video HDR"
+  }
+ }
+}

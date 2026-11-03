@@ -1,0 +1,30 @@
+[
+ {
+  "_name": "H3 swap",
+  "workspace": "video-edit",
+  "model": "h3-swap",
+  "method": "replace",
+  "prompt": "",
+  "video": "h3cs/01_VOILIER_ROUSSE_source.mp4",
+  "slots": [
+   "h3cs/01_VOILIER_ROUSSE_source.mp4",
+   "h3cs/01_VOILIER_ROUSSE_perso.png"
+  ],
+  "target": "woman",
+  "seed": 904239
+ },
+ {
+  "_name": "H3 swap vidéo tournée, cible vide",
+  "workspace": "video-edit",
+  "model": "h3-swap",
+  "method": "replace",
+  "prompt": "",
+  "video": "h3cs/rot90_test.mp4",
+  "slots": [
+   "h3cs/rot90_test.mp4",
+   "h3cs/01_VOILIER_ROUSSE_perso.png"
+  ],
+  "target": "",
+  "seed": 904239
+ }
+]

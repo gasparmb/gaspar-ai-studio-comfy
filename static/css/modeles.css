@@ -1,0 +1,31 @@
+/* INFOS › MODÈLES (static/js/modeles.js) : dossier, clé Hugging Face, téléchargements */
+.mdl-set { display: grid; gap: 10px; margin: 4px 0 12px; }
+.mdl-row { display: grid; grid-template-columns: 130px 1fr; gap: 12px; align-items: start; }
+.mdl-k { color: var(--muted); font-size: 9px; letter-spacing: .14em; padding-top: 8px; }
+.mdl-v small { display: block; margin-top: 4px; font-size: 10px; line-height: 1.45; color: var(--muted); }
+.mdl-v small a { color: inherit; text-decoration: underline; }
+.mdl-form { display: flex; gap: 6px; }
+.mdl-form input { flex: 1; min-width: 0; font: inherit; font-size: 11px; padding: 7px 10px; border-radius: var(--r-sm); border: 1px solid var(--line); background: #fff; }
+.mdl-form input:disabled { background: transparent; }
+.mdl-form button, .mdl-sum button, .infos-model button { font-size: 9px; letter-spacing: .14em; padding: 6px 12px; border-radius: var(--r-pill); background: var(--ink); color: #fff; white-space: nowrap; }
+.infos-model button { margin-top: 6px; padding: 4px 10px; font-size: 8px; }
+.infos-model button.mdl-more { background: transparent; color: var(--ink); border: 1px solid var(--line); }
+.infos-model button:disabled, .mdl-sum button:disabled { opacity: .4; }
+.mdl-ok { font-size: 10px; letter-spacing: .12em; display: inline-block; padding-top: 7px; }
+.mdl-q { font-style: normal; display: inline-block; margin-top: 6px; font-size: 8px; letter-spacing: .14em; color: var(--muted); }
+.mdl-sum { display: flex; justify-content: space-between; align-items: center; gap: 10px; margin: 6px 0 8px; font-size: 10px; letter-spacing: .12em; }
+.mdl-prog { display: grid; grid-template-columns: 1fr auto; gap: 6px 12px; align-items: center; margin-bottom: 8px; padding: 8px 10px; border-radius: var(--r-sm); border: 1px solid var(--line); background: #fff; font-size: 11px; }
+.mdl-prog small { display: block; color: var(--muted); font-size: 10px; margin-top: 2px; }
+.mdl-prog i { grid-column: 1 / -1; grid-row: 2; height: 3px; border-radius: 2px; background: linear-gradient(90deg, var(--ink) var(--p), var(--line) var(--p)); }
+.mdl-warn, .mdl-err { font-size: 11px; line-height: 1.45; margin: 4px 0 8px; padding: 7px 10px; border-radius: var(--r-sm); }
+.mdl-warn { background: #fff6e0; color: #8a4b00; }
+.mdl-err { background: #fbecea; color: #9b2c1f; }
+@media (max-width: 600px) { .mdl-row { grid-template-columns: 1fr; gap: 4px; } .mdl-k { padding-top: 0; } }
+/* INFOS › INSTALLATION (static/js/installation.js) */
+.ins-line { display: flex; align-items: center; justify-content: space-between; gap: 10px; flex-wrap: wrap; padding-top: 5px; }
+.ins-btns { display: flex; gap: 6px; }
+.ins-btns button { font-size: 9px; letter-spacing: .14em; padding: 6px 12px; border-radius: var(--r-pill); background: var(--ink); color: #fff; white-space: nowrap; }
+.ins-btns button:disabled { opacity: .4; }
+.ins-job { margin: 4px 0 12px; font-size: 10px; letter-spacing: .1em; }
+.ins-job pre { margin: 6px 0 0; max-height: 220px; overflow: auto; padding: 8px 10px; border-radius: var(--r-sm); background: #111; color: #ddd;
+  font: 10.5px/1.45 ui-monospace, SFMono-Regular, Menlo, monospace; letter-spacing: 0; white-space: pre-wrap; word-break: break-all; }

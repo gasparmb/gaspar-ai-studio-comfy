@@ -1,0 +1,171 @@
+[
+ {
+  "key": "V1",
+  "shot": "03 VIDÉO",
+  "workspace": "video",
+  "model": "ltx-2.5",
+  "method": "first",
+  "first": "@B1",
+  "slots": [
+   "@B1"
+  ],
+  "aspect": "16:9",
+  "duration": 5,
+  "prompt": "The woman walks slowly and gracefully along the curved edge of the infinity pool, the turquoise water ripples gently, a light sea breeze moves her hair, static camera, cinematic 35mm film look with soft grain"
+ },
+ {
+  "key": "V2",
+  "shot": "03 VIDÉO",
+  "workspace": "video",
+  "model": "wan-2.2",
+  "method": "first",
+  "first": "@B2",
+  "slots": [
+   "@B2"
+  ],
+  "aspect": "16:9",
+  "duration": 5,
+  "prompt": "She slowly lifts her head from her arms and gazes at the sea, warm light leaks flicker across the frame, her hair moves in the wind, 1970s film look with grain"
+ },
+ {
+  "key": "V_text",
+  "shot": "03 VIDÉO",
+  "workspace": "video",
+  "model": "ltx-2.5",
+  "method": "text",
+  "aspect": "16:9",
+  "duration": 5,
+  "camera": "film35",
+  "style": "portra",
+  "prompt": "Slow aerial drone shot gliding toward a white sculptural organic villa with a round turquoise infinity pool on a cliff above the Mediterranean, red rocks and umbrella pines, hazy summer afternoon light, cinematic film look with soft grain"
+ },
+ {
+  "key": "V_firstlast",
+  "shot": "03 VIDÉO",
+  "workspace": "video",
+  "model": "ltx-2.5",
+  "method": "firstlast",
+  "first": "@B3",
+  "last": "@E_angles",
+  "slots": [
+   "@B3",
+   "@E_angles"
+  ],
+  "aspect": "4:5",
+  "duration": 5,
+  "prompt": "The woman in the blue hooded down jacket slowly turns her head toward the camera, light snow drifts in the cold wind, cinematic film look"
+ },
+ {
+  "key": "V_refs",
+  "shot": "03 VIDÉO",
+  "workspace": "video",
+  "model": "minimax-h3",
+  "method": "refs",
+  "refs": [
+   "@B4",
+   "@B3"
+  ],
+  "slots": [
+   "@B4",
+   "@B3"
+  ],
+  "aspect": "16:9",
+  "duration": 5,
+  "prompt": "The woman from image 1, wearing the steel-blue hooded down jacket from image 2, walks slowly through a snowy alpine landscape and looks back over her shoulder, wind and soft crunch of snow, cinematic 35mm film look with grain"
+ },
+ {
+  "key": "V_story",
+  "shot": "03 VIDÉO",
+  "workspace": "video",
+  "model": "wan-storyboard",
+  "method": "storyboard",
+  "slots": [
+   "@B1",
+   "@E_inpaint",
+   "@B2",
+   "@E_relight",
+   "@B3",
+   "@B4"
+  ],
+  "aspect": "16:9",
+  "prompt": "A dreamy summer-to-winter fashion film of a young woman, smooth transitions between each moment, cinematic film look with grain"
+ },
+ {
+  "key": "V_talk",
+  "shot": "03 VIDÉO",
+  "workspace": "video",
+  "model": "ltx-a2v",
+  "method": "talk",
+  "first": "@B2",
+  "slots": [
+   "@B2",
+   "AI-STUDIO/test_audio.wav"
+  ],
+  "aspect": "16:9",
+  "duration": 5,
+  "prompt": "The woman leaning on the car window speaks softly to the camera, warm light leaks, 1970s film look"
+ },
+ {
+  "key": "V_camera",
+  "shot": "03 VIDÉO",
+  "workspace": "video",
+  "model": "wan-camera",
+  "method": "camera",
+  "first": "@B1",
+  "slots": [
+   "@B1"
+  ],
+  "campose": "Pan Right",
+  "aspect": "16:9",
+  "prompt": "the camera pans slowly to the right across the infinity pool and the sea, the woman keeps walking"
+ },
+ {
+  "key": "V_tracks",
+  "shot": "03 VIDÉO",
+  "workspace": "video",
+  "model": "wan-move",
+  "method": "tracks",
+  "first": "@B1",
+  "slots": [
+   "@B1"
+  ],
+  "tracks": [
+   [
+    0.53,
+    0.6,
+    0.35,
+    0.72
+   ]
+  ],
+  "aspect": "16:9",
+  "prompt": "the woman walks along the edge of the pool toward the left, cinematic film look"
+ },
+ {
+  "key": "V_cine",
+  "shot": "03 VIDÉO",
+  "workspace": "video",
+  "model": "ltx-cinemagraph",
+  "method": "cinemagraph",
+  "first": "@B1",
+  "slots": [
+   "@B1"
+  ],
+  "aspect": "16:9",
+  "duration": 5,
+  "prompt": "only the turquoise pool water ripples and sparkles in the sun, the woman and everything else stay perfectly still"
+ },
+ {
+  "key": "V_extend",
+  "shot": "03 VIDÉO",
+  "workspace": "video",
+  "model": "ltx-extend",
+  "method": "extend",
+  "video": "@V1",
+  "slots": [
+   "@V1"
+  ],
+  "aspect": "16:9",
+  "duration": 5,
+  "prompt": "She stops at the edge, turns toward the sea and slowly raises her arms in the breeze"
+ }
+]

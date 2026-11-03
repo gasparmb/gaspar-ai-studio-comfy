@@ -1,0 +1,152 @@
+[
+ {
+  "key": "I_refs",
+  "shot": "01 IMAGE",
+  "workspace": "image",
+  "model": "qwen-edit-2511",
+  "method": "refs",
+  "refs": [
+   "@B3",
+   "@B5"
+  ],
+  "slots": [
+   "@B3",
+   "@B5"
+  ],
+  "prompt": "The woman from image 1, in her blue hooded down jacket, holds the amber perfume bottle from image 2 close to her face in the snowy mountains, fashion campaign, keep the cinematic film look and the film grain"
+ },
+ {
+  "key": "I_pano",
+  "shot": "01 IMAGE",
+  "workspace": "image",
+  "model": "qwen-360",
+  "method": "pano360",
+  "camera": "film35",
+  "style": "portra",
+  "prompt": "the curved white terrace of a sculptural organic modernist villa above the Mediterranean sea, a round turquoise infinity pool, red rocky cliffs and pine trees, hazy summer light, cinematic film still, subtle film grain"
+ },
+ {
+  "key": "M1",
+  "_mask": "@B1",
+  "box": [
+   0.03,
+   0.42,
+   0.21,
+   0.64
+  ]
+ },
+ {
+  "key": "E_inpaint",
+  "shot": "02 IMAGE EDIT",
+  "workspace": "image-edit",
+  "model": "qwen-inpaint",
+  "method": "inpaint",
+  "image": "@B1",
+  "slots": [
+   "@B1"
+  ],
+  "mask": "@M1",
+  "prompt": "a small white sailing boat with a white sail on the calm sea, far away, cinematic film grain"
+ },
+ {
+  "key": "E_instruct",
+  "shot": "02 IMAGE EDIT",
+  "workspace": "image-edit",
+  "model": "qwen-edit-2511",
+  "method": "instruct",
+  "image": "@B4",
+  "slots": [
+   "@B4"
+  ],
+  "prompt": "Tie her wet hair into a low sleek bun and add a thin gold chain necklace, keep everything else identical, keep the film grain"
+ },
+ {
+  "key": "E_outpaint",
+  "shot": "02 IMAGE EDIT",
+  "workspace": "image-edit",
+  "model": "qwen-outpaint",
+  "method": "outpaint",
+  "image": "@B4",
+  "slots": [
+   "@B4"
+  ],
+  "aspect": "9:16",
+  "prompt": "plain white wall above and a white floor below, soft window daylight, film grain"
+ },
+ {
+  "key": "E_angles",
+  "shot": "02 IMAGE EDIT",
+  "workspace": "image-edit",
+  "model": "qwen-angles",
+  "method": "angles",
+  "image": "@B3",
+  "slots": [
+   "@B3"
+  ],
+  "angle_h": "0",
+  "angle_v": "0",
+  "angle_zoom": "5"
+ },
+ {
+  "key": "E_multi",
+  "shot": "02 IMAGE EDIT",
+  "workspace": "image-edit",
+  "model": "qwen-angles",
+  "method": "multiangles",
+  "image": "@B6",
+  "slots": [
+   "@B6"
+  ],
+  "angle_pack": "sheet4"
+ },
+ {
+  "key": "E_relight",
+  "shot": "02 IMAGE EDIT",
+  "workspace": "image-edit",
+  "model": "qwen-relight",
+  "method": "relight",
+  "image": "@B4",
+  "slots": [
+   "@B4"
+  ],
+  "light": "golden",
+  "prompt": "warm low golden hour sunlight from the window, long soft shadows on the white wall, keep the film grain"
+ },
+ {
+  "key": "E_lightmig",
+  "shot": "02 IMAGE EDIT",
+  "workspace": "image-edit",
+  "model": "qwen-lightmig",
+  "method": "lightmig",
+  "slots": [
+   "@B4",
+   "@B2"
+  ]
+ },
+ {
+  "key": "E_effect",
+  "shot": "02 IMAGE EDIT",
+  "workspace": "image-edit",
+  "model": "qwen-fx",
+  "method": "effect",
+  "image": "@B5",
+  "slots": [
+   "@B5"
+  ],
+  "imgfx": "inflate",
+  "prompt": "the perfume bottle"
+ },
+ {
+  "key": "E_recipe",
+  "shot": "02 IMAGE EDIT",
+  "workspace": "image-edit",
+  "model": "qwen-edit-2511",
+  "method": "recipe",
+  "slots": [
+   "@B4",
+   "@B5"
+  ],
+  "recipe": "hold",
+  "prompt": "the amber perfume bottle"
+ }
+]

@@ -1,0 +1,15 @@
+[
+ {"key": "LM_qe", "shot": "02 IMAGE EDIT", "workspace": "image-edit", "model": "qwen-edit-2511", "method": "lightmig", "slots": ["@B4", "@B2"], "quality": true},
+ {"key": "LM_flux", "shot": "02 IMAGE EDIT", "workspace": "image-edit", "model": "flux3-klein", "method": "lightmig", "slots": ["@B4", "@B2"]},
+ {"key": "LM_grade", "shot": "02 IMAGE EDIT", "workspace": "image-edit", "model": "light-grade", "method": "lightmig", "slots": ["@B4", "@B2"]},
+ {"key": "IP_qe", "shot": "02 IMAGE EDIT", "workspace": "image-edit", "model": "qwen-edit-2511", "method": "inpaint", "image": "@B1", "slots": ["@B1", null], "mask": "@M3", "quality": true,
+  "prompt": "change her black one-piece swimsuit into a plain bright white one-piece swimsuit with thin straps"},
+ {"key": "IP_flux", "shot": "02 IMAGE EDIT", "workspace": "image-edit", "model": "flux3-klein", "method": "inpaint", "image": "@B1", "slots": ["@B1", null], "mask": "@M3",
+  "prompt": "change her black one-piece swimsuit into a plain bright white one-piece swimsuit with thin straps"},
+ {"key": "IP_zi", "shot": "02 IMAGE EDIT", "workspace": "image-edit", "model": "z-image-turbo", "method": "inpaint", "image": "@B1", "slots": ["@B1", null], "mask": "@M3",
+  "prompt": "a young woman in a plain bright white one-piece swimsuit with thin straps walking on a stone terrace, cinematic film still, film grain"},
+ {"key": "IP_qe_ref", "shot": "02 IMAGE EDIT", "workspace": "image-edit", "model": "qwen-edit-2511", "method": "inpaint", "image": "@B1", "slots": ["@B1", "@R_swim"], "mask": "@M3", "quality": true,
+  "prompt": "the woman now wears the white one-piece swimsuit from image 2"},
+ {"key": "IP_flux_ref", "shot": "02 IMAGE EDIT", "workspace": "image-edit", "model": "flux3-klein", "method": "inpaint", "image": "@B1", "slots": ["@B1", "@R_swim"], "mask": "@M3",
+  "prompt": "the woman now wears the white one-piece swimsuit from image 2"}
+]

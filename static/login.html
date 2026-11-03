@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Connexion — AI Studio</title>
+  <style>
+    /* Jost (OFL, /static/fonts/Jost-OFL.txt), servie par l'app : la page de connexion marche sans internet. */
+    @font-face { font-family: 'Jost'; src: url('/static/fonts/jost-latin.woff2') format('woff2'); font-weight: 100 900; font-display: swap; }
+    @font-face { font-family: 'Outfit'; src: url('/static/fonts/outfit-latin.woff2') format('woff2'); font-weight: 100 900; font-display: swap; }
+    :root { --paper: #f5f4f1; --ink: #0e0e10; --muted: rgba(14,14,16,.5); --line: rgba(14,14,16,.12);
+            --label: 'Futura', 'Jost', 'Century Gothic', sans-serif; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 40px;
+           padding: 32px 16px; font-family: var(--label); color: var(--ink); background: var(--paper);
+           background-image: radial-gradient(42vw 38vh at 8% 6%, rgba(14,14,16,.05), transparent 70%), radial-gradient(52vw 40vh at 55% 108%, rgba(14,14,16,.045), transparent 70%);
+           -webkit-font-smoothing: antialiased; }
+    .logo { display: inline-flex; flex-direction: column; line-height: .85; }
+    .logo b { font-family: 'MADE Outer Sans', 'Outfit', 'Arial Black', sans-serif; font-weight: 900; font-size: clamp(44px, 8vw, 84px); margin-bottom: -.36em; }
+    .logo span { font-family: 'MADE Outer Sans Outline', 'Outfit', 'Arial Black', sans-serif; font-size: clamp(42px, 7.7vw, 81px); margin-left: .727em; }
+    .no-made .logo span { -webkit-text-stroke: 2px var(--ink); color: transparent; font-weight: 900; }
+    .card { width: min(420px, 100%); background: rgba(255,255,255,.72); border: 1px solid rgba(255,255,255,.85); border-radius: 24px;
+            box-shadow: inset 0 1px 0 rgba(255,255,255,.85), 0 28px 70px -28px rgba(20,20,40,.32); padding: 26px 24px 22px;
+            -webkit-backdrop-filter: blur(26px) saturate(170%); backdrop-filter: blur(26px) saturate(170%); }
+    .tabs { display: flex; gap: 2px; padding: 3px; background: rgba(14,14,16,.05); border-radius: 999px; margin-bottom: 20px; }
+    .tabs button { flex: 1; border: 0; background: none; font: inherit; font-size: 10px; letter-spacing: .16em; padding: 8px 6px; border-radius: 999px; cursor: pointer; color: var(--muted); }
+    .tabs button.on { background: #fff; color: var(--ink); box-shadow: 0 1px 3px rgba(20,20,40,.1); }
+    h1 { font-family: 'MADE Outer Sans', sans-serif; font-weight: 900; font-size: 15px; letter-spacing: .05em; margin-bottom: 6px; }
+    p.hint { font-size: 11px; line-height: 1.55; color: var(--muted); margin-bottom: 16px; }
+    form { display: flex; flex-direction: column; gap: 10px; }
+    label { display: flex; flex-direction: column; gap: 5px; font-size: 9px; letter-spacing: .18em; color: var(--muted); }
+    input, textarea { font: inherit; font-size: 14px; letter-spacing: .01em; color: var(--ink); padding: 11px 13px; border-radius: 12px;
+                      border: 1px solid var(--line); background: rgba(255,255,255,.8); outline: none; }
+    input:focus, textarea:focus { border-color: rgba(14,14,16,.35); background: #fff; }
+    textarea { resize: vertical; min-height: 64px; }
+    button.go { margin-top: 6px; border: 0; cursor: pointer; font-family: 'MADE Outer Sans', sans-serif; font-weight: 900; font-size: 13px; letter-spacing: .06em;
+                color: #fff; background: var(--ink); padding: 14px; border-radius: 14px; box-shadow: 0 10px 26px -12px rgba(14,14,16,.55); }
+    button.go:disabled { opacity: .4; }
+    .msg { font-size: 11px; line-height: 1.5; min-height: 16px; letter-spacing: .02em; }
+    .msg.err { color: var(--ink); font-weight: 600; }
+    .done { text-align: center; font-size: 12px; line-height: 1.6; padding: 10px 0 4px; }
+    [hidden] { display: none !important; }
+  </style>
+</head>
+<body>
+  <div class="logo"><b>GASPAR.</b><span>AI STUDIO</span></div>
+
+  <div class="card">
+    <!-- 1er lancement : création du compte administrateur -->
+    <section id="setup" hidden>
+      <h1>CRÉER LE COMPTE ADMINISTRATEUR</h1>
+      <p class="hint">Premier lancement : ce compte gère tous les autres (accepter ou refuser les demandes d’accès).</p>
+      <form id="f-setup">
+        <label>NOM<input name="name" autocomplete="name" required></label>
+        <label>E-MAIL<input name="email" type="email" autocomplete="email" required></label>
+        <label>MOT DE PASSE (8 caractères au moins)<input name="password" type="password" autocomplete="new-password" minlength="8" required></label>
+        <label>CONFIRMATION<input name="confirm" type="password" autocomplete="new-password" minlength="8" required></label>
+        <p class="msg" id="m-setup"></p>
+        <button class="go">CRÉER ET ENTRER</button>
+      </form>
+    </section>
+
+    <section id="normal" hidden>
+      <div class="tabs"><button type="button" class="on" data-tab="login">SE CONNECTER</button><button type="button" data-tab="signup">DEMANDER UN ACCÈS</button></div>
+      <form id="f-login">
+        <label>E-MAIL<input name="email" type="email" autocomplete="email" required></label>
+        <label>MOT DE PASSE<input name="password" type="password" autocomplete="current-password" required></label>
+        <p class="msg" id="m-login"></p>
+        <button class="go">SE CONNECTER</button>
+      </form>
+      <form id="f-signup" hidden>
+        <p class="hint">Ta demande sera examinée par l’administrateur ; tu pourras te connecter dès qu’elle sera acceptée.</p>
+        <label>NOM<input name="name" autocomplete="name" required></label>
+        <label>E-MAIL<input name="email" type="email" autocomplete="email" required></label>
+        <label>MOT DE PASSE (8 caractères au moins)<input name="password" type="password" autocomplete="new-password" minlength="8" required></label>
+        <label>UN MOT POUR L’ADMINISTRATEUR (facultatif)<textarea name="message" placeholder="Qui es-tu, sur quel projet ?"></textarea></label>
+        <p class="msg" id="m-signup"></p>
+        <button class="go">ENVOYER LA DEMANDE</button>
+      </form>
+      <div class="done" id="sent" hidden>Demande envoyée.<br>Tu recevras l’accès dès que l’administrateur l’aura acceptée.</div>
+    </section>
+  </div>
+
+  <script>
+    const $ = (s) => document.querySelector(s);
+    const post = async (url, body) => {
+      const r = await fetch(url, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body) });
+      const d = await r.json().catch(() => ({}));
+      if (!r.ok) throw new Error(d.error || 'Erreur');
+      return d;
+    };
+    const fields = (f) => Object.fromEntries(new FormData(f).entries());
+    const say = (id, text, err = true) => { const m = $(id); m.textContent = text; m.classList.toggle('err', err); };
+
+    (async () => {
+      const st = await fetch('/api/auth/state').then((r) => r.json()).catch(() => ({}));
+      if (st.user) { location.replace('/'); return; }
+      $(st.has_admin ? '#normal' : '#setup').hidden = false;
+    })();
+
+    document.querySelectorAll('[data-tab]').forEach((b) => b.addEventListener('click', () => {
+      document.querySelectorAll('[data-tab]').forEach((x) => x.classList.toggle('on', x === b));
+      $('#f-login').hidden = b.dataset.tab !== 'login'; $('#f-signup').hidden = b.dataset.tab !== 'signup'; $('#sent').hidden = true;
+    }));
+
+    $('#f-setup').addEventListener('submit', async (e) => {
+      e.preventDefault(); const v = fields(e.target);
+      if (v.password !== v.confirm) return say('#m-setup', 'Les deux mots de passe diffèrent');
+      try { await post('/api/auth/signup', v); location.replace('/'); } catch (err) { say('#m-setup', err.message); }
+    });
+    $('#f-login').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      try { await post('/api/auth/login', fields(e.target)); location.replace('/' + location.hash); } catch (err) { say('#m-login', err.message); }
+    });
+    $('#f-signup').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      try { await post('/api/auth/signup', fields(e.target)); e.target.hidden = true; $('#sent').hidden = false; } catch (err) { say('#m-signup', err.message); }
+    });
+  </script>
+  <script>
+    // Sans MADE Outer Sans (copie publique du dépôt) : contour dessiné par le navigateur.
+    const madeInstalled = (family) => {
+      const ctx = document.createElement('canvas').getContext('2d');
+      const probe = 'mmmmmmmmmmlliWWW@@';
+      ctx.font = '900 40px monospace'; const base = ctx.measureText(probe).width;
+      ctx.font = `900 40px "${family}", monospace`; return ctx.measureText(probe).width !== base;
+    };
+    document.fonts && document.fonts.ready.then(() => {
+      if (!madeInstalled('MADE Outer Sans Outline')) document.body.classList.add('no-made');
+    }).catch(() => {});
+  </script>
+  <script src="/static/js/i18n.js?v=50"></script>
+</body>
+</html>

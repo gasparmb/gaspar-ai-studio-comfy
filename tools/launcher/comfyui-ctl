@@ -1,0 +1,38 @@
+#!/usr/bin/env bash
+# Petit utilitaire ComfyUI : detection/arret bases sur le PID qui ecoute
+# reellement sur le port (fiable, contrairement a pgrep sur "main.py"
+# qui rate les lancements en chemin relatif et attrape des faux positifs).
+PORT="${COMFYUI_PORT:-8188}"
+URL="http://localhost:${PORT}"
+
+pids() {
+    ss -ltnpH "sport = :${PORT}" 2>/dev/null \
+        | grep -oP 'pid=\K[0-9]+' | sort -u
+}
+
+case "$1" in
+  pids)   pids ;;
+  status)
+        p=$(pids)
+        if [ -n "$p" ]; then echo "running $p"; else echo "stopped"; fi ;;
+  stop)
+        p=$(pids)
+        [ -z "$p" ] && { echo "ComfyUI n'est pas en cours d'exécution."; exit 0; }
+        # Copie publique d'AI STUDIO : pas d'arrêt pendant un calcul (sauf « stop --force »)
+        if [ "$2" != "--force" ]; then
+            if ! curl -s -m 10 "$URL/queue" | python3 -c 'import json,sys; d=json.load(sys.stdin); sys.exit(bool(d["queue_running"] or d["queue_pending"]))' 2>/dev/null; then
+                msg="Des calculs sont en cours ou en file (ou ComfyUI ne répond pas) : attends, ou « stop --force »."
+                echo "$msg"
+                command -v notify-send >/dev/null && notify-send "ComfyUI" "$msg"   # (lancé depuis le menu, sans terminal)
+                exit 1
+            fi
+        fi
+        kill -TERM $p
+        for _ in $(seq 1 15); do
+            sleep 1; [ -z "$(pids)" ] && { echo "ComfyUI arrêté."; exit 0; }
+        done
+        kill -9 $(pids) 2>/dev/null
+        echo "ComfyUI arrêté (forcé)." ;;
+  open)   xdg-open "$URL" ;;
+  *)      echo "usage: $0 {status|pids|stop [--force]|open}"; exit 2 ;;
+esac

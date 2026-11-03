@@ -1,0 +1,7 @@
+# Données de travail (historique, projets, liens clients, avis, comptes) : hors du dépôt
+data/
+projets
+__pycache__/
+*.pyc
+*.tmp
+.DS_Store

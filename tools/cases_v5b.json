@@ -1,0 +1,101 @@
+[
+ {
+  "_name": "FLUX.3 texte",
+  "workspace": "image",
+  "model": "flux3-klein",
+  "method": "text",
+  "prompt": "a red wooden door standing alone on a white salt flat at dawn, minimalist, editorial",
+  "camera": "alexa35",
+  "aspect": "16:9"
+ },
+ {
+  "_name": "FLUX.3 références",
+  "workspace": "image",
+  "model": "flux3-klein",
+  "method": "refs",
+  "refs": [
+   "AI-STUDIO/z-image_00001_.png [output]",
+   "AI-STUDIO/qwen-2512_00001_.png [output]"
+  ],
+  "slots": [
+   "AI-STUDIO/z-image_00001_.png [output]",
+   "AI-STUDIO/qwen-2512_00001_.png [output]",
+   null
+  ],
+  "prompt": "the woman from image 1 stands next to the red door from image 2 on the salt flat"
+ },
+ {
+  "_name": "Étendre image 9:16 (v2)",
+  "workspace": "image-edit",
+  "model": "qwen-outpaint",
+  "method": "outpaint",
+  "image": "AI-STUDIO/qwen-2512_00001_.png [output]",
+  "slots": [
+   "AI-STUDIO/qwen-2512_00001_.png [output]"
+  ],
+  "aspect": "9:16",
+  "prompt": "vast salt flat and wide sky"
+ },
+ {
+  "_name": "Calques",
+  "workspace": "post",
+  "model": "qwen-layers",
+  "method": "layers",
+  "image": "AI-STUDIO/z-image_00002_.png [output]",
+  "slots": [
+   "AI-STUDIO/z-image_00002_.png [output]"
+  ],
+  "nlayers": "3",
+  "prompt": "a man in a red coat on a white background"
+ },
+ {
+  "_name": "Caméra pilotée",
+  "workspace": "video",
+  "model": "wan-camera",
+  "method": "camera",
+  "slots": [
+   "AI-STUDIO/qwen-2512_00001_.png [output]"
+  ],
+  "campose": "Zoom In",
+  "aspect": "16:9",
+  "prompt": "slow zoom toward the red door on the salt flat"
+ },
+ {
+  "_name": "Transfert de mouvement",
+  "workspace": "video-edit",
+  "model": "wan-animate",
+  "method": "motion",
+  "video": "AI-STUDIO/wan-i2v_00001_.mp4 [output]",
+  "slots": [
+   "AI-STUDIO/wan-i2v_00001_.mp4 [output]",
+   "AI-STUDIO/z-image_00002_.png [output]"
+  ],
+  "prompt": "a man in a red coat"
+ },
+ {
+  "_name": "H3 texte",
+  "workspace": "video",
+  "model": "minimax-h3",
+  "method": "text",
+  "prompt": "a red door creaks open on a windy salt flat, wind sounds",
+  "aspect": "16:9",
+  "duration": 5
+ },
+ {
+  "_name": "H3 références",
+  "workspace": "video",
+  "model": "minimax-h3",
+  "method": "refs",
+  "refs": [
+   "AI-STUDIO/z-image_00002_.png [output]",
+   "AI-STUDIO/qwen-2512_00001_.png [output]"
+  ],
+  "slots": [
+   "AI-STUDIO/z-image_00002_.png [output]",
+   "AI-STUDIO/qwen-2512_00001_.png [output]"
+  ],
+  "prompt": "the man from image 1 walks up to the red door from image 2 and opens it",
+  "aspect": "16:9",
+  "duration": 5
+ }
+]

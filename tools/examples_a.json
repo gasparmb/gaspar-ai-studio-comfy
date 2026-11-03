@@ -1,0 +1,74 @@
+[
+ {
+  "key": "B1",
+  "shot": "00 BASES",
+  "workspace": "image",
+  "model": "z-image-turbo",
+  "method": "text",
+  "aspect": "16:9",
+  "prompt": "Editorial fashion photograph, a young woman with long dark wavy hair in a black one-piece swimsuit walks barefoot along the curved edge of a round turquoise infinity pool, framed by the smooth organic oval opening of a white sculptural concrete villa, the Mediterranean coastline with red rocky cliffs and pine trees far below, hazy summer light, soft pale sky, cinematic film still, subtle visible film grain, soft halation on the highlights, gentle filmic contrast, not digital, not oversharpened",
+  "camera": "film35",
+  "style": "portra",
+  "lens": "anamo"
+ },
+ {
+  "key": "B2",
+  "shot": "00 BASES",
+  "workspace": "image",
+  "model": "qwen-2512",
+  "method": "text",
+  "aspect": "16:9",
+  "prompt": "Cinematic close-up portrait of a young woman with long brown hair resting her chin on her crossed arms on the open window of a vintage car, the sea softly blurred behind her, warm orange light leaks and a soft lens flare, faded 1970s film photograph, dreamy and melancholic mood, fine grain, cinematic film still, subtle visible film grain, soft halation on the highlights, gentle filmic contrast, not digital, not oversharpened",
+  "camera": "film35",
+  "style": "portra",
+  "lens": "anamo"
+ },
+ {
+  "key": "B3",
+  "shot": "00 BASES",
+  "workspace": "image",
+  "model": "z-image-turbo",
+  "method": "text",
+  "aspect": "4:5",
+  "prompt": "Fashion campaign photograph, a young woman with blonde shoulder-length hair wearing a glossy steel-blue hooded down jacket zipped up, looking off into the distance, snowy alpine mountains and drifting mist behind her, cold overcast light, muted palette, cinematic film still, subtle visible film grain, soft halation on the highlights, gentle filmic contrast, not digital, not oversharpened",
+  "camera": "film35",
+  "style": "eterna",
+  "lens": "50"
+ },
+ {
+  "key": "B4",
+  "shot": "00 BASES",
+  "workspace": "image",
+  "model": "z-image-turbo",
+  "method": "text",
+  "aspect": "16:9",
+  "prompt": "Minimalist beauty portrait, profile of a young woman with wet slicked-back dark brown hair, bare shoulders, both hands gently touching the side of her neck, a small pearl earring, plain white wall, soft diffused window daylight, calm and clean, natural skin texture, editorial, cinematic film still, subtle visible film grain, soft halation on the highlights, gentle filmic contrast, not digital, not oversharpened",
+  "camera": "film35",
+  "style": "eterna",
+  "lens": "85"
+ },
+ {
+  "key": "B5",
+  "shot": "00 BASES",
+  "workspace": "image",
+  "model": "qwen-2512",
+  "method": "text",
+  "aspect": "1:1",
+  "prompt": "Product still life, a minimal sculptural perfume bottle in smoked amber glass with a rounded white stone cap, standing on a curved white plaster plinth, soft long shadow, warm afternoon sunlight, Mediterranean modernist mood, clean warm white background, no text, cinematic film still, subtle visible film grain, soft halation on the highlights, gentle filmic contrast, not digital, not oversharpened",
+  "camera": "film35",
+  "style": "portra",
+  "lens": "none"
+ },
+ {
+  "key": "B6",
+  "shot": "00 BASES",
+  "workspace": "image",
+  "model": "z-image-turbo",
+  "method": "text",
+  "aspect": "4:5",
+  "prompt": "Full body fashion photograph of a young woman with a short black bob haircut in a flowing ivory linen dress and flat leather sandals, standing straight facing the camera, arms relaxed along her body, plain light grey studio background filling the whole frame, full-bleed image without any border or frame, soft even light, sharp details, cinematic film still, subtle visible film grain, soft halation on the highlights, gentle filmic contrast, not digital, not oversharpened",
+  "camera": "film35",
+  "style": "eterna",
+  "lens": "50"
+ }
+]

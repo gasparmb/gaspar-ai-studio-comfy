@@ -1,0 +1,4 @@
+[
+ {"_name": "FLUX.3 + PLAN (réécrivain)", "workspace": "image", "model": "flux3-klein", "method": "text", "aspect": "16:9", "resolution": "2k",
+  "prompt": "two young women sit on the edge of a rooftop pool above a white Mediterranean village at sunset", "dp_plan": "gp", "seed": 7116}
+]

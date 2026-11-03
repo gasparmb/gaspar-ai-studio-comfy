@@ -1,0 +1,21 @@
+[
+ {"key": "C_sheet", "shot": "01 IMAGE", "workspace": "image", "model": "qwen-edit-2511", "method": "charsheet", "refs": ["@B3", "@E_angles"], "slots": ["@B3", "@E_angles"], "sheet": "full", "aspect": "16:9"},
+ {"key": "M2", "_mask": "@B1", "box": [0.44, 0.36, 0.56, 0.64]},
+ {"key": "E_inpaint", "shot": "02 IMAGE EDIT", "workspace": "image-edit", "model": "qwen-inpaint", "method": "inpaint", "image": "@B1", "slots": ["@B1"], "mask": "@M2", "quality": true,
+  "prompt": "a white one-piece swimsuit with thin straps, same body, same pose, cinematic film grain"},
+ {"key": "E_outpaint", "shot": "02 IMAGE EDIT", "workspace": "image-edit", "model": "qwen-outpaint", "method": "outpaint", "image": "@B1", "slots": ["@B1"], "aspect": "21:9", "quality": true,
+  "prompt": "the pale stone terrace, the turquoise pool and the white sculptural villa wall continue on both sides, the Mediterranean sea and red rocks in the distance, same hazy light, same film grain"},
+ {"key": "E_effect", "shot": "02 IMAGE EDIT", "workspace": "image-edit", "model": "qwen-fx", "method": "effect", "image": "@B6", "slots": ["@B6"], "imgfx": "inflate", "prompt": "the woman"},
+ {"key": "E_recipe", "shot": "02 IMAGE EDIT", "workspace": "image-edit", "model": "qwen-edit-2511", "method": "recipe", "slots": ["@B4", "@B5"], "recipe": "hold",
+  "prompt": "the amber perfume bottle with its round white stone cap, plain smoked glass, keep the film grain"},
+ {"key": "E_lightmig", "shot": "02 IMAGE EDIT", "workspace": "image-edit", "model": "qwen-lightmig", "method": "lightmig", "slots": ["@B4", "@B2"]},
+ {"key": "P_upimg", "shot": "05 POST-PROD", "workspace": "post", "model": "seedvr2-image", "method": "upscale-image", "image": "@B2", "slots": ["@B2"], "factor": 2},
+ {"key": "S_sit", "shot": "00 BASES", "workspace": "image-edit", "model": "qwen-edit-2511", "method": "instruct", "image": "@B1", "slots": ["@B1"],
+  "prompt": "Same woman, same place, same light: she now sits on the edge of the infinity pool with her legs in the water, seen from the side, looking at the sea, keep the film grain"},
+ {"key": "S_close", "shot": "00 BASES", "workspace": "image-edit", "model": "qwen-edit-2511", "method": "instruct", "image": "@B1", "slots": ["@B1"],
+  "prompt": "Close-up portrait of the same woman at the pool, her face and shoulders fill the frame, hair moving in the breeze, the sea blurred behind her, same light, keep the film grain"},
+ {"key": "S_dive", "shot": "00 BASES", "workspace": "image-edit", "model": "qwen-edit-2511", "method": "instruct", "image": "@B1", "slots": ["@B1"],
+  "prompt": "The same woman dives gracefully into the turquoise infinity pool from the stone terrace, arms stretched forward, small splash, same place, same light, keep the film grain"},
+ {"key": "S_float", "shot": "00 BASES", "workspace": "image-edit", "model": "qwen-edit-2511", "method": "instruct", "image": "@B1", "slots": ["@B1"],
+  "prompt": "Top view of the same woman floating on her back in the turquoise infinity pool, arms open, eyes closed, sunlight ripples on the water, same light, keep the film grain"}
+]

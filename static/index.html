@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gaspar Matheron — AI Studio</title>
+  <link rel="preload" href="/static/fonts/jost-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/static/css/app.css?v=56">
+  <link rel="stylesheet" href="/static/css/assistant.css?v=6">
+  <link rel="stylesheet" href="/static/css/modeles.css?v=3">
+</head>
+<body>
+
+  <!-- HEADER — à gauche les outils (IMAGE · VIDÉO · POST-PRODUCTION), à droite filtre · projet · infos.
+       Chaque entrée s'ouvre au survol. -->
+  <header class="site-header">
+    <a class="home-link" href="#/" title="Accueil — tous les projets">HOME</a>
+    <button type="button" class="menu-toggle" id="menu-toggle" aria-expanded="false" aria-controls="header-menus">MENU</button>
+    <div class="header-menus" id="header-menus">
+    <nav class="menu-left" id="menu-left"></nav>
+    <div class="menu-right">
+      <div class="hmenu hmenu-right" id="menu-cols">
+        <button type="button" class="hmenu-btn"><em>COLONNES</em><b id="cols-label">4</b></button>
+        <div class="hmenu-panel" id="cols-panel"></div>
+      </div>
+      <div class="hmenu hmenu-right" id="menu-filter">
+        <button type="button" class="hmenu-btn"><em>FILTRE</em><b id="filter-label">TOUT</b></button>
+        <div class="hmenu-panel" id="filter-panel"></div>
+      </div>
+      <div class="hmenu hmenu-right" id="menu-project">
+        <button type="button" class="hmenu-btn" id="ctx-btn"><em id="ctx-l1">PROJET</em><b id="ctx-l2">FIL GÉNÉRAL</b></button>
+        <div class="hmenu-panel" id="project-panel"></div>
+      </div>
+      <div class="hmenu hmenu-right" id="menu-account" hidden>
+        <button type="button" class="hmenu-btn"><b id="account-name"></b><i class="pending-dot" id="account-pending" hidden></i></button>
+        <div class="hmenu-panel" id="account-panel"></div>
+      </div>
+      <span class="share-badge" id="share-badge"></span>
+      <button type="button" class="header-btn" id="btn-queue" hidden>FILE <b id="queue-n">0</b></button>
+      <button type="button" class="header-btn" id="btn-infos">INFOS</button>
+    </div>
+    </div>
+  </header>
+
+  <span class="cross" style="top:22%;left:8%">+</span>
+  <span class="cross" style="top:64%;left:92%">+</span>
+  <span class="cross" style="top:84%;left:31%">+</span>
+
+  <main class="stage">
+    <div class="hero" id="hero">
+      <div class="logo">
+        <span class="logo-solid">GASPAR.</span>
+        <span class="logo-outline">AI STUDIO</span>
+      </div>
+      <p class="hero-sub" id="hero-sub"></p>
+    </div>
+    <div class="feed-bar" id="feed-bar">
+      <a class="shot-back" id="shot-back" href="#/" hidden>← PROJET</a>
+      <div class="feed-select" id="feed-select">
+        <span class="sel-tools" id="sel-tools" hidden>
+          <span class="sel-count" id="sel-count"></span>
+          <button type="button" class="link" id="sel-all">TOUT</button>
+          <button type="button" class="sel-rv ok" data-sel-rv="ok">✓ VALIDÉE</button>
+          <button type="button" class="sel-rv ko" data-sel-rv="ko">✕ À REFAIRE</button>
+          <button type="button" class="sel-rv rejected" data-sel-rv="rejected">⊘ REJETÉE</button>
+          <button type="button" class="link sel-del" id="sel-del">METTRE À LA CORBEILLE</button>
+          <button type="button" class="link" id="sel-cancel">ANNULER</button>
+        </span>
+        <button type="button" class="link" id="sel-toggle">SÉLECTIONNER</button>
+      </div>
+    </div>
+    <section class="feed" id="feed" aria-live="polite"></section>
+    <div class="feed-more" id="feed-more" hidden><button type="button" class="link" id="feed-more-btn">VOIR PLUS</button><span class="card-cat" id="feed-count"></span></div>
+  </main>
+
+  <!-- ACCUEIL : le logo et les projets -->
+  <section class="home" id="home" hidden>
+    <div class="home-hero">
+      <div class="logo"><span class="logo-solid">GASPAR.</span><span class="logo-outline">AI STUDIO</span></div>
+    </div>
+    <div class="home-head"><h2>PROJETS</h2><span class="card-cat" id="home-count"></span>
+      <a class="home-examples" href="#/exemples">EXEMPLES DES OUTILS →</a></div>
+    <div id="home-trash"></div>
+    <div class="home-grid" id="home-grid"></div>
+  </section>
+
+  <!-- COMPTES : demandes d'accès et comptes (administrateur) -->
+  <section class="accounts" id="accounts" hidden></section>
+
+  <!-- BILAN : ce que tes avis disent de chaque modèle -->
+  <section class="accounts" id="bilan" hidden></section>
+
+  <!-- EXEMPLES : un exemple par outil, avec avant / après -->
+  <section class="examples" id="examples" hidden></section>
+
+  <!-- Aperçu d'un outil au survol des menus -->
+  <aside class="tool-preview" id="tool-preview" hidden></aside>
+
+  <!-- PROJET : tous les plans en storyboard -->
+  <section class="board" id="board" hidden></section>
+
+
+  <!-- COMPOSER -->
+  <form class="composer" id="composer" autocomplete="off">
+    <div class="shotbar" id="shotbar" hidden>
+      <span class="shotbar-title" id="shotbar-title"></span>
+      <div class="shotbar-refs" id="shotbar-refs"></div>
+      <button type="button" class="shotbar-add" id="shotbar-add" title="Ajouter une référence au plan">+ RÉF.</button>
+    </div>
+    <div class="composer-top">
+      <div class="methods" id="methods"></div>
+      <div class="method-hint" id="method-hint"></div>
+    </div>
+
+    <div class="composer-mid">
+      <div class="slots" id="slots"></div>
+      <div class="cam3d" id="cam3d" hidden>
+        <div class="cam3d-stage">
+          <canvas id="cam3d-canvas" title="Fais glisser la caméra autour de l'image · molette pour la distance"></canvas>
+          <button type="button" class="cam3d-nudge" data-nudge="h" title="Plus haut">▲</button>
+          <button type="button" class="cam3d-nudge" data-nudge="b" title="Plus bas">▼</button>
+          <button type="button" class="cam3d-nudge" data-nudge="g" title="Vers la gauche">◀</button>
+          <button type="button" class="cam3d-nudge" data-nudge="d" title="Vers la droite">▶</button>
+        </div>
+        <div class="cam3d-label" id="cam3d-label"></div>
+        <div class="cam3d-sliders" id="cam3d-sliders">
+          <label><span>ROTATION</span><input type="range" id="cam-rot" min="-180" max="180" step="1"><b id="cam-rot-v"></b></label>
+          <label><span>HAUTEUR</span><input type="range" id="cam-el" min="-30" max="60" step="1"><b id="cam-el-v"></b></label>
+          <label><span>DISTANCE</span><input type="range" id="cam-zoom" min="0" max="10" step="0.5"><b id="cam-zoom-v"></b></label>
+        </div>
+      </div>
+      <div class="prompt-col">
+        <input class="target" id="target" placeholder="ÉLÉMENT À RETIRER — EN ANGLAIS : person, car, logo…" hidden>
+        <textarea id="prompt" rows="2" placeholder="Décris le plan — sujet, action, décor, lumière…"></textarea>
+        <div class="mention-hint" id="mention-hint" hidden></div>
+      </div>
+      <button type="submit" class="go" id="go"><span>GÉNÉRER</span></button>
+    </div>
+
+    <div class="composer-bot" id="chips">
+      <button type="button" class="chip" data-chip="model" data-pick="model"><em>MODÈLE</em><b id="v-model">—</b></button>
+      <button type="button" class="chip" data-chip="camera" data-pick="camera"><em>CAMÉRA</em><b id="v-camera">LIBRE</b></button>
+      <button type="button" class="chip" data-chip="lens" data-pick="lens"><em>OPTIQUE</em><b id="v-lens">LIBRE</b></button>
+      <button type="button" class="chip" data-chip="shot" data-pick="shot"><em>PLAN</em><b id="v-shot">LIBRE</b></button>
+      <button type="button" class="chip" data-chip="move" data-pick="move"><em>MOUVEMENT</em><b id="v-move">LIBRE</b></button>
+      <button type="button" class="chip" data-chip="style" data-pick="style"><em>LOOK</em><b id="v-style">LIBRE</b></button>
+      <button type="button" class="chip" data-chip="aspect" data-pick="aspect"><em>FORMAT</em><b id="v-aspect">16:9</b></button>
+      <button type="button" class="chip" data-chip="duration" data-pick="duration"><em>DURÉE</em><b id="v-duration">5 S</b></button>
+      <button type="button" class="chip" data-chip="factor" data-pick="factor"><em>AGRANDIR</em><b id="v-factor">×2</b></button>
+      <button type="button" class="chip" data-chip="batch" data-pick="batch"><em>NOMBRE</em><b id="v-batch">×1</b></button>
+      <label class="chip chip-toggle" data-chip="enhance" title="Le LLM de LTX réécrit le prompt">
+        <input type="checkbox" id="enhance"><em>PROMPT</em><b>AMÉLIORÉ</b>
+      </label>
+      <label class="chip chip-toggle" data-chip="quality" title="Plus de pas, plus lent">
+        <input type="checkbox" id="quality"><em>MODE</em><b>QUALITÉ</b>
+      </label>
+      <label class="chip chip-seed" data-chip="seed"><em>SEED</em><input id="seed" inputmode="numeric" placeholder="ALÉA"></label>
+    </div>
+    <div class="license-line" id="license-line"></div>
+  </form>
+
+  <!-- Sélecteur -->
+  <div class="picker" id="picker" hidden>
+    <div class="picker-head"><span id="picker-title"></span><button type="button" class="picker-close" id="picker-close">✕</button></div>
+    <div class="picker-grid" id="picker-grid"></div>
+  </div>
+
+  <!-- Visionneuse -->
+  <div class="viewer" id="viewer" hidden>
+    <button class="viewer-close" id="viewer-close">✕</button>
+    <div class="viewer-media" id="viewer-media"></div>
+    <aside class="viewer-side">
+      <!-- trois groupes : empilés à côté d'un résultat vertical, en colonnes sous un résultat horizontal -->
+      <div class="vs-col">
+        <h2 id="viewer-title"></h2>
+        <p class="viewer-cat" id="viewer-cat"></p>
+        <div class="viewer-block" id="viewer-ask-block"><h3>TA DEMANDE</h3><p class="viewer-prompt" id="viewer-ask"></p></div>
+        <div class="viewer-block"><h3 id="viewer-prompt-title">PROMPT ENVOYÉ</h3><p class="viewer-prompt" id="viewer-prompt"></p>
+          <button type="button" class="viewer-copy" id="viewer-copy">COPIER</button></div>
+      </div>
+      <div class="vs-col">
+        <div class="viewer-block" id="viewer-sources-block"><h3>FICHIERS UTILISÉS</h3><div class="viewer-sources" id="viewer-sources"></div></div>
+        <dl class="viewer-meta" id="viewer-meta"></dl>
+      </div>
+      <div class="vs-col">
+        <div class="viewer-actions" id="viewer-actions"></div>
+        <div class="viewer-block review-host" id="viewer-review"></div>
+      </div>
+    </aside>
+  </div>
+
+  <!-- Lightbox : une référence de la visionneuse en grand -->
+  <div class="lightbox" id="lightbox" hidden>
+    <button type="button" class="lightbox-close" id="lightbox-close" title="Fermer (Échap)">✕</button>
+    <button type="button" class="lightbox-nav prev" id="lightbox-prev" title="Précédente (←)">←</button>
+    <div class="lightbox-media" id="lightbox-media"></div>
+    <button type="button" class="lightbox-nav next" id="lightbox-next" title="Suivante (→)">→</button>
+    <div class="lightbox-bar"><span id="lightbox-label"></span><a id="lightbox-open" target="_blank" rel="noopener">OUVRIR DANS UN ONGLET ↗</a></div>
+  </div>
+
+  <!-- Éditeur de masque (inpaint) -->
+  <div class="masker" id="masker" hidden>
+    <div class="masker-bar">
+      <span class="masker-title" id="masker-title">MASQUE — PEINS LA ZONE À REFAIRE</span>
+      <label class="masker-size">PINCEAU <input type="range" id="brush" min="8" max="240" value="60"></label>
+      <button type="button" class="seg-btn is-on" id="tool-paint">PEINDRE</button>
+      <button type="button" class="seg-btn" id="tool-erase">GOMMER</button>
+      <button type="button" class="seg-btn" id="mask-clear">EFFACER</button>
+      <button type="button" class="seg-btn" id="mask-cancel">ANNULER</button>
+      <button type="button" class="seg-btn primary" id="mask-ok">VALIDER</button>
+    </div>
+    <div class="masker-stage" id="masker-stage">
+      <img id="masker-img" alt="">
+      <canvas id="masker-canvas"></canvas>
+    </div>
+  </div>
+
+  <!-- Éditeur de trajectoires (Wan-Move) -->
+  <div class="masker" id="tracker" hidden>
+    <div class="masker-bar">
+      <span class="masker-title">TRAJECTOIRES — GLISSE POUR TRACER UNE FLÈCHE (<span id="tracker-count">0 / 5</span>)</span>
+      <button type="button" class="seg-btn" id="tracks-undo">ANNULER LA DERNIÈRE</button>
+      <button type="button" class="seg-btn" id="tracks-clear">EFFACER</button>
+      <button type="button" class="seg-btn" id="tracks-cancel">FERMER</button>
+      <button type="button" class="seg-btn primary" id="tracks-ok">VALIDER</button>
+    </div>
+    <div class="masker-stage" id="tracker-stage">
+      <img id="tracker-img" alt="">
+      <canvas id="tracker-canvas" style="opacity:1"></canvas>
+    </div>
+  </div>
+
+  <!-- PARTAGER : liens clients d'un projet -->
+  <div class="modal-overlay" id="shares" hidden>
+    <div class="modal-box shares-box">
+      <button class="modal-close" id="shares-close">✕</button>
+      <h2 class="modal-title" id="shares-title">PARTAGER</h2>
+      <p class="shares-status" id="shares-status"></p>
+      <form class="share-new" id="share-new" autocomplete="off">
+        <input name="label" placeholder="Pour qui ? (ex. Marque — Claire)" maxlength="80">
+        <select name="level">
+          <option value="view">Voir</option>
+          <option value="comment" selected>Voir et commenter</option>
+          <option value="full">Accès complet (génération comprise)</option>
+        </select>
+        <select name="days">
+          <option value="0">Sans expiration</option>
+          <option value="7">7 jours</option>
+          <option value="30" selected>30 jours</option>
+          <option value="90">90 jours</option>
+        </select>
+        <button type="submit" class="link primary-link">CRÉER LE LIEN</button>
+      </form>
+      <div class="shares-list" id="shares-list"></div>
+      <p class="shares-help">Un lien ne donne accès qu’à ce projet. « Voir » : storyboard et résultats terminés. « Voir et commenter » : en plus, valider ou commenter chaque résultat (leurs avis apparaissent à côté des tiens, sans les remplacer). « Accès complet » : travailler dans le projet comme toi, génération comprise, sans pouvoir supprimer ni sortir du projet.</p>
+    </div>
+  </div>
+
+  <!-- INFOS machine / services -->
+  <div class="modal-overlay" id="infos" hidden>
+    <div class="modal-box">
+      <button class="modal-close" id="infos-close">✕</button>
+      <h2 class="modal-title">INFOS</h2>
+      <div class="infos-grid" id="infos-body"></div>
+    </div>
+  </div>
+
+  <!-- FILE : ce qui calcule et ce qui attend, tous projets confondus -->
+  <div class="modal-overlay" id="queue" hidden>
+    <div class="modal-box">
+      <button class="modal-close" id="queue-close">✕</button>
+      <h2 class="modal-title">FILE D’ATTENTE</h2>
+      <div id="queue-body"></div>
+    </div>
+  </div>
+
+  <!-- Ranger dans un plan -->
+  <div class="picker" id="mover" hidden>
+    <div class="picker-head"><span>RANGER DANS UN PLAN</span><button type="button" class="picker-close" id="mover-close">✕</button></div>
+    <div class="mover-list" id="mover-list"></div>
+  </div>
+
+  <div class="toast" id="toast" hidden></div>
+  <input type="file" id="file-input" hidden>
+
+  <script src="/static/js/i18n.js?v=50"></script>
+  <script src="/static/js/app.js?v=75"></script>
+  <script src="/static/js/assistant.js?v=5"></script>
+  <script src="/static/js/modeles.js?v=3"></script>
+  <script src="/static/js/installation.js?v=4"></script>
+</body>
+</html>

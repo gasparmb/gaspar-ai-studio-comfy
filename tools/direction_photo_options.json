@@ -1,0 +1,574 @@
+{
+ "scene": "a young woman with long dark wavy hair, wearing a black one-piece swimsuit, stands at the curved edge of a round turquoise infinity pool; behind her rises a white sculptural concrete villa with a large smooth oval opening that frames the sea; beyond, the Mediterranean, red rocky cliffs and umbrella pines along the coast",
+ "familles": {
+  "plan": {
+   "titre": "PLAN",
+   "place": "lead",
+   "options": [
+    {
+     "id": "tgp",
+     "label": "Très gros plan",
+     "prompt": "Extreme close-up: the camera is a few centimetres from her face; only her eyes, nose and lips fill the whole frame, cut off at the forehead and at the chin; no hair outline, no shoulders and no background visible",
+     "court": "Un détail du visage remplit le cadre"
+    },
+    {
+     "id": "gp",
+     "label": "Gros plan",
+     "prompt": "Close-up: her face fills the frame from the top of the forehead to just below the chin and takes up about 80 percent of the frame height; her shoulders and the setting are out of frame, only a hint of blurred background at the edges",
+     "court": "Le visage remplit le cadre"
+    },
+    {
+     "id": "prp",
+     "label": "Plan rapproché poitrine",
+     "prompt": "Medium close-up, head and shoulders: framed from just above her head down to the middle of her chest; her waist, hips and legs are out of frame; her head takes up about a third of the frame height",
+     "court": "Tête et épaules, jusqu'à la poitrine"
+    },
+    {
+     "id": "prt",
+     "label": "Plan taille",
+     "prompt": "Medium shot: framed from just above her head down to her waist; her hips and legs are out of frame; she fills most of the frame height",
+     "court": "Jusqu'à la taille"
+    },
+    {
+     "id": "pa",
+     "label": "Plan américain",
+     "prompt": "Medium long shot, cowboy shot: framed from just above her head down to mid-thigh; her knees, lower legs and feet are out of frame",
+     "court": "Jusqu'à mi-cuisse"
+    },
+    {
+     "id": "pp",
+     "label": "Plan pied",
+     "prompt": "Full shot: the main subject's whole body is visible from head to feet and fills most of the frame height, with a little space above the head and below the feet",
+     "court": "Le corps entier, de la tête aux pieds"
+    },
+    {
+     "id": "pl",
+     "label": "Plan large",
+     "prompt": "Wide shot: the whole figure is small, about a third of the frame height, clearly placed in her surroundings, and the setting dominates the image",
+     "court": "La silhouette, petite, dans son décor"
+    },
+    {
+     "id": "pe",
+     "label": "Plan d'ensemble",
+     "prompt": "Extreme wide establishing shot: a vast view of the whole location, in which the main subject is a tiny figure less than a tenth of the frame height",
+     "court": "Le lieu entier, le sujet minuscule"
+    },
+    {
+     "id": "insert",
+     "label": "Insert",
+     "prompt": "Insert shot: a tight view of a single small detail of the scene, such as a hand resting on the stone edge of the pool, isolated from everything else",
+     "court": "Un objet ou une main, isolés"
+    }
+   ]
+  },
+  "angle": {
+   "titre": "ANGLE",
+   "place": "lead",
+   "options": [
+    {
+     "id": "yeux",
+     "label": "À hauteur d'yeux",
+     "prompt": "Eye-level shot: the camera stands about 1.6 metres above the ground, exactly at her eye height, perfectly level, facing her straight on; the sea horizon crosses the frame at the height of her eyes, the pool edge is seen almost edge-on, no downward or upward tilt, all vertical lines perfectly vertical",
+     "court": "Caméra à hauteur du regard"
+    },
+    {
+     "id": "plongee",
+     "label": "Plongée",
+     "prompt": "High-angle shot: the camera is well above the main subject, looking down at her at about 45 degrees, so the ground is visible all around her",
+     "court": "La caméra domine et regarde en bas"
+    },
+    {
+     "id": "contre",
+     "label": "Contre-plongée",
+     "prompt": "Low-angle shot: the camera is near the ground looking up at the main subject, who towers against the sky",
+     "court": "La caméra au sol regarde en haut"
+    },
+    {
+     "id": "zenith",
+     "label": "Plongée zénithale",
+     "prompt": "Top-down overhead shot: the camera looks straight down from directly above, so the scene is seen as a flat map from the sky",
+     "court": "Vue d'en haut, à la verticale"
+    },
+    {
+     "id": "ras",
+     "label": "Ras du sol",
+     "prompt": "Worm's-eye view from ground level: the lens rests on the ground just in front of her feet, the stone floor fills the bottom of the frame in the immediate foreground, she towers above the camera, seen from below, and the sky fills the top of the frame",
+     "court": "Caméra posée au sol"
+    },
+    {
+     "id": "debullee",
+     "label": "Plan débullé",
+     "prompt": "Dutch angle: the camera is tilted sideways by 25 degrees, so the whole picture is rotated; the sea horizon is clearly slanted, running diagonally from high on one side of the frame to low on the other, and the walls of the villa and the woman lean at the same strong diagonal",
+     "court": "Horizon incliné",
+     "sans_reecriture": true
+    },
+    {
+     "id": "epaule",
+     "label": "Par-dessus l'épaule",
+     "prompt": "Over-the-shoulder shot: the out-of-focus back of another person's head and shoulder fills one side of the near foreground, looking toward the main subject",
+     "court": "Une épaule floue au premier plan"
+    },
+    {
+     "id": "subjectif",
+     "label": "Subjectif",
+     "prompt": "First-person point of view, as if seen through the viewer's own eyes at standing height: the viewer's two hands and forearms enter naturally from the bottom edge of the frame, reaching toward her",
+     "court": "Par les yeux du personnage"
+    },
+    {
+     "id": "aerien",
+     "label": "Vue aérienne",
+     "prompt": "Aerial view from about thirty metres up, looking down at an angle over the whole location",
+     "court": "Vue de drone, de haut"
+    }
+   ]
+  },
+  "focale": {
+   "titre": "FOCALE",
+   "place": "tail",
+   "options": [
+    {
+     "id": "8",
+     "label": "Fisheye 8 mm",
+     "prompt": "Fisheye lens: a circular, strongly curved image in which straight lines bow outward, with an extremely wide 180-degree view",
+     "court": "Image ronde, lignes courbées"
+    },
+    {
+     "id": "14",
+     "label": "14 mm",
+     "prompt": "Ultra-wide 14mm lens very close to the subject: exaggerated perspective, nearby objects look huge and distant ones tiny, straight lines lean at the edges of the frame",
+     "court": "Très grand angle, perspective exagérée"
+    },
+    {
+     "id": "24",
+     "label": "24 mm",
+     "prompt": "Wide-angle 24mm lens close to the subject: a broad view of the surroundings with strong depth and visible perspective",
+     "court": "Grand angle, beaucoup de décor"
+    },
+    {
+     "id": "35",
+     "label": "35 mm",
+     "prompt": "35mm lens: natural documentary perspective, subject and surroundings in balance",
+     "court": "Perspective naturelle de reportage"
+    },
+    {
+     "id": "50",
+     "label": "50 mm",
+     "prompt": "50mm lens: natural human-eye perspective with neutral proportions",
+     "court": "Vision de l'œil, proportions neutres"
+    },
+    {
+     "id": "85",
+     "label": "85 mm",
+     "prompt": "85mm portrait lens from a few metres away: flattering, slightly compressed perspective, the background looks closer and larger behind the subject",
+     "court": "Portrait, arrière-plan rapproché"
+    },
+    {
+     "id": "135",
+     "label": "135 mm",
+     "prompt": "135mm telephoto lens from far away: strongly compressed perspective, distant background elements appear stacked right behind the subject, narrow field of view",
+     "court": "Téléobjectif, plans écrasés"
+    }
+   ]
+  },
+  "ouverture": {
+   "titre": "OUVERTURE",
+   "place": "tail",
+   "options": [
+    {
+     "id": "f14",
+     "label": "f/1.4",
+     "prompt": "Very shallow depth of field: only the main subject is sharp, the background dissolves into a smooth creamy blur with large round bokeh",
+     "court": "Seul le sujet est net"
+    },
+    {
+     "id": "f28",
+     "label": "f/2.8",
+     "prompt": "Shallow depth of field: the main subject is sharp and the background is softly out of focus but still recognisable",
+     "court": "Arrière-plan doux mais lisible"
+    },
+    {
+     "id": "f56",
+     "label": "f/5.6",
+     "prompt": "Moderate depth of field: the main subject and her immediate surroundings are sharp, the far background only slightly soft",
+     "court": "Le sujet et ses abords nets"
+    },
+    {
+     "id": "f11",
+     "label": "f/11",
+     "prompt": "Deep focus: everything from the nearest foreground to the far horizon is sharp",
+     "court": "Tout est net, du premier plan au loin"
+    }
+   ]
+  },
+  "lumiere": {
+   "titre": "LUMIÈRE",
+   "place": "tail",
+   "options": [
+    {
+     "id": "doree",
+     "label": "Heure dorée",
+     "prompt": "Golden hour: a low warm sun near the horizon, long soft shadows and orange light raking across the scene",
+     "court": "Soleil bas et chaud"
+    },
+    {
+     "id": "bleue",
+     "label": "Heure bleue",
+     "prompt": "Blue hour just after sunset: deep blue twilight, no direct sunlight, warm lights glowing in the villa",
+     "court": "Crépuscule bleu"
+    },
+    {
+     "id": "couvert",
+     "label": "Ciel couvert",
+     "prompt": "Overcast sky: soft, even, shadowless daylight and muted contrast",
+     "court": "Lumière douce et égale"
+    },
+    {
+     "id": "midi",
+     "label": "Midi dur",
+     "prompt": "Harsh midday sun straight overhead: hard, short, dark shadows and bright, almost blown highlights",
+     "court": "Soleil dur au zénith"
+    },
+    {
+     "id": "contrejour",
+     "label": "Contre-jour",
+     "prompt": "Backlit by the sun behind the subject: a glowing rim of light outlines her hair and shoulders, her face in soft shadow, a light haze in the air",
+     "court": "Le soleil derrière le sujet"
+    },
+    {
+     "id": "lateral",
+     "label": "Clair-obscur",
+     "prompt": "Low-key side light: a single hard light from one side lights half of her face and body, the other half falls into deep shadow",
+     "court": "Une moitié dans l'ombre"
+    },
+    {
+     "id": "nuit",
+     "label": "Nuit éclairée",
+     "prompt": "Night scene lit only by practical lights: glowing windows, small lamps and underwater pool lights, colored reflections, deep shadows",
+     "court": "Seulement les lampes"
+    },
+    {
+     "id": "silhouette",
+     "label": "Silhouette",
+     "prompt": "Silhouette: a bright sky behind her turns the subject into a dark outline with almost no detail",
+     "court": "Le sujet en ombre chinoise"
+    }
+   ]
+  },
+  "etalonnage": {
+   "titre": "ÉTALONNAGE",
+   "place": "tail",
+   "options": [
+    {
+     "id": "naturel",
+     "label": "Naturel",
+     "prompt": "Natural, true-to-life color with a neutral white balance",
+     "court": "Couleurs fidèles"
+    },
+    {
+     "id": "pastel",
+     "label": "Chaud pastel",
+     "prompt": "Warm pastel color palette: creamy highlights, warm skin tones, soft low contrast, gentle saturation",
+     "court": "Doux, chaud, pastel"
+    },
+    {
+     "id": "tungstene",
+     "label": "Tungstène",
+     "prompt": "Cool blue-cyan shadows against warm amber highlights, rich deep blacks",
+     "court": "Ombres bleues, lumières ambrées"
+    },
+    {
+     "id": "desature",
+     "label": "Désaturé doux",
+     "prompt": "Muted low-saturation palette: soft greens and teals, low contrast, matte shadows",
+     "court": "Couleurs sourdes, contraste bas"
+    },
+    {
+     "id": "tealorange",
+     "label": "Teal & orange",
+     "prompt": "Teal shadows and warm orange skin tones, a cinematic blockbuster color grade",
+     "court": "Ombres bleu-vert, peau orangée"
+    },
+    {
+     "id": "bleach",
+     "label": "Sans blanchiment",
+     "prompt": "Bleach-bypass look, almost monochrome: the water, the sky and the rocks are nearly gray with only faint traces of color, high contrast, silvery highlights and dense blacks",
+     "court": "Contrasté et désaturé",
+     "avant": true,
+     "support": "Bleach-bypass outdoor photograph, almost monochrome",
+     "scene_sans_couleur": true
+    },
+    {
+     "id": "nb",
+     "label": "Noir & blanc",
+     "prompt": "Strictly monochrome black-and-white photograph, every part of the image is a shade of gray, including the water, the sky, the rocks and the skin; no color at all and no tint: rich gray tones, deep blacks and bright whites",
+     "court": "Noir et blanc",
+     "avant": true,
+     "support": "Black-and-white outdoor photograph",
+     "scene_sans_couleur": true
+    }
+   ]
+  },
+  "objectif": {
+   "titre": "OBJECTIF",
+   "place": "tail",
+   "options": [
+    {
+     "id": "master",
+     "label": "Zeiss Master Prime",
+     "avant": false,
+     "prompt": "Rendered through modern ultra-sharp cinema optics: crisp detail from edge to edge, high micro-contrast, neutral slightly cool color, no flare and no distortion, a smooth round background blur",
+     "court": "Très net bord à bord, neutre"
+    },
+    {
+     "id": "cooke",
+     "label": "Cooke S4",
+     "avant": false,
+     "prompt": "Rendered through classic British cinema primes: warm, flattering skin, gentle contrast, focus that falls off smoothly and gradually behind her, soft round background blur",
+     "court": "Chaud, doux, chute de net douce"
+    },
+    {
+     "id": "signature",
+     "label": "ARRI Signature Prime",
+     "avant": false,
+     "prompt": "Rendered through large-format modern cinema primes: very clean yet gentle rendering of skin, the smoothest creamy background blur, a hint of warmth, no harshness",
+     "court": "Propre, flou de fond crémeux"
+    },
+    {
+     "id": "k35",
+     "label": "Canon K-35",
+     "avant": false,
+     "prompt": "Rendered through 1970s vintage cinema primes shot wide open: low contrast, warm pastel skin tones, a soft warm veiling glow over the image, large golden and amber flares and ghost reflections from the sun, gently soft edges",
+     "court": "Contraste bas, reflets ambrés"
+    },
+    {
+     "id": "helios",
+     "label": "Helios 44-2",
+     "avant": false,
+     "prompt": "Rendered through a vintage Soviet 58mm portrait optic wide open: the out-of-focus background swirls in a circular pattern around the sharp subject, soft corners, slightly low contrast, a mild vignette",
+     "court": "Flou de fond en tourbillon"
+    },
+    {
+     "id": "petzval",
+     "label": "Petzval",
+     "avant": false,
+     "prompt": "Rendered through a 19th-century brass portrait optic: a very sharp centre, a strong swirling blur and heavy darkening towards the edges and corners, warm vintage rendering",
+     "court": "Centre net, tourbillon, coins sombres"
+    },
+    {
+     "id": "lensbaby",
+     "label": "Lensbaby",
+     "avant": false,
+     "prompt": "Rendered through a selective-focus optic: a single small sweet spot of sharpness on her, everything else blurring progressively towards the edges with a soft dreamy glow",
+     "court": "Une seule zone nette"
+    },
+    {
+     "id": "panavision",
+     "label": "Panavision anamorphique",
+     "avant": true,
+     "prompt": "Widescreen cinema look with the sun low behind the villa: long horizontal blue streaks of light run straight across the bright highlights, out-of-focus lights in the background are stretched vertically into tall soft capsules, organic medium contrast. Rectangular full-bleed image: the scene fills the frame right into the corners, bright corners",
+     "court": "Traînées bleues, flou étiré en hauteur"
+    },
+    {
+     "id": "hawk",
+     "label": "Anamorphique moderne",
+     "avant": true,
+     "prompt": "Widescreen cinema look: the background melts into a strong blur whose out-of-focus lights are stretched vertically into tall soft capsules, the woman is crisp, high contrast, a thin straight horizontal blue streak of light. Rectangular full-bleed image: the scene fills the frame right into the corners, bright corners",
+     "court": "Flou étiré en hauteur, sujet net"
+    },
+    {
+     "id": "promist",
+     "label": "Filtre Black Pro-Mist",
+     "avant": false,
+     "prompt": "Shot through a black diffusion filter: bright highlights bloom into a soft glow, the sun and its reflections on the water are surrounded by a gentle halo, contrast is softened in the highlights while the blacks stay deep, skin looks smooth",
+     "court": "Halo des hautes lumières"
+    },
+    {
+     "id": "macro",
+     "label": "Macro 100 mm",
+     "avant": true,
+     "prompt": "Macro close-up at 1:1 magnification: an extreme close detail of water droplets on her shoulder beside the strap of the black swimsuit, fine skin texture, a razor-thin plane of focus, everything else dissolving into smooth blur",
+     "court": "Détail agrandi, net très fin"
+    },
+    {
+     "id": "tiltshift",
+     "label": "Tilt-shift",
+     "avant": true,
+     "prompt": "Single tilt-shift photograph taken from a high balcony looking down at the pool: one narrow horizontal zone of sharp focus runs through the woman, and the image gets smoothly and progressively blurrier toward the top and the bottom edges, vivid colors, so the whole real scene looks like a tiny scale model; one continuous photo, not a collage",
+     "court": "Bande nette, effet maquette"
+    }
+   ]
+  },
+  "camera": {
+   "titre": "CAMÉRA",
+   "place": "lead",
+   "options": [
+    {
+     "id": "alexa35",
+     "label": "ARRI Alexa 35",
+     "support": "cinematic digital motion-picture frame in Super 35 format",
+     "optique": "35mm-equivalent field of view; the subject is sharp and the background falls gently out of focus but stays readable",
+     "couleur": "natural, gently warm color with true-to-life soft skin tones and restrained saturation; highlights roll off smoothly into white without clipping and the deep shadows keep their detail",
+     "texture": "clean image with a barely visible fine organic noise and soft, unsharpened detail",
+     "court": "Peau douce, hautes lumières douces"
+    },
+    {
+     "id": "minilf",
+     "label": "ARRI Alexa Mini LF",
+     "support": "large-format cinematic digital motion-picture frame",
+     "optique": "wide, immersive large-format perspective with a very shallow depth of field: the subject is sharp while the background melts into a soft creamy blur",
+     "couleur": "natural, gently warm color with true-to-life soft skin tones and restrained saturation; very smooth highlight roll-off",
+     "texture": "smooth tonality, fine clean detail, no sharpening",
+     "court": "Grand format, fond très flou"
+    },
+    {
+     "id": "venice2",
+     "label": "Sony Venice 2",
+     "support": "full-frame cinematic digital motion-picture frame",
+     "optique": "full-frame shallow depth of field: sharp subject, smoothly blurred background",
+     "couleur": "rich, deep, saturated yet natural color, glowing healthy skin tones, clean neutral whites and dense clean black shadows",
+     "texture": "very clean, noise-free image with smooth gradients",
+     "court": "Couleurs riches, noirs denses"
+    },
+    {
+     "id": "vraptor",
+     "label": "RED V-Raptor",
+     "support": "8K large-format digital motion-picture frame",
+     "optique": "shallow depth of field, sharp subject against a blurred background",
+     "couleur": "punchy contrast, vivid saturated color and crisp neutral whites",
+     "texture": "hyper-detailed, razor-sharp micro-detail on skin, hair and stone, crisp edges, no grain",
+     "court": "Très net, contrasté"
+    },
+    {
+     "id": "film35",
+     "label": "Pellicule 35 mm",
+     "support": "photographed on 35mm color negative motion-picture film and printed on film",
+     "optique": "moderate depth of field, the background softly out of focus",
+     "couleur": "warm film-print colors: creamy highlights, slightly teal-green shadows, rich but natural saturation, gentle contrast with a soft shoulder in the highlights",
+     "texture": "fine organic film grain visible in the midtones and the sky, a faint red halation glow around the brightest highlights",
+     "court": "Grain fin, couleurs de tirage"
+    },
+    {
+     "id": "film16",
+     "label": "Pellicule 16 mm",
+     "support": "photographed on 16mm color negative film",
+     "optique": "deeper focus than 35mm, the background only slightly soft",
+     "couleur": "muted, slightly faded colors, lifted milky blacks and a warm cast",
+     "texture": "clearly visible coarse film grain across the whole image, slightly soft overall sharpness, reddish halation on highlights, full-frame image with no black border",
+     "court": "Grain marqué, doux, noirs laiteux"
+    },
+    {
+     "id": "super8",
+     "label": "Super 8",
+     "support": "Super 8 reversal-film home-movie frame from the 1970s",
+     "optique": "everything roughly in focus through a small soft lens",
+     "couleur": "warm but natural colors with slightly faded reds, deep contrasty shadows, no strong yellow cast",
+     "texture": "heavy coarse grain and soft blurry detail, full-frame image with no black border, no vignette and no film-gate edges",
+     "court": "Gros grain, couleurs passées"
+    },
+    {
+     "id": "imax",
+     "label": "IMAX 65 mm",
+     "support": "photographed on 65mm large-format motion-picture film",
+     "optique": "immense depth and scale with an extremely shallow depth of field: razor-sharp subject, background dissolving into soft blur",
+     "couleur": "rich, natural film colors with deep blacks and creamy highlights",
+     "texture": "astonishing fine detail and an extremely fine, almost invisible grain",
+     "court": "Détail immense, fond flou"
+    },
+    {
+     "id": "iphone",
+     "label": "iPhone",
+     "support": "casual eye-level snapshot with a wide 26mm-equivalent field of view",
+     "optique": "deep focus: foreground and background both sharp",
+     "couleur": "bright computational HDR: lifted shadows, flattened contrast, vivid saturated colors and smoothed skin",
+     "texture": "crisp over-sharpened edges, clean digital image without grain",
+     "court": "Tout net, HDR, surnetteté"
+    },
+    {
+     "id": "gopro",
+     "label": "Caméra d'action",
+     "support": "action-cam frame: ultra-wide 150-degree view held very close to the subject",
+     "optique": "strong barrel distortion bending straight lines near the edges, a curved horizon, everything in sharp focus from near to far",
+     "couleur": "punchy, highly saturated colors with a vivid blue sky and water and high contrast",
+     "texture": "crisp digital sharpening and slight noise in the shadows",
+     "court": "Ultra grand angle déformé, saturé"
+    },
+    {
+     "id": "drone",
+     "label": "Drone",
+     "support": "aerial drone frame, seen from about 20 metres up and 30 metres away, looking down at 30 degrees",
+     "optique": "deep focus, the whole landscape sharp, wide view",
+     "couleur": "vivid saturated landscape colors, a bright clean HDR look and a slightly hazy distance",
+     "texture": "crisp digital detail with slight sharpening",
+     "court": "Vue aérienne, tout net"
+    },
+    {
+     "id": "vhs",
+     "label": "Caméscope VHS",
+     "support": "frame from a 1990s home-video camcorder tape",
+     "optique": "everything in focus through a small wide lens",
+     "couleur": "washed-out colors bleeding past their edges, pale blacks and a slight color cast",
+     "texture": "low resolution, soft smeared detail and faint horizontal video noise lines",
+     "court": "Basse définition, couleurs qui bavent"
+    }
+   ]
+  }
+ },
+ "recettes": [
+  {
+   "id": "cine35",
+   "label": "Ciné 35 mm doré",
+   "choix": {
+    "camera": "film35",
+    "plan": "prp",
+    "focale": "85",
+    "ouverture": "f14",
+    "lumiere": "doree",
+    "etalonnage": "pastel"
+   }
+  },
+  {
+   "id": "luxe",
+   "label": "Image de marque nette",
+   "choix": {
+    "camera": "alexa35",
+    "objectif": "master",
+    "plan": "pa",
+    "focale": "50",
+    "ouverture": "f56",
+    "lumiere": "contrejour",
+    "etalonnage": "naturel"
+   }
+  },
+  {
+   "id": "souvenir",
+   "label": "Souvenir Super 8",
+   "choix": {
+    "camera": "super8",
+    "plan": "pl",
+    "focale": "24",
+    "lumiere": "midi",
+    "etalonnage": "pastel"
+   }
+  },
+  {
+   "id": "nuitanamo",
+   "label": "Nuit anamorphique",
+   "choix": {
+    "camera": "film35",
+    "objectif": "panavision",
+    "plan": "prt",
+    "lumiere": "nuit",
+    "etalonnage": "tungstene"
+   }
+  }
+ ],
+ "scene_serre": "a young woman with long dark wavy hair, wearing a black one-piece swimsuit; the white villa, the turquoise pool and the sea are only a soft, out-of-focus background behind her",
+ "plans_serres": [
+  "tgp",
+  "gp",
+  "prp",
+  "prt",
+  "pa"
+ ],
+ "scene_sans_couleur": "a young woman with long dark wavy hair, wearing a black one-piece swimsuit, stands at the curved edge of a round infinity pool; behind her rises a white sculptural concrete villa with a large smooth oval opening that frames the sea; beyond, the sea, rocky cliffs and umbrella pines along the coast"
+}

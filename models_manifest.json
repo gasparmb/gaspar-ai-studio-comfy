@@ -1,0 +1,1187 @@
+{
+ "_doc": "Fabriqué par tools/models_manifest.py — ne pas modifier à la main.",
+ "files": {
+  "loras/Qwen-Image-Edit-2511-Lightning-4steps-V1.0-bf16.safetensors": {
+   "size": 849608296,
+   "url": "https://huggingface.co/lightx2v/Qwen-Image-Edit-2511-Lightning/resolve/107d238d68b8387e32843d0b4a2e24ceb0d3ad86/Qwen-Image-Edit-2511-Lightning-4steps-V1.0-bf16.safetensors",
+   "sha256": "22226e8d05d354bb356627d428809f5afd7819399b077238a2b70a82883a904f"
+  },
+  "vae/ae.safetensors": {
+   "size": 335304388,
+   "url": "https://huggingface.co/Comfy-Org/HiDream-I1_ComfyUI/resolve/main/split_files/vae/ae.safetensors?download=true"
+  },
+  "diffusion_models/z_image_turbo_bf16.safetensors": {
+   "size": 12309866400,
+   "url": "https://huggingface.co/Comfy-Org/Z-Image-Turbo/resolve/6fc90a3b1b653e935a0d175e260736de25b84df5/split_files/diffusion_models/z_image_turbo_bf16.safetensors",
+   "sha256": "2407613050b809ffdff18a4ac99af83ea6b95443ecebdf80e064a79c825574a6"
+  },
+  "text_encoders/qwen3.5_9b_flux3_prompt_upsampler_w4a8.safetensors": {
+   "size": 6724090780,
+   "url": "https://huggingface.co/black-forest-labs/flux-3-image-klein-comfy/resolve/main/text_encoders/qwen3.5_9b_flux3_prompt_upsampler_w4a8.safetensors",
+   "gated": true
+  },
+  "text_encoders/qwen_2.5_vl_7b_fp8_scaled.safetensors": {
+   "size": 9384670680,
+   "url": "https://huggingface.co/Comfy-Org/Hunyuan-Video-1.5/resolve/1405a2b738c29b890cf6d03fc038d8d3e92eeed7/split_files/text_encoders/qwen_2.5_vl_7b_fp8_scaled.safetensors",
+   "sha256": "cb5636d852a0ea6a9075ab1bef496c0db7aef13c02350571e388aea959c5c0b4"
+  },
+  "text_encoders/qwen_3_4b.safetensors": {
+   "size": 8044982048,
+   "url": "https://huggingface.co/Comfy-Org/Z-Image-Turbo/resolve/6fc90a3b1b653e935a0d175e260736de25b84df5/split_files/text_encoders/qwen_3_4b.safetensors",
+   "sha256": "6c671498573ac2f7a5501502ccce8d2b08ea6ca2f661c458e708f36b36edfc5a"
+  },
+  "diffusion_models/qwen_image_edit_2511_int8_convrot.safetensors": {
+   "size": 20499083824,
+   "url": "https://huggingface.co/Comfy-Org/Qwen-Image-Edit/resolve/f68ace85e60b4a02a323e394253731947657b7d2/split_files/diffusion_models/qwen_image_edit_2511_int8_convrot.safetensors",
+   "sha256": "11b5af5ac601821d73930c84846c9a158e67177356daf927ce1c8d10f3963829"
+  },
+  "vae/qwen_image_vae.safetensors": {
+   "size": 253806246,
+   "url": "https://huggingface.co/Comfy-Org/Qwen-Image/resolve/1f12b17be14c89b026c51a91d67c32f84bb047bc/split_files/vae/qwen_image_vae.safetensors",
+   "sha256": "a70580f0213e67967ee9c95f05bb400e8fb08307e017a924bf3441223e023d1f"
+  },
+  "diffusion_models/seedvr2_7b_int8_convrot.safetensors": {
+   "size": 8334897976,
+   "url": "https://huggingface.co/Comfy-Org/SeedVR2/resolve/df48879708206a403d2a61acd55578c2e80fd233/diffusion_models/seedvr2_7b_int8_convrot.safetensors",
+   "sha256": "5aa0d25fc9d35e449b659d0c9a5dcb22e2a4fa04032101b95a39da42b32c1be6"
+  },
+  "vae/seedvr2_ema_vae_fp16.safetensors": {
+   "size": 501324814,
+   "url": "https://huggingface.co/Comfy-Org/SeedVR2/resolve/df48879708206a403d2a61acd55578c2e80fd233/vae/seedvr2_ema_vae_fp16.safetensors",
+   "sha256": "20678548f420d98d26f11442d3528f8b8c94e57ee046ef93dbb7633da8612ca1"
+  },
+  "diffusion_models/flux3_image_klein_sd_int8_convrot.safetensors": {
+   "size": 5827874779,
+   "url": "https://huggingface.co/black-forest-labs/flux-3-image-klein-comfy/resolve/main/diffusion_models/flux3_image_klein_sd_int8_convrot.safetensors",
+   "gated": true
+  },
+  "vae/flux2-vae.safetensors": {
+   "size": 336213556,
+   "url": "https://huggingface.co/Comfy-Org/ERNIE-Image/resolve/50509a88bc4fb9e89583a98605f4c81dc221eb8c/vae/flux2-vae.safetensors",
+   "sha256": "d64f3a68e1cc4f9f4e29b6e0da38a0204fe9a49f2d4053f0ec1fa1ca02f9c4b5"
+  },
+  "diffusion_models/flux3-image-klein-base-bf16.safetensors": {
+   "size": 11076957072,
+   "url": "https://huggingface.co/black-forest-labs/flux-3-image-klein-comfy/resolve/main/diffusion_models/flux3-image-klein-base-bf16.safetensors",
+   "gated": true
+  },
+  "text_encoders/qwen3vl_4b_int8_convrot.safetensors": {
+   "size": 4858559240,
+   "url": "https://huggingface.co/black-forest-labs/flux-3-image-klein-comfy/resolve/main/text_encoders/qwen3vl_4b_int8_convrot.safetensors",
+   "gated": true
+  },
+  "loras/Qwen-Image-2512-Lightning-4steps-V1.0-fp32.safetensors": {
+   "size": 1698951104,
+   "url": "https://huggingface.co/lightx2v/Qwen-Image-2512-Lightning/resolve/4609161e308ce82018a42c2a0c9b107e865bb751/Qwen-Image-2512-Lightning-4steps-V1.0-fp32.safetensors",
+   "sha256": "ad12117461cb41e2ea637fec8df6392ce8e8550c47fbe2b829ed3deb98262066"
+  },
+  "unet/qwen-image-2512-Q8_0.gguf": {
+   "size": 22354590240,
+   "url": "https://huggingface.co/unsloth/Qwen-Image-2512-GGUF/resolve/899597deea5b6e8593a021684b4571e06b59ebea/qwen-image-2512-Q8_0.gguf",
+   "sha256": "be8144b3c6983dec6c6c3fe8c383d41ce92ed0bf40f288ebb8fd403d02cdab76"
+  },
+  "controlnet/Qwen-Image-InstantX-ControlNet-Inpainting.safetensors": {
+   "size": 4234599432,
+   "url": "https://huggingface.co/Comfy-Org/Qwen-Image-InstantX-ControlNets/resolve/90cf72c3b0e4b11f9a0037727459dbdd03ae029b/split_files/controlnet/Qwen-Image-InstantX-ControlNet-Inpainting.safetensors",
+   "sha256": "49c01aafe6545c1f6e7627a724c8fb13357fe74efee235622158f0a8f30e5458"
+  },
+  "diffusion_models/qwen_image_2512_fp8_e4m3fn.safetensors": {
+   "size": 20430679144,
+   "url": "https://huggingface.co/Comfy-Org/Qwen-Image/resolve/1f12b17be14c89b026c51a91d67c32f84bb047bc/split_files/diffusion_models/qwen_image_2512_fp8_e4m3fn.safetensors",
+   "sha256": "5dc80554d5d83390046a2f4a94ece06afb7700bf7b0aaf8bde9769793875876b"
+  },
+  "diffusion_models/ltx-2.5-22b-distilled-transformer-comfy-int8-convrot.safetensors": {
+   "size": 21504034224,
+   "url": "https://huggingface.co/Lightricks/LTX-2.5/resolve/main/diffusion_models/ltx-2.5-22b-distilled-transformer-comfy-int8-convrot.safetensors",
+   "gated": true
+  },
+  "text_encoders/gemma4-12b-with-proj-ltx-2.5-comfy-int8-convrot.safetensors": {
+   "size": 15372969374,
+   "url": "https://huggingface.co/Lightricks/LTX-2.5/resolve/main/text_encoders/gemma4-12b-with-proj-ltx-2.5-comfy-int8-convrot.safetensors",
+   "gated": true
+  },
+  "text_encoders/gemma4_e2b_it_int8_convrot.safetensors": {
+   "size": 5199997904,
+   "url": "https://huggingface.co/Comfy-Org/gemma-4/resolve/63d0f7c476756b88910170c1df75e2384ea1af31/text_encoders/gemma4_e2b_it_int8_convrot.safetensors",
+   "sha256": "efeca0fcad2f863e5ed0a75e3af952b72bc963604c1dda6d20aee87a32b17566"
+  },
+  "vae/ltx-2.5-audio-vae-bf16.safetensors": {
+   "size": 364866540,
+   "url": "https://huggingface.co/Lightricks/LTX-2.5/resolve/main/vae/ltx-2.5-audio-vae-bf16.safetensors",
+   "gated": true
+  },
+  "latent_upscale_models/ltx-2.5-latent-spatial-upscaler-x2-bf16-1.0.safetensors": {
+   "size": 995778752,
+   "url": "https://huggingface.co/Lightricks/LTX-2.5/resolve/main/latent_upscale_models/ltx-2.5-latent-spatial-upscaler-x2-bf16-1.0.safetensors",
+   "gated": true
+  },
+  "vae/ltx-2.5-video-vae-bf16.safetensors": {
+   "size": 1472223346,
+   "url": "https://huggingface.co/Lightricks/LTX-2.5/resolve/main/vae/ltx-2.5-video-vae-bf16.safetensors",
+   "gated": true
+  },
+  "diffusion_models/wan2.2_i2v_high_noise_14B_fp8_scaled.safetensors": {
+   "size": 14294742832,
+   "url": "https://huggingface.co/Comfy-Org/Wan-2.2/resolve/ee6f4a40737a995bf5818954cfce6d59443b0f04/split_files/diffusion_models/wan2.2_i2v_high_noise_14B_fp8_scaled.safetensors",
+   "sha256": "6122e79d55e0f235698d11d657f3b196c5273c830da00b2b013c5a048d5e6a42"
+  },
+  "text_encoders/umt5_xxl_fp8_e4m3fn_scaled.safetensors": {
+   "size": 6735906897,
+   "url": "https://huggingface.co/Comfy-Org/Wan-2.1/resolve/123acf1cc74bccbb9bfff8ac1ee72edc08c2341d/split_files/text_encoders/umt5_xxl_fp8_e4m3fn_scaled.safetensors",
+   "sha256": "c3355d30191f1f066b26d93fba017ae9809dce6c627dda5f6a66eaa651204f68"
+  },
+  "loras/wan2.2_i2v_lightx2v_4steps_lora_v1_high_noise.safetensors": {
+   "size": 1226977424,
+   "url": "https://huggingface.co/Comfy-Org/Wan-2.2/resolve/ee6f4a40737a995bf5818954cfce6d59443b0f04/split_files/loras/wan2.2_i2v_lightx2v_4steps_lora_v1_high_noise.safetensors",
+   "sha256": "d176c808d6fc461999b68e321efcb7501b20b8c3797523ed0df14f7d1deff11e"
+  },
+  "loras/wan2.2_i2v_lightx2v_4steps_lora_v1_low_noise.safetensors": {
+   "size": 1226977424,
+   "url": "https://huggingface.co/Comfy-Org/Wan-2.2/resolve/ee6f4a40737a995bf5818954cfce6d59443b0f04/split_files/loras/wan2.2_i2v_lightx2v_4steps_lora_v1_low_noise.safetensors",
+   "sha256": "024f21de095bc8fad9809ded3e9e49a2e170dcf27075da8145ba7d60d8aab7f9"
+  },
+  "diffusion_models/wan2.2_i2v_low_noise_14B_fp8_scaled.safetensors": {
+   "size": 14294742832,
+   "url": "https://huggingface.co/Comfy-Org/Wan-2.2/resolve/ee6f4a40737a995bf5818954cfce6d59443b0f04/split_files/diffusion_models/wan2.2_i2v_low_noise_14B_fp8_scaled.safetensors",
+   "sha256": "5471a457b6ac404202a5fbe6c11595a3d5641fc766b00f38763f72303fffc21e"
+  },
+  "vae/wan_2.1_vae.safetensors": {
+   "size": 253815318,
+   "url": "https://huggingface.co/Comfy-Org/Wan-2.2/resolve/ee6f4a40737a995bf5818954cfce6d59443b0f04/split_files/vae/wan_2.1_vae.safetensors",
+   "sha256": "2fc39d31359a4b0a64f55876d8ff7fa8d780956ae2cb13463b0223e15148976b"
+  },
+  "diffusion_models/minimax_h3_fl2va_pruned_int8_convrot.safetensors": {
+   "size": 20970379616,
+   "url": "https://huggingface.co/Comfy-Org/MiniMax-H3/resolve/54472221d27c695fca9621b0c3ed52f06c4af707/diffusion_models/minimax_h3_fl2va_pruned_int8_convrot.safetensors",
+   "sha256": "e889202c41dafb67b10d67b97f0d8541508036a6090af23425a5c2615d03c47a"
+  },
+  "vae/minimax_h3_audio_vae_fp32.safetensors": {
+   "size": 605254808,
+   "url": "https://huggingface.co/Comfy-Org/MiniMax-H3/resolve/54472221d27c695fca9621b0c3ed52f06c4af707/vae/minimax_h3_audio_vae_fp32.safetensors",
+   "sha256": "8e505d95dd1561d47abd43d4238fd40d9bb1ae9e147ed0a4cba778d76ae4db48"
+  },
+  "loras/minimax_h3_fl2v_turbo_8step_v1.0_comfyui_bf16.safetensors": {
+   "size": 1956193000,
+   "url": "https://huggingface.co/lightx2v/Minimax-h3-Turbo/resolve/30f485ed874aa44c8183348ad361c5eabad318da/minimax_h3_fl2v_turbo_8step_v1.0_comfyui_bf16.safetensors",
+   "sha256": "2339acdf19bfe123f46b971ea35d367a84adb85de43627e1eceafa5a5b2b111e"
+  },
+  "loras/minimax_h3_ref2v_turbo_4step_v0.1_comfyui_bf16.safetensors": {
+   "size": 1956193000,
+   "url": "https://huggingface.co/Comfy-Org/MiniMax-H3/resolve/54472221d27c695fca9621b0c3ed52f06c4af707/loras/minimax_h3_ref2v_turbo_4step_v0.1_comfyui_bf16.safetensors",
+   "sha256": "5b9ab5ade15d0775676d01a907268a69a1468dc6033b3b0d3ded5502f3ebb84c"
+  },
+  "diffusion_models/minimax_h3_ref2va_pruned_int8_convrot.safetensors": {
+   "size": 20970379616,
+   "url": "https://huggingface.co/Comfy-Org/MiniMax-H3/resolve/54472221d27c695fca9621b0c3ed52f06c4af707/diffusion_models/minimax_h3_ref2va_pruned_int8_convrot.safetensors",
+   "sha256": "9255f52b6677845ad238f20dfaafa94727053694127ab7f255c048f0f9365779"
+  },
+  "vae/minimax_h3_video_vae_fp16.safetensors": {
+   "size": 5207808496,
+   "url": "https://huggingface.co/Comfy-Org/MiniMax-H3/resolve/54472221d27c695fca9621b0c3ed52f06c4af707/vae/minimax_h3_video_vae_fp16.safetensors",
+   "sha256": "7c1f131492e7eddacaac9069a61b81bdd39de5cc96561e677c5eab1cdce5e522"
+  },
+  "text_encoders/qwen3vl_32b_minimax_h3_nvfp4_awq.safetensors": {
+   "size": 15687142551,
+   "url": "https://huggingface.co/Comfy-Org/MiniMax-H3/resolve/54472221d27c695fca9621b0c3ed52f06c4af707/text_encoders/qwen3vl_32b_minimax_h3_nvfp4_awq.safetensors",
+   "sha256": "35a88d51044231fe332301d7a62aa81e3f2cba62febeb446e2c1e3e0ef76f2c6"
+  },
+  "checkpoints/sam3.1_multiplex_fp16.safetensors": {
+   "size": 1745546848,
+   "url": "https://huggingface.co/Comfy-Org/sam3.1/resolve/7bb8374780a725b4353ed31f3a9395c9742b5621/checkpoints/sam3.1_multiplex_fp16.safetensors",
+   "sha256": "9ba99c92703c2e8b4f47de2d34a539bb8e18923049e238b780d70dbe6368eb03"
+  },
+  "loras/h3_character_swap_v1.5.safetensors": {
+   "size": 155110792,
+   "url": "https://huggingface.co/akatz-ai/MiniMax-H3-Character-Swap-LoRA/resolve/96ea3407b230b6f7df71c58c70e31df96bd7e533/h3_character_swap_v1.5.safetensors",
+   "sha256": "8f2c3c3eba161df8d0c6099598b4730f641f5ce01e04cd16d2427cff8a35218f"
+  },
+  "loras/minimax_h3_fl2v_turbo_8step_v1.0_768p_comfyui_bf16.safetensors": {
+   "size": 1956193000,
+   "url": "https://huggingface.co/lightx2v/Minimax-h3-Turbo/resolve/30f485ed874aa44c8183348ad361c5eabad318da/minimax_h3_fl2v_turbo_8step_v1.0_768p_comfyui_bf16.safetensors",
+   "sha256": "08cfe946033af7d27719b964b6e0a0e50c32138daabbd6ce4137e23df6bf9980"
+  },
+  "clip_vision/clip_vision_h.safetensors": {
+   "size": 1264219396,
+   "url": "https://huggingface.co/Comfy-Org/Wan-2.1/resolve/123acf1cc74bccbb9bfff8ac1ee72edc08c2341d/split_files/clip_vision/clip_vision_h.safetensors",
+   "sha256": "64a7ef761bfccbadbaa3da77366aac4185a6c58fa5de5f589b42a65bcc21f161"
+  },
+  "diffusion_models/wan2.1_14B_SCAIL_2_int8_convrot.safetensors": {
+   "size": 16654506256,
+   "url": "https://huggingface.co/Comfy-Org/SCAIL-2/resolve/fe3c728bc793ba21ca674688f822afb709ad44fb/diffusion_models/wan2.1_14B_SCAIL_2_int8_convrot.safetensors",
+   "sha256": "a2114c18a811243185f103765cd5004b61652141aa55a9016d3bdceebceb5ac0"
+  },
+  "loras/lightx2v_I2V_14B_480p_cfg_step_distill_rank64_bf16.safetensors": {
+   "size": 738005744,
+   "url": "https://huggingface.co/Comfy-Org/Wan-Animate-2/resolve/e7181fe1896b7f2ce34120d1a3663413548240d7/loras/lightx2v_I2V_14B_480p_cfg_step_distill_rank64_bf16.safetensors",
+   "sha256": "85c4a61c30e0497aa44b91d93a893b624708461a56fe5485183b28fa07e2dfb3"
+  },
+  "loras/wan2.1_SCAIL_2_DPO_lora_bf16.safetensors": {
+   "size": 1226936552,
+   "url": "https://huggingface.co/Comfy-Org/SCAIL-2/resolve/fe3c728bc793ba21ca674688f822afb709ad44fb/loras/wan2.1_SCAIL_2_DPO_lora_bf16.safetensors",
+   "sha256": "b106522036f64e50f5f8ae3b808973515ff442cc2fac27b65d875eafb95b89e2"
+  },
+  "vae/cogvideox_vae.safetensors": {
+   "size": 431221142,
+   "url": "https://huggingface.co/Comfy-Org/void-model/resolve/f9c9e565920002478ab9477f4c99c29c52d16db3/vae/cogvideox_vae.safetensors",
+   "sha256": "bd47d57ad948ff80da0af0cb2e4dcdef65073aba59bccfd383ada9a7d1c02024"
+  },
+  "diffusion_models/void_pass1.safetensors": {
+   "size": 11143025952,
+   "url": "https://huggingface.co/Comfy-Org/void-model/resolve/f9c9e565920002478ab9477f4c99c29c52d16db3/diffusion_models/void_pass1.safetensors",
+   "sha256": "f3fff936d57008c39054e37ae0db6a3fd3f48ccaf1291a186e28d8760d68e6f3"
+  },
+  "diffusion_models/void_pass2.safetensors": {
+   "size": 11143025952,
+   "url": "https://huggingface.co/Comfy-Org/void-model/resolve/f9c9e565920002478ab9477f4c99c29c52d16db3/diffusion_models/void_pass2.safetensors",
+   "sha256": "884d96ae3be9e2c899f15446aee69260f56e21496c1005400fc6676701e67704"
+  },
+  "optical_flow/raft_large_C_T_SKHT_V2-ff5fadd5.safetensors": {
+   "size": 21060840,
+   "url": "https://huggingface.co/Comfy-Org/void-model/resolve/f9c9e565920002478ab9477f4c99c29c52d16db3/optical_flow/raft_large_C_T_SKHT_V2-ff5fadd5.safetensors",
+   "sha256": "aac3561dbbb49a30853bc7d9bb1bf39ce59cc260f670911d43c900ba27a4a8bb"
+  },
+  "text_encoders/t5xxl_fp16.safetensors": {
+   "size": 9787841024,
+   "url": "https://huggingface.co/comfyanonymous/flux_text_encoders/resolve/6af2a98e3f615bdfa612fbd85da93d1ed5f69ef5/t5xxl_fp16.safetensors",
+   "sha256": "6e480b09fae049a72d2a8c5fbccb8d3e92febeb233bbe9dfe7256958a9167635"
+  },
+  "loras/ltx-2.5-22b-ic-lora-alpha-gen-0.9.safetensors": {
+   "size": 1308787472,
+   "url": "https://huggingface.co/Lightricks/LTX-2.5-22b-IC-LoRA-Alpha-Gen/resolve/main/ltx-2.5-22b-ic-lora-alpha-gen-0.9.safetensors",
+   "gated": true
+  },
+  "checkpoints/ltx-2.3-22b-dev.safetensors": {
+   "size": 46149344974,
+   "url": "https://huggingface.co/Lightricks/LTX-2.3/resolve/c1521179de480464f366a98a9d9b2acc4cc097b9/ltx-2.3-22b-dev.safetensors",
+   "sha256": "7ab7225325bc403448ea84b6db2269811a880e5118cd2ee2b6282a93d585016f"
+  },
+  "diffusion_models/seedvr2_3b_int8_convrot.safetensors": {
+   "size": 3458259704,
+   "url": "https://huggingface.co/Comfy-Org/SeedVR2/resolve/df48879708206a403d2a61acd55578c2e80fd233/diffusion_models/seedvr2_3b_int8_convrot.safetensors",
+   "sha256": "c3dec8bcc5916843a8a858572970597462e1f2dc598d6dfd818f6cd40f53a157"
+  },
+  "loras/qwen-360-diffusion-2512-int8-bf16-v2.safetensors": {
+   "size": 755039336,
+   "url": "https://huggingface.co/ProGamerGov/qwen-360-diffusion/resolve/f63e5de60bd27b7d9af9c64f8c591381775ea9aa/qwen-360-diffusion-2512-int8-bf16-v2.safetensors",
+   "sha256": "11065421c2a4c8f503ee1be5d6dc0320a9ffb5bfaded2490813046fd2312578d"
+  },
+  "loras/qwen-image-edit-2511-multiple-angles-lora.safetensors": {
+   "size": 295140688,
+   "url": "https://huggingface.co/fal/Qwen-Image-Edit-2511-Multiple-Angles-LoRA/resolve/e3066224ab74263f4a5b6179cd1a3b0a15577e44/qwen-image-edit-2511-multiple-angles-lora.safetensors",
+   "sha256": "42426ded4e25fd22879d9e198b857556445ef4ca56e8da3246d0345155bb6765"
+  },
+  "loras/Qwen-Image-Edit-2509-Lightning-4steps-V1.0-bf16.safetensors": {
+   "size": 849608296,
+   "url": "https://huggingface.co/lightx2v/Qwen-Image-Lightning/resolve/d468c534b360e0754c6bf9e38ed49e1e09cd2e2a/Qwen-Image-Edit-2509/Qwen-Image-Edit-2509-Lightning-4steps-V1.0-bf16.safetensors",
+   "sha256": "2a32ce938ec71db2b49a817b4844ae86995569518dea56ee0ddc209cbe8e1377"
+  },
+  "loras/Qwen-Image-Edit-2509-Relight.safetensors": {
+   "size": 236117032,
+   "url": "https://huggingface.co/Comfy-Org/Qwen-Image-Edit/resolve/f68ace85e60b4a02a323e394253731947657b7d2/split_files/loras/Qwen-Image-Edit-2509-Relight.safetensors",
+   "sha256": "2a11c2b74ce0965abf35a8c8db52305072e970a689ca904b5a5b5a94d0aab86c"
+  },
+  "diffusion_models/qwen_image_edit_2509_fp8_e4m3fn.safetensors": {
+   "size": 20430698424,
+   "url": "https://huggingface.co/Comfy-Org/Qwen-Image-Edit/resolve/f68ace85e60b4a02a323e394253731947657b7d2/split_files/diffusion_models/qwen_image_edit_2509_fp8_e4m3fn.safetensors",
+   "sha256": "318568f61951ab9da21100c7b896e3c1da67f0d2efad6421545e022cfaa2b2b4"
+  },
+  "loras/Qwen-Image-Edit-2509-Light-Migration.safetensors": {
+   "size": 236117032,
+   "url": "https://huggingface.co/Comfy-Org/Qwen-Image-Edit/resolve/f68ace85e60b4a02a323e394253731947657b7d2/split_files/loras/Qwen-Image-Edit-2509-Light-Migration.safetensors",
+   "sha256": "202d76cfbf0f8e670154ef300b0f28e4a4bfdb94dd91a535f6ab73769314ae3f"
+  },
+  "loras/Qwen_Image_Edit_2511-SYSTMS_INFL8.safetensors": {
+   "size": 295146200,
+   "url": "https://huggingface.co/systms/SYSTMS-INFL8-LoRA-Qwen-Image-Edit-2511/resolve/d12b29cd92da261f9f439629515618c15837a7dd/SYSTMS_INFL8_LoRA_Qwen_Image_Edit_2511.safetensors",
+   "sha256": "48cff1497edf7610c904a18d94e996f97466c8c3784de4e790a31f9d45f33998"
+  },
+  "diffusion_models/wan2.2_fun_camera_high_noise_14B_fp8_scaled.safetensors": {
+   "size": 15301408048,
+   "url": "https://huggingface.co/Comfy-Org/Wan-2.2/resolve/ee6f4a40737a995bf5818954cfce6d59443b0f04/split_files/diffusion_models/wan2.2_fun_camera_high_noise_14B_fp8_scaled.safetensors",
+   "sha256": "89a99cb5ab29e388f2e24fddac48eab4d88ca339d236c7a8d96aabacd0f525ae"
+  },
+  "diffusion_models/wan2.2_fun_camera_low_noise_14B_fp8_scaled.safetensors": {
+   "size": 15301408048,
+   "url": "https://huggingface.co/Comfy-Org/Wan-2.2/resolve/ee6f4a40737a995bf5818954cfce6d59443b0f04/split_files/diffusion_models/wan2.2_fun_camera_low_noise_14B_fp8_scaled.safetensors",
+   "sha256": "a2b7b361e3fad907958aa6ad662a3673bad5ffdce14706cffde4baabb98f9020"
+  },
+  "diffusion_models/Wan21-WanMove_fp8_scaled_e4m3fn_KJ.safetensors": {
+   "size": 16402832658,
+   "url": "https://huggingface.co/Kijai/WanVideo_comfy_fp8_scaled/resolve/033a4e487f60220b3d6e469599a6aebc46e13cee/WanMove/Wan21-WanMove_fp8_scaled_e4m3fn_KJ.safetensors",
+   "sha256": "88aa449ce87dae29f3e6c1ec1c6107ba1a2d5057e6547ac1720d75c71eac32e9"
+  },
+  "loras/ltx-2.5-22b-lora-cinemagraph-0.9.safetensors": {
+   "size": 201462650,
+   "url": "https://huggingface.co/Lightricks/LTX-2.5-22b-LoRA-Cinemagraph/resolve/main/ltx-2.5-22b-lora-cinemagraph-0.9.safetensors",
+   "gated": true
+  },
+  "diffusion_models/wan_animate_2_distill_int8_convrot.safetensors": {
+   "size": 16653175528,
+   "url": "https://huggingface.co/Comfy-Org/Wan-Animate-2/resolve/e7181fe1896b7f2ce34120d1a3663413548240d7/diffusion_models/wan_animate_2_distill_int8_convrot.safetensors",
+   "sha256": "d2e566ecac3f164cb1a6b63dc7d868d6678c9affa49fbceb3abe4f9458f89c8a"
+  },
+  "loras/ltx-2.5-22b-ic-lora-day-to-night-0.9.safetensors": {
+   "size": 327318440,
+   "url": "https://huggingface.co/Lightricks/LTX-2.5-22b-IC-LoRA-Day-To-Night/resolve/main/ltx-2.5-22b-ic-lora-day-to-night-0.9.safetensors",
+   "gated": true
+  },
+  "loras/ltx-2.5-22b-ic-lora-colorization-0.9.safetensors": {
+   "size": 906080571,
+   "url": "https://huggingface.co/Lightricks/LTX-2.5-22b-IC-LoRA-Colorization/resolve/main/ltx-2.5-22b-ic-lora-colorization-0.9.safetensors",
+   "gated": true
+  },
+  "loras/ltx-2.5-22b-ic-lora-deblur-0.9.safetensors": {
+   "size": 906080571,
+   "url": "https://huggingface.co/Lightricks/LTX-2.5-22b-IC-LoRA-Deblur/resolve/main/ltx-2.5-22b-ic-lora-deblur-0.9.safetensors",
+   "gated": true
+  },
+  "loras/ltx-2.5-22b-ic-lora-decompression-0.9.safetensors": {
+   "size": 906080571,
+   "url": "https://huggingface.co/Lightricks/LTX-2.5-22b-IC-LoRA-Decompression/resolve/main/ltx-2.5-22b-ic-lora-decompression-0.9.safetensors",
+   "gated": true
+  },
+  "loras/ltx-2.5-22b-ic-lora-refine-details-1.0.safetensors": {
+   "size": 1308787534,
+   "url": "https://huggingface.co/Lightricks/LTX-2.5-22b-IC-LoRA-Refine-Details/resolve/main/ltx-2.5-22b-ic-lora-refine-details-1.0.safetensors",
+   "gated": true
+  },
+  "loras/ltx-2.5-22b-ic-lora-restore-1.0.safetensors": {
+   "size": 1711643914,
+   "url": "https://huggingface.co/Lightricks/LTX-2.5-22b-IC-LoRA-Restore/resolve/main/ltx-2.5-22b-ic-lora-restore-1.0.safetensors",
+   "gated": true
+  },
+  "loras/ltx-2.5-22b-ic-lora-water-simulation-0.9.safetensors": {
+   "size": 906080568,
+   "url": "https://huggingface.co/Lightricks/LTX-2.5-22b-IC-LoRA-Water-Simulation/resolve/main/ltx-2.5-22b-ic-lora-water-simulation-0.9.safetensors",
+   "gated": true
+  },
+  "loras/minimax_h3_vfx_edit_v1.0_r128.safetensors": {
+   "size": 1240518744,
+   "url": "https://huggingface.co/Alissonerdx/Minimax-H3-ComfyUI/resolve/4bb14d4a611179d4cf633e74d3ae33e965ae2301/loras/minimax_h3_vfx_edit_v1.0_r128.safetensors",
+   "sha256": "9053607b28f271a22cf3f70d7fa534b35eb88d2259dcbec03d63a97d8929c210"
+  },
+  "loras/minimax_h3_vfx_edit_v1.0_r128_ffp.safetensors": {
+   "size": 1240518720,
+   "url": "https://huggingface.co/Alissonerdx/Minimax-H3-ComfyUI/resolve/4bb14d4a611179d4cf633e74d3ae33e965ae2301/loras/minimax_h3_vfx_edit_v1.0_r128_ffp.safetensors",
+   "sha256": "995fabeafa3626477092c3f9baf30dededbf18649b2a53e6fe26ee28f07396c8"
+  },
+  "loras/ltx-2.3-22b-ic-lora-in-outpainting-0.9.safetensors": {
+   "size": 1308778338,
+   "url": "https://huggingface.co/Lightricks/LTX-2.3-22b-IC-LoRA-In-Outpainting/resolve/main/ltx-2.3-22b-ic-lora-in-outpainting-0.9.safetensors",
+   "gated": true
+  },
+  "frame_interpolation/film_net_fp16.safetensors": {
+   "size": 68882302,
+   "url": "https://huggingface.co/Comfy-Org/Frame-Interpolation/resolve/aa7009be4d1471ea0bac91d6fe4d7e4b637cbbfc/frame_interpolation/film_net_fp16.safetensors",
+   "sha256": "f226e51375dc839d4b40e5c3d63da560dd1ea1c962364ec78f5adf2d05db05c0"
+  },
+  "background_removal/birefnet.safetensors": {
+   "size": 444473596,
+   "url": "https://huggingface.co/Comfy-Org/BiRefNet/resolve/884af709e9b795d89dafbf97f29c8d6a2386f5c6/background_removal/birefnet.safetensors",
+   "sha256": "9ab37426bf4de0567af6b5d21b16151357149139362e6e8992021b8ce356a154"
+  },
+  "diffusion_models/qwen_image_layered_fp8mixed.safetensors": {
+   "size": 20533591821,
+   "url": "https://huggingface.co/Comfy-Org/Qwen-Image-Layered/resolve/02130716aaf54a36f84c9fcfa8a373ab06284e2b/split_files/diffusion_models/qwen_image_layered_fp8mixed.safetensors",
+   "sha256": "e68c406b1bc08c97382a46dce6ed46699bc18a0f50422d97952ee4e8b63ad50a"
+  },
+  "vae/qwen_image_layered_vae.safetensors": {
+   "size": 253816616,
+   "url": "https://huggingface.co/Comfy-Org/Qwen-Image-Layered/resolve/02130716aaf54a36f84c9fcfa8a373ab06284e2b/split_files/vae/qwen_image_layered_vae.safetensors",
+   "sha256": "c5320595fc61859ccdd0282184208f7b781c983b8ce4c6bc3e7723a807d3d28d"
+  },
+  "diffusion_models/qwen_image_2.1_bf16.safetensors": {
+   "size": 14230280616,
+   "url": "https://huggingface.co/Comfy-Org/Qwen-Image-2.1/resolve/aacf31a6d48e707f352ecba714cee0680da3479b/diffusion_models/qwen_image_2.1_bf16.safetensors",
+   "sha256": "89f4158d066cc33906a199fca85634f766892dd78f49b6698dabf187ac86c4bc"
+  },
+  "loras/qwen_image_2.1_turbo_lora_avg_rank_178_bf16.safetensors": {
+   "size": 913314512,
+   "url": "https://huggingface.co/Comfy-Org/Qwen-Image-2.1/resolve/aacf31a6d48e707f352ecba714cee0680da3479b/loras/qwen_image_2.1_turbo_lora_avg_rank_178_bf16.safetensors",
+   "sha256": "208dd43250e1e01467ba190572ae2e7107a7870ec1ff026bc65f791fa1e80e95"
+  },
+  "text_encoders/qwen3vl_8b_bf16.safetensors": {
+   "size": 17534334616,
+   "url": "https://huggingface.co/Comfy-Org/Qwen-Image-2.1/resolve/aacf31a6d48e707f352ecba714cee0680da3479b/text_encoders/qwen3vl_8b_bf16.safetensors",
+   "sha256": "68bdc82bc1b66851162ae656225e7e2068166b603db19bd5d5a3b90eb12669a9"
+  },
+  "vae/qwen_image_2.1_vae_bf16.safetensors": {
+   "size": 675509688,
+   "url": "https://huggingface.co/Comfy-Org/Qwen-Image-2.1/resolve/aacf31a6d48e707f352ecba714cee0680da3479b/vae/qwen_image_2.1_vae_bf16.safetensors",
+   "sha256": "bb21f7473051e1ac368515dd3f2e15cd44d7a11748ee8823e1ddca3e4876b7c9"
+  },
+  "checkpoints/ltx-2.3-22b-distilled-fp8.safetensors": {
+   "size": 29531884062,
+   "url": "https://huggingface.co/Lightricks/LTX-2.3-fp8/resolve/91eda216f820e5ecb3d17dc9fe3b7cdaf56b587d/ltx-2.3-22b-distilled-fp8.safetensors",
+   "sha256": "d9646b6f2d5c42d337b23671634c43bfeece6989644f51b4a3aa088465ccd3b2"
+  },
+  "text_encoders/gemma_3_12B_it_fp4_mixed.safetensors": {
+   "size": 9447702218,
+   "url": "https://huggingface.co/Comfy-Org/ltx-2/resolve/ccde4ba417d7900669fd56dd292a883cee11ff37/split_files/text_encoders/gemma_3_12B_it_fp4_mixed.safetensors",
+   "sha256": "aaca463d11e6d8d2a4bdb0d6299214c15ef78a3f73e0ef8113d5a9d0219b3f6d"
+  },
+  "loras/ltx-2.3-22b-ic-lora-union-control-ref0.5.safetensors": {
+   "size": 654465352,
+   "url": "https://huggingface.co/Lightricks/LTX-2.3-22b-IC-LoRA-Union-Control/resolve/20a580c8606c06a0988d40375a61309e0fe5893d/ltx-2.3-22b-ic-lora-union-control-ref0.5.safetensors",
+   "sha256": "a1b888a87f661d27f08b394ae559e8e1050be33900bcc36a5cdf659e48f88d18"
+  },
+  "latent_upscale_models/ltx-2.3-spatial-upscaler-x2-1.1.safetensors": {
+   "size": 995743560,
+   "url": "https://huggingface.co/Lightricks/LTX-2.3/resolve/c1521179de480464f366a98a9d9b2acc4cc097b9/ltx-2.3-spatial-upscaler-x2-1.1.safetensors",
+   "sha256": "5f416311fa8172b65af67530758964708d29a317b830d689a51143b7f91913ed"
+  },
+  "diffusion_models/wan2.2_fun_control_high_noise_14B_fp8_scaled.safetensors": {
+   "size": 14296064656,
+   "url": "https://huggingface.co/Comfy-Org/Wan-2.2/resolve/ee6f4a40737a995bf5818954cfce6d59443b0f04/split_files/diffusion_models/wan2.2_fun_control_high_noise_14B_fp8_scaled.safetensors",
+   "sha256": "aa2f6b6f4cfc8a75a273a075db31730530f93320a996b153b8825205c3a3c498"
+  },
+  "diffusion_models/wan2.2_fun_control_low_noise_14B_fp8_scaled.safetensors": {
+   "size": 14296064656,
+   "url": "https://huggingface.co/Comfy-Org/Wan-2.2/resolve/ee6f4a40737a995bf5818954cfce6d59443b0f04/split_files/diffusion_models/wan2.2_fun_control_low_noise_14B_fp8_scaled.safetensors",
+   "sha256": "0f83c7b1cd6d509ff3504a8f604ca9d9876a8b1ed04f6e05095c4a7ccb9009cd"
+  },
+  "diffusion_models/Wan2_1-I2V-14B-480p_fp8_e4m3fn_scaled_KJ.safetensors": {
+   "size": 16643349018,
+   "url": "https://huggingface.co/Kijai/WanVideo_comfy_fp8_scaled/resolve/033a4e487f60220b3d6e469599a6aebc46e13cee/I2V/Wan2_1-I2V-14B-480p_fp8_e4m3fn_scaled_KJ.safetensors",
+   "sha256": "2ff922282cd84589702e6e8c26e083d1160bfc2b217dd44e1ae2688441dc495d"
+  },
+  "audio_encoders/wav2vec2-chinese-base_fp16.safetensors": {
+   "size": 190115368,
+   "url": "https://huggingface.co/Kijai/wav2vec2_safetensors/resolve/87847d3bc53702afda44078249e7c33e867827c4/wav2vec2-chinese-base_fp16.safetensors",
+   "sha256": "000813e441020f18cff844c969d2d5d4adc2a5ce46b2db1f23950b05d88805b4"
+  },
+  "model_patches/wan2.1_infiniteTalk_multi_fp16.safetensors": {
+   "size": 5124439112,
+   "url": "https://huggingface.co/Comfy-Org/Wan-2.1/resolve/123acf1cc74bccbb9bfff8ac1ee72edc08c2341d/split_files/model_patches/wan2.1_infiniteTalk_multi_fp16.safetensors",
+   "sha256": "4c2486cdfb6ff9a9f27408e98e11e20619136933b20411e0c365b1e84075d195"
+  },
+  "videodepthanything/video_depth_anything_vits.pth": {
+   "size": 116440756,
+   "url": "https://huggingface.co/depth-anything/Video-Depth-Anything-Small/resolve/256875362cff76724b920335dfb4b29dd611f66e/video_depth_anything_vits.pth",
+   "sha256": "13379300b739e659f076a59d52e9801bd8d38c541a7e71f73bbca4dcfb013609"
+  }
+ },
+ "models": {
+  "z-image-turbo": {
+   "files": [
+    "diffusion_models/z_image_turbo_bf16.safetensors",
+    "text_encoders/qwen_3_4b.safetensors",
+    "vae/ae.safetensors"
+   ],
+   "options": [
+    "diffusion_models/qwen_image_edit_2511_int8_convrot.safetensors",
+    "diffusion_models/seedvr2_7b_int8_convrot.safetensors",
+    "loras/Qwen-Image-Edit-2511-Lightning-4steps-V1.0-bf16.safetensors",
+    "text_encoders/qwen3.5_9b_flux3_prompt_upsampler_w4a8.safetensors",
+    "text_encoders/qwen_2.5_vl_7b_fp8_scaled.safetensors",
+    "vae/qwen_image_vae.safetensors",
+    "vae/seedvr2_ema_vae_fp16.safetensors"
+   ],
+   "nodes": [
+    "comfyui-rmbg",
+    "comfyui_essentials"
+   ]
+  },
+  "flux3-klein": {
+   "files": [
+    "diffusion_models/flux3_image_klein_sd_int8_convrot.safetensors",
+    "diffusion_models/z_image_turbo_bf16.safetensors",
+    "text_encoders/qwen3vl_4b_int8_convrot.safetensors",
+    "text_encoders/qwen_3_4b.safetensors",
+    "vae/ae.safetensors",
+    "vae/flux2-vae.safetensors"
+   ],
+   "options": [
+    "diffusion_models/flux3-image-klein-base-bf16.safetensors",
+    "diffusion_models/seedvr2_7b_int8_convrot.safetensors",
+    "text_encoders/qwen3.5_9b_flux3_prompt_upsampler_w4a8.safetensors",
+    "vae/seedvr2_ema_vae_fp16.safetensors"
+   ],
+   "nodes": [
+    "ComfyUI-KJNodes",
+    "comfyui-rmbg",
+    "comfyui_essentials"
+   ]
+  },
+  "qwen-2512": {
+   "files": [
+    "diffusion_models/qwen_image_edit_2511_int8_convrot.safetensors",
+    "diffusion_models/z_image_turbo_bf16.safetensors",
+    "loras/Qwen-Image-2512-Lightning-4steps-V1.0-fp32.safetensors",
+    "loras/Qwen-Image-Edit-2511-Lightning-4steps-V1.0-bf16.safetensors",
+    "text_encoders/qwen_2.5_vl_7b_fp8_scaled.safetensors",
+    "text_encoders/qwen_3_4b.safetensors",
+    "unet/qwen-image-2512-Q8_0.gguf",
+    "vae/ae.safetensors",
+    "vae/qwen_image_vae.safetensors"
+   ],
+   "options": [
+    "diffusion_models/seedvr2_7b_int8_convrot.safetensors",
+    "text_encoders/qwen3.5_9b_flux3_prompt_upsampler_w4a8.safetensors",
+    "vae/seedvr2_ema_vae_fp16.safetensors"
+   ],
+   "nodes": [
+    "ComfyUI-GGUF",
+    "comfyui-rmbg",
+    "comfyui_essentials"
+   ]
+  },
+  "qwen-edit-2511": {
+   "files": [
+    "diffusion_models/qwen_image_edit_2511_int8_convrot.safetensors",
+    "diffusion_models/z_image_turbo_bf16.safetensors",
+    "loras/Qwen-Image-Edit-2511-Lightning-4steps-V1.0-bf16.safetensors",
+    "text_encoders/qwen_2.5_vl_7b_fp8_scaled.safetensors",
+    "text_encoders/qwen_3_4b.safetensors",
+    "vae/ae.safetensors",
+    "vae/qwen_image_vae.safetensors"
+   ],
+   "options": [
+    "diffusion_models/seedvr2_7b_int8_convrot.safetensors",
+    "text_encoders/qwen3.5_9b_flux3_prompt_upsampler_w4a8.safetensors",
+    "vae/seedvr2_ema_vae_fp16.safetensors"
+   ],
+   "nodes": [
+    "ComfyUI-KJNodes",
+    "comfyui-rmbg",
+    "comfyui_essentials"
+   ]
+  },
+  "qwen-inpaint": {
+   "files": [
+    "controlnet/Qwen-Image-InstantX-ControlNet-Inpainting.safetensors",
+    "diffusion_models/qwen_image_2512_fp8_e4m3fn.safetensors",
+    "diffusion_models/qwen_image_edit_2511_int8_convrot.safetensors",
+    "loras/Qwen-Image-Edit-2511-Lightning-4steps-V1.0-bf16.safetensors",
+    "text_encoders/qwen_2.5_vl_7b_fp8_scaled.safetensors",
+    "vae/qwen_image_vae.safetensors"
+   ],
+   "options": [
+    "text_encoders/qwen3.5_9b_flux3_prompt_upsampler_w4a8.safetensors"
+   ],
+   "nodes": [
+    "ComfyUI-KJNodes"
+   ]
+  },
+  "ltx-2.5": {
+   "files": [
+    "diffusion_models/ltx-2.5-22b-distilled-transformer-comfy-int8-convrot.safetensors",
+    "latent_upscale_models/ltx-2.5-latent-spatial-upscaler-x2-bf16-1.0.safetensors",
+    "text_encoders/gemma4-12b-with-proj-ltx-2.5-comfy-int8-convrot.safetensors",
+    "text_encoders/gemma4_e2b_it_int8_convrot.safetensors",
+    "vae/ltx-2.5-audio-vae-bf16.safetensors",
+    "vae/ltx-2.5-video-vae-bf16.safetensors"
+   ],
+   "options": [
+    "text_encoders/qwen3.5_9b_flux3_prompt_upsampler_w4a8.safetensors"
+   ],
+   "nodes": []
+  },
+  "wan-2.2": {
+   "files": [
+    "diffusion_models/wan2.2_i2v_high_noise_14B_fp8_scaled.safetensors",
+    "diffusion_models/wan2.2_i2v_low_noise_14B_fp8_scaled.safetensors",
+    "loras/wan2.2_i2v_lightx2v_4steps_lora_v1_high_noise.safetensors",
+    "loras/wan2.2_i2v_lightx2v_4steps_lora_v1_low_noise.safetensors",
+    "text_encoders/umt5_xxl_fp8_e4m3fn_scaled.safetensors",
+    "vae/wan_2.1_vae.safetensors"
+   ],
+   "options": [
+    "text_encoders/qwen3.5_9b_flux3_prompt_upsampler_w4a8.safetensors"
+   ],
+   "nodes": []
+  },
+  "minimax-h3": {
+   "files": [
+    "diffusion_models/minimax_h3_fl2va_pruned_int8_convrot.safetensors",
+    "diffusion_models/minimax_h3_ref2va_pruned_int8_convrot.safetensors",
+    "loras/minimax_h3_fl2v_turbo_8step_v1.0_comfyui_bf16.safetensors",
+    "loras/minimax_h3_ref2v_turbo_4step_v0.1_comfyui_bf16.safetensors",
+    "text_encoders/qwen3vl_32b_minimax_h3_nvfp4_awq.safetensors",
+    "vae/minimax_h3_audio_vae_fp32.safetensors",
+    "vae/minimax_h3_video_vae_fp16.safetensors"
+   ],
+   "options": [
+    "text_encoders/qwen3.5_9b_flux3_prompt_upsampler_w4a8.safetensors"
+   ],
+   "nodes": []
+  },
+  "h3-swap": {
+   "files": [
+    "checkpoints/sam3.1_multiplex_fp16.safetensors",
+    "diffusion_models/minimax_h3_ref2va_pruned_int8_convrot.safetensors",
+    "loras/h3_character_swap_v1.5.safetensors",
+    "loras/minimax_h3_fl2v_turbo_8step_v1.0_768p_comfyui_bf16.safetensors",
+    "text_encoders/qwen3vl_32b_minimax_h3_nvfp4_awq.safetensors",
+    "vae/minimax_h3_audio_vae_fp32.safetensors",
+    "vae/minimax_h3_video_vae_fp16.safetensors"
+   ],
+   "options": [
+    "text_encoders/qwen3.5_9b_flux3_prompt_upsampler_w4a8.safetensors"
+   ],
+   "nodes": [
+    "h3_character_swap"
+   ]
+  },
+  "scail-2": {
+   "files": [
+    "checkpoints/sam3.1_multiplex_fp16.safetensors",
+    "clip_vision/clip_vision_h.safetensors",
+    "diffusion_models/wan2.1_14B_SCAIL_2_int8_convrot.safetensors",
+    "loras/lightx2v_I2V_14B_480p_cfg_step_distill_rank64_bf16.safetensors",
+    "loras/wan2.1_SCAIL_2_DPO_lora_bf16.safetensors",
+    "text_encoders/umt5_xxl_fp8_e4m3fn_scaled.safetensors",
+    "vae/wan_2.1_vae.safetensors"
+   ],
+   "options": [
+    "text_encoders/qwen3.5_9b_flux3_prompt_upsampler_w4a8.safetensors"
+   ],
+   "nodes": []
+  },
+  "void": {
+   "files": [
+    "checkpoints/sam3.1_multiplex_fp16.safetensors",
+    "diffusion_models/void_pass1.safetensors",
+    "diffusion_models/void_pass2.safetensors",
+    "optical_flow/raft_large_C_T_SKHT_V2-ff5fadd5.safetensors",
+    "text_encoders/t5xxl_fp16.safetensors",
+    "vae/cogvideox_vae.safetensors"
+   ],
+   "options": [
+    "text_encoders/qwen3.5_9b_flux3_prompt_upsampler_w4a8.safetensors"
+   ],
+   "nodes": []
+  },
+  "alpha-gen": {
+   "files": [
+    "checkpoints/ltx-2.3-22b-dev.safetensors",
+    "diffusion_models/ltx-2.5-22b-distilled-transformer-comfy-int8-convrot.safetensors",
+    "loras/ltx-2.5-22b-ic-lora-alpha-gen-0.9.safetensors",
+    "text_encoders/gemma4-12b-with-proj-ltx-2.5-comfy-int8-convrot.safetensors",
+    "text_encoders/gemma4_e2b_it_int8_convrot.safetensors",
+    "vae/ltx-2.5-audio-vae-bf16.safetensors",
+    "vae/ltx-2.5-video-vae-bf16.safetensors"
+   ],
+   "options": [],
+   "nodes": [
+    "ComfyUI-LTXVideo"
+   ]
+  },
+  "seedvr2-image": {
+   "files": [
+    "diffusion_models/seedvr2_7b_int8_convrot.safetensors",
+    "vae/seedvr2_ema_vae_fp16.safetensors"
+   ],
+   "options": [],
+   "nodes": []
+  },
+  "seedvr2-video": {
+   "files": [
+    "diffusion_models/seedvr2_3b_int8_convrot.safetensors",
+    "vae/seedvr2_ema_vae_fp16.safetensors"
+   ],
+   "options": [],
+   "nodes": []
+  },
+  "qwen-360": {
+   "files": [
+    "loras/Qwen-Image-2512-Lightning-4steps-V1.0-fp32.safetensors",
+    "loras/qwen-360-diffusion-2512-int8-bf16-v2.safetensors",
+    "text_encoders/qwen_2.5_vl_7b_fp8_scaled.safetensors",
+    "unet/qwen-image-2512-Q8_0.gguf",
+    "vae/qwen_image_vae.safetensors"
+   ],
+   "options": [],
+   "nodes": [
+    "ComfyUI-GGUF"
+   ]
+  },
+  "qwen-outpaint": {
+   "files": [
+    "controlnet/Qwen-Image-InstantX-ControlNet-Inpainting.safetensors",
+    "text_encoders/qwen_2.5_vl_7b_fp8_scaled.safetensors",
+    "unet/qwen-image-2512-Q8_0.gguf",
+    "vae/qwen_image_vae.safetensors"
+   ],
+   "options": [
+    "text_encoders/qwen3.5_9b_flux3_prompt_upsampler_w4a8.safetensors"
+   ],
+   "nodes": [
+    "ComfyUI-GGUF",
+    "ComfyUI-KJNodes"
+   ]
+  },
+  "qwen-edit-outpaint": {
+   "files": [
+    "diffusion_models/qwen_image_edit_2511_int8_convrot.safetensors",
+    "loras/Qwen-Image-Edit-2511-Lightning-4steps-V1.0-bf16.safetensors",
+    "text_encoders/qwen_2.5_vl_7b_fp8_scaled.safetensors",
+    "vae/qwen_image_vae.safetensors"
+   ],
+   "options": [
+    "text_encoders/qwen3.5_9b_flux3_prompt_upsampler_w4a8.safetensors"
+   ],
+   "nodes": [
+    "ComfyUI-KJNodes"
+   ]
+  },
+  "qwen-angles": {
+   "files": [
+    "diffusion_models/qwen_image_edit_2511_int8_convrot.safetensors",
+    "loras/Qwen-Image-Edit-2511-Lightning-4steps-V1.0-bf16.safetensors",
+    "loras/qwen-image-edit-2511-multiple-angles-lora.safetensors",
+    "text_encoders/qwen_2.5_vl_7b_fp8_scaled.safetensors",
+    "vae/qwen_image_vae.safetensors"
+   ],
+   "options": [],
+   "nodes": []
+  },
+  "qwen-relight": {
+   "files": [
+    "diffusion_models/qwen_image_edit_2509_fp8_e4m3fn.safetensors",
+    "loras/Qwen-Image-Edit-2509-Lightning-4steps-V1.0-bf16.safetensors",
+    "loras/Qwen-Image-Edit-2509-Relight.safetensors",
+    "text_encoders/qwen_2.5_vl_7b_fp8_scaled.safetensors",
+    "vae/qwen_image_vae.safetensors"
+   ],
+   "options": [],
+   "nodes": []
+  },
+  "qwen-lightmig": {
+   "files": [
+    "diffusion_models/qwen_image_edit_2509_fp8_e4m3fn.safetensors",
+    "loras/Qwen-Image-Edit-2509-Light-Migration.safetensors",
+    "loras/Qwen-Image-Edit-2509-Lightning-4steps-V1.0-bf16.safetensors",
+    "text_encoders/qwen_2.5_vl_7b_fp8_scaled.safetensors",
+    "vae/qwen_image_vae.safetensors"
+   ],
+   "options": [],
+   "nodes": []
+  },
+  "qwen-fx": {
+   "files": [
+    "diffusion_models/qwen_image_edit_2511_int8_convrot.safetensors",
+    "loras/Qwen-Image-Edit-2511-Lightning-4steps-V1.0-bf16.safetensors",
+    "loras/Qwen_Image_Edit_2511-SYSTMS_INFL8.safetensors",
+    "text_encoders/qwen_2.5_vl_7b_fp8_scaled.safetensors",
+    "vae/qwen_image_vae.safetensors"
+   ],
+   "options": [
+    "text_encoders/qwen3.5_9b_flux3_prompt_upsampler_w4a8.safetensors"
+   ],
+   "nodes": []
+  },
+  "ltx-a2v": {
+   "files": [
+    "checkpoints/ltx-2.3-22b-dev.safetensors",
+    "diffusion_models/ltx-2.5-22b-distilled-transformer-comfy-int8-convrot.safetensors",
+    "latent_upscale_models/ltx-2.5-latent-spatial-upscaler-x2-bf16-1.0.safetensors",
+    "text_encoders/gemma4-12b-with-proj-ltx-2.5-comfy-int8-convrot.safetensors",
+    "text_encoders/gemma4_e2b_it_int8_convrot.safetensors",
+    "vae/ltx-2.5-audio-vae-bf16.safetensors",
+    "vae/ltx-2.5-video-vae-bf16.safetensors"
+   ],
+   "options": [
+    "text_encoders/qwen3.5_9b_flux3_prompt_upsampler_w4a8.safetensors"
+   ],
+   "nodes": [
+    "ComfyUI-LTXVideo"
+   ]
+  },
+  "wan-storyboard": {
+   "files": [
+    "diffusion_models/wan2.2_i2v_high_noise_14B_fp8_scaled.safetensors",
+    "diffusion_models/wan2.2_i2v_low_noise_14B_fp8_scaled.safetensors",
+    "loras/wan2.2_i2v_lightx2v_4steps_lora_v1_high_noise.safetensors",
+    "loras/wan2.2_i2v_lightx2v_4steps_lora_v1_low_noise.safetensors",
+    "text_encoders/umt5_xxl_fp8_e4m3fn_scaled.safetensors",
+    "vae/wan_2.1_vae.safetensors"
+   ],
+   "options": [
+    "text_encoders/qwen3.5_9b_flux3_prompt_upsampler_w4a8.safetensors"
+   ],
+   "nodes": []
+  },
+  "wan-camera": {
+   "files": [
+    "diffusion_models/wan2.2_fun_camera_high_noise_14B_fp8_scaled.safetensors",
+    "diffusion_models/wan2.2_fun_camera_low_noise_14B_fp8_scaled.safetensors",
+    "loras/wan2.2_i2v_lightx2v_4steps_lora_v1_high_noise.safetensors",
+    "loras/wan2.2_i2v_lightx2v_4steps_lora_v1_low_noise.safetensors",
+    "text_encoders/umt5_xxl_fp8_e4m3fn_scaled.safetensors",
+    "vae/wan_2.1_vae.safetensors"
+   ],
+   "options": [
+    "text_encoders/qwen3.5_9b_flux3_prompt_upsampler_w4a8.safetensors"
+   ],
+   "nodes": []
+  },
+  "wan-move": {
+   "files": [
+    "clip_vision/clip_vision_h.safetensors",
+    "diffusion_models/Wan21-WanMove_fp8_scaled_e4m3fn_KJ.safetensors",
+    "loras/lightx2v_I2V_14B_480p_cfg_step_distill_rank64_bf16.safetensors",
+    "text_encoders/umt5_xxl_fp8_e4m3fn_scaled.safetensors",
+    "vae/wan_2.1_vae.safetensors"
+   ],
+   "options": [
+    "text_encoders/qwen3.5_9b_flux3_prompt_upsampler_w4a8.safetensors"
+   ],
+   "nodes": []
+  },
+  "ltx-cinemagraph": {
+   "files": [
+    "diffusion_models/ltx-2.5-22b-distilled-transformer-comfy-int8-convrot.safetensors",
+    "latent_upscale_models/ltx-2.5-latent-spatial-upscaler-x2-bf16-1.0.safetensors",
+    "loras/ltx-2.5-22b-lora-cinemagraph-0.9.safetensors",
+    "text_encoders/gemma4-12b-with-proj-ltx-2.5-comfy-int8-convrot.safetensors",
+    "text_encoders/gemma4_e2b_it_int8_convrot.safetensors",
+    "vae/ltx-2.5-audio-vae-bf16.safetensors",
+    "vae/ltx-2.5-video-vae-bf16.safetensors"
+   ],
+   "options": [
+    "text_encoders/qwen3.5_9b_flux3_prompt_upsampler_w4a8.safetensors"
+   ],
+   "nodes": []
+  },
+  "ltx-extend": {
+   "files": [
+    "diffusion_models/ltx-2.5-22b-distilled-transformer-comfy-int8-convrot.safetensors",
+    "latent_upscale_models/ltx-2.5-latent-spatial-upscaler-x2-bf16-1.0.safetensors",
+    "text_encoders/gemma4-12b-with-proj-ltx-2.5-comfy-int8-convrot.safetensors",
+    "text_encoders/gemma4_e2b_it_int8_convrot.safetensors",
+    "vae/ltx-2.5-audio-vae-bf16.safetensors",
+    "vae/ltx-2.5-video-vae-bf16.safetensors"
+   ],
+   "options": [
+    "text_encoders/qwen3.5_9b_flux3_prompt_upsampler_w4a8.safetensors"
+   ],
+   "nodes": []
+  },
+  "h3-extend": {
+   "files": [
+    "diffusion_models/minimax_h3_fl2va_pruned_int8_convrot.safetensors",
+    "loras/minimax_h3_fl2v_turbo_8step_v1.0_comfyui_bf16.safetensors",
+    "text_encoders/qwen3vl_32b_minimax_h3_nvfp4_awq.safetensors",
+    "vae/minimax_h3_audio_vae_fp32.safetensors",
+    "vae/minimax_h3_video_vae_fp16.safetensors"
+   ],
+   "options": [
+    "text_encoders/qwen3.5_9b_flux3_prompt_upsampler_w4a8.safetensors"
+   ],
+   "nodes": []
+  },
+  "wan-animate": {
+   "files": [
+    "clip_vision/clip_vision_h.safetensors",
+    "diffusion_models/wan_animate_2_distill_int8_convrot.safetensors",
+    "text_encoders/umt5_xxl_fp8_e4m3fn_scaled.safetensors",
+    "vae/wan_2.1_vae.safetensors"
+   ],
+   "options": [
+    "text_encoders/qwen3.5_9b_flux3_prompt_upsampler_w4a8.safetensors"
+   ],
+   "nodes": []
+  },
+  "ltx-vfx": {
+   "files": [
+    "checkpoints/ltx-2.3-22b-dev.safetensors",
+    "diffusion_models/ltx-2.5-22b-distilled-transformer-comfy-int8-convrot.safetensors",
+    "loras/ltx-2.5-22b-ic-lora-day-to-night-0.9.safetensors",
+    "text_encoders/gemma4-12b-with-proj-ltx-2.5-comfy-int8-convrot.safetensors",
+    "text_encoders/gemma4_e2b_it_int8_convrot.safetensors",
+    "vae/ltx-2.5-audio-vae-bf16.safetensors",
+    "vae/ltx-2.5-video-vae-bf16.safetensors"
+   ],
+   "options": [
+    "loras/ltx-2.5-22b-ic-lora-colorization-0.9.safetensors",
+    "loras/ltx-2.5-22b-ic-lora-deblur-0.9.safetensors",
+    "loras/ltx-2.5-22b-ic-lora-decompression-0.9.safetensors",
+    "loras/ltx-2.5-22b-ic-lora-refine-details-1.0.safetensors",
+    "loras/ltx-2.5-22b-ic-lora-restore-1.0.safetensors",
+    "loras/ltx-2.5-22b-ic-lora-water-simulation-0.9.safetensors",
+    "text_encoders/qwen3.5_9b_flux3_prompt_upsampler_w4a8.safetensors"
+   ],
+   "nodes": [
+    "ComfyUI-LTXVideo"
+   ]
+  },
+  "h3-vfx": {
+   "files": [
+    "diffusion_models/minimax_h3_ref2va_pruned_int8_convrot.safetensors",
+    "loras/minimax_h3_fl2v_turbo_8step_v1.0_768p_comfyui_bf16.safetensors",
+    "loras/minimax_h3_vfx_edit_v1.0_r128.safetensors",
+    "loras/minimax_h3_vfx_edit_v1.0_r128_ffp.safetensors",
+    "text_encoders/qwen3vl_32b_minimax_h3_nvfp4_awq.safetensors",
+    "vae/minimax_h3_audio_vae_fp32.safetensors",
+    "vae/minimax_h3_video_vae_fp16.safetensors"
+   ],
+   "options": [
+    "text_encoders/qwen3.5_9b_flux3_prompt_upsampler_w4a8.safetensors"
+   ],
+   "nodes": []
+  },
+  "ltx-reframe": {
+   "files": [
+    "checkpoints/ltx-2.3-22b-dev.safetensors",
+    "diffusion_models/ltx-2.5-22b-distilled-transformer-comfy-int8-convrot.safetensors",
+    "loras/ltx-2.3-22b-ic-lora-in-outpainting-0.9.safetensors",
+    "text_encoders/gemma4-12b-with-proj-ltx-2.5-comfy-int8-convrot.safetensors",
+    "text_encoders/gemma4_e2b_it_int8_convrot.safetensors",
+    "vae/ltx-2.5-audio-vae-bf16.safetensors",
+    "vae/ltx-2.5-video-vae-bf16.safetensors"
+   ],
+   "options": [
+    "text_encoders/qwen3.5_9b_flux3_prompt_upsampler_w4a8.safetensors"
+   ],
+   "nodes": [
+    "ComfyUI-KJNodes",
+    "ComfyUI-LTXVideo"
+   ]
+  },
+  "rtx-vsr": {
+   "files": [],
+   "options": [],
+   "nodes": [
+    "ComfyUI_Nvidia_VFX_Nodes"
+   ]
+  },
+  "rtx-fg": {
+   "files": [],
+   "options": [],
+   "nodes": [
+    "ComfyUI_Nvidia_VFX_Nodes"
+   ]
+  },
+  "film": {
+   "files": [
+    "frame_interpolation/film_net_fp16.safetensors"
+   ],
+   "options": [],
+   "nodes": []
+  },
+  "rtx-hdr": {
+   "files": [],
+   "options": [],
+   "nodes": [
+    "ComfyUI_Nvidia_VFX_Nodes"
+   ]
+  },
+  "birefnet": {
+   "files": [
+    "background_removal/birefnet.safetensors"
+   ],
+   "options": [],
+   "nodes": []
+  },
+  "qwen-layers": {
+   "files": [
+    "diffusion_models/qwen_image_layered_fp8mixed.safetensors",
+    "text_encoders/qwen_2.5_vl_7b_fp8_scaled.safetensors",
+    "vae/qwen_image_layered_vae.safetensors"
+   ],
+   "options": [
+    "text_encoders/qwen3.5_9b_flux3_prompt_upsampler_w4a8.safetensors"
+   ],
+   "nodes": []
+  },
+  "qwen-2.1": {
+   "files": [
+    "diffusion_models/qwen_image_2.1_bf16.safetensors",
+    "diffusion_models/z_image_turbo_bf16.safetensors",
+    "loras/qwen_image_2.1_turbo_lora_avg_rank_178_bf16.safetensors",
+    "text_encoders/qwen3vl_8b_bf16.safetensors",
+    "text_encoders/qwen_3_4b.safetensors",
+    "vae/ae.safetensors",
+    "vae/qwen_image_2.1_vae_bf16.safetensors"
+   ],
+   "options": [
+    "diffusion_models/seedvr2_7b_int8_convrot.safetensors",
+    "text_encoders/qwen3.5_9b_flux3_prompt_upsampler_w4a8.safetensors",
+    "vae/seedvr2_ema_vae_fp16.safetensors"
+   ],
+   "nodes": [
+    "comfyui-rmbg",
+    "comfyui_essentials"
+   ]
+  },
+  "light-grade": {
+   "files": [],
+   "options": [],
+   "nodes": [
+    "ComfyUI-KJNodes"
+   ]
+  },
+  "ltx-union": {
+   "files": [
+    "checkpoints/ltx-2.3-22b-distilled-fp8.safetensors",
+    "diffusion_models/qwen_image_edit_2511_int8_convrot.safetensors",
+    "loras/ltx-2.3-22b-ic-lora-union-control-ref0.5.safetensors",
+    "text_encoders/gemma_3_12B_it_fp4_mixed.safetensors"
+   ],
+   "options": [
+    "latent_upscale_models/ltx-2.3-spatial-upscaler-x2-1.1.safetensors",
+    "text_encoders/qwen3.5_9b_flux3_prompt_upsampler_w4a8.safetensors"
+   ],
+   "nodes": [
+    "ComfyUI-KJNodes",
+    "ComfyUI-VideoHelperSuite",
+    "comfyui-rmbg",
+    "comfyui_controlnet_aux"
+   ]
+  },
+  "wan-fun-control": {
+   "files": [
+    "diffusion_models/qwen_image_edit_2511_int8_convrot.safetensors",
+    "diffusion_models/wan2.2_fun_control_high_noise_14B_fp8_scaled.safetensors",
+    "diffusion_models/wan2.2_fun_control_low_noise_14B_fp8_scaled.safetensors",
+    "loras/wan2.2_i2v_lightx2v_4steps_lora_v1_high_noise.safetensors",
+    "loras/wan2.2_i2v_lightx2v_4steps_lora_v1_low_noise.safetensors",
+    "text_encoders/umt5_xxl_fp8_e4m3fn_scaled.safetensors",
+    "vae/wan_2.1_vae.safetensors"
+   ],
+   "options": [
+    "text_encoders/qwen3.5_9b_flux3_prompt_upsampler_w4a8.safetensors"
+   ],
+   "nodes": [
+    "ComfyUI-KJNodes",
+    "ComfyUI-VideoHelperSuite",
+    "comfyui-rmbg",
+    "comfyui_controlnet_aux"
+   ]
+  },
+  "ltx-sketch": {
+   "files": [
+    "diffusion_models/ltx-2.5-22b-distilled-transformer-comfy-int8-convrot.safetensors",
+    "diffusion_models/qwen_image_edit_2511_int8_convrot.safetensors",
+    "latent_upscale_models/ltx-2.5-latent-spatial-upscaler-x2-bf16-1.0.safetensors",
+    "loras/Qwen-Image-Edit-2511-Lightning-4steps-V1.0-bf16.safetensors",
+    "text_encoders/gemma4-12b-with-proj-ltx-2.5-comfy-int8-convrot.safetensors",
+    "text_encoders/gemma4_e2b_it_int8_convrot.safetensors",
+    "text_encoders/qwen_2.5_vl_7b_fp8_scaled.safetensors",
+    "vae/ltx-2.5-audio-vae-bf16.safetensors",
+    "vae/ltx-2.5-video-vae-bf16.safetensors",
+    "vae/qwen_image_vae.safetensors"
+   ],
+   "options": [
+    "text_encoders/qwen3.5_9b_flux3_prompt_upsampler_w4a8.safetensors"
+   ],
+   "nodes": []
+  },
+  "infinitetalk": {
+   "files": [
+    "audio_encoders/wav2vec2-chinese-base_fp16.safetensors",
+    "diffusion_models/Wan2_1-I2V-14B-480p_fp8_e4m3fn_scaled_KJ.safetensors",
+    "loras/lightx2v_I2V_14B_480p_cfg_step_distill_rank64_bf16.safetensors",
+    "model_patches/wan2.1_infiniteTalk_multi_fp16.safetensors",
+    "text_encoders/umt5_xxl_fp8_e4m3fn_scaled.safetensors",
+    "vae/wan_2.1_vae.safetensors"
+   ],
+   "options": [
+    "text_encoders/qwen3.5_9b_flux3_prompt_upsampler_w4a8.safetensors"
+   ],
+   "nodes": [
+    "ai_studio_nodes",
+    "comfyui-rmbg"
+   ]
+  },
+  "atmosphere": {
+   "files": [
+    "videodepthanything/video_depth_anything_vits.pth"
+   ],
+   "options": [
+    "checkpoints/ltx-2.3-22b-distilled-fp8.safetensors",
+    "loras/ltx-2.3-22b-ic-lora-union-control-ref0.5.safetensors",
+    "text_encoders/gemma_3_12B_it_fp4_mixed.safetensors"
+   ],
+   "nodes": [
+    "ComfyUI-Video-Depth-Anything",
+    "ComfyUI-VideoHelperSuite",
+    "ai_studio_nodes"
+   ]
+  },
+  "wan-choreo": {
+   "files": [
+    "diffusion_models/wan2.2_fun_camera_high_noise_14B_fp8_scaled.safetensors",
+    "diffusion_models/wan2.2_fun_camera_low_noise_14B_fp8_scaled.safetensors",
+    "loras/wan2.2_i2v_lightx2v_4steps_lora_v1_high_noise.safetensors",
+    "loras/wan2.2_i2v_lightx2v_4steps_lora_v1_low_noise.safetensors",
+    "text_encoders/umt5_xxl_fp8_e4m3fn_scaled.safetensors",
+    "vae/wan_2.1_vae.safetensors"
+   ],
+   "options": [
+    "text_encoders/qwen3.5_9b_flux3_prompt_upsampler_w4a8.safetensors"
+   ],
+   "nodes": [
+    "ai_studio_nodes"
+   ]
+  }
+ },
+ "nodes": {
+  "comfyui-rmbg": {
+   "registry": "comfyui-rmbg",
+   "version": "3.0.0",
+   "url": "https://cdn.comfy.org/ailab/comfyui-rmbg/3.0.0/node.zip",
+   "sha256": "eb09e23f3775802483c899eb7edf225822fec08fec778b1267540bca788262d9",
+   "requirements": true
+  },
+  "comfyui_essentials": {
+   "registry": "comfyui_essentials",
+   "version": "1.1.0",
+   "url": "https://cdn.comfy.org/matteo/comfyui_essentials/1.1.0/node.tar.gz",
+   "sha256": "ebd99d7463c7be7f13cf8ddd064d6e9bda151199c267b0b9cb27ff634ccb6840",
+   "requirements": true
+  },
+  "ComfyUI-KJNodes": {
+   "git": "https://github.com/kijai/ComfyUI-KJNodes",
+   "commit": "57105374f47d0fbb49c9c3926fb981702e0a4b5c",
+   "requirements": true
+  },
+  "ComfyUI-GGUF": {
+   "registry": "ComfyUI-GGUF",
+   "version": "1.1.10",
+   "url": "https://cdn.comfy.org/city96/ComfyUI-GGUF/1.1.10/node.zip",
+   "sha256": "20bf8136b42a970242e0ee7069f0ba70350184da1305c212882fd89534dd328b",
+   "requirements": true
+  },
+  "h3_character_swap": {
+   "git": "https://github.com/akatz-labs/h3-character-swap-tool",
+   "commit": "0670e4fdf95adf2262caa4b81afed2a9c4ae4b7b",
+   "subdir": "worker_nodes/h3_character_swap",
+   "license": "GPL-3.0",
+   "requirements": true
+  },
+  "ComfyUI-LTXVideo": {
+   "git": "https://github.com/Lightricks/ComfyUI-LTXVideo",
+   "commit": "44c8a36b7c31ee00b4271daed11dc2a4aa481140",
+   "requirements": true
+  },
+  "ComfyUI_Nvidia_VFX_Nodes": {
+   "git": "https://github.com/Comfy-Org/ComfyUI_Nvidia_VFX_Nodes",
+   "commit": "38d790ded00650681fa3645362efe28c8560cf40",
+   "requirements": true,
+   "optionnel": "SDK NVIDIA propriétaire : seulement pour les trois outils RTX, retirés des menus. Installé avec « nodes nvidia »."
+  },
+  "ComfyUI-VideoHelperSuite": {
+   "git": "https://github.com/Kosinkadink/ComfyUI-VideoHelperSuite",
+   "commit": "4d907bee61e92c2e65af3bd6383a4e4d356126d1",
+   "requirements": true
+  },
+  "comfyui_controlnet_aux": {
+   "registry": "comfyui_controlnet_aux",
+   "version": "1.1.5",
+   "url": "https://cdn.comfy.org/fannovel16/comfyui_controlnet_aux/1.1.5/node.zip",
+   "sha256": "c8b3c719e0dd44aded4c581906a68f0a7b397fc51ad95404a0cdc205ee4f8422",
+   "requirements": true
+  },
+  "ai_studio_nodes": {
+   "local": "comfy_nodes/ai_studio_nodes",
+   "requirements": false
+  },
+  "ComfyUI-Video-Depth-Anything": {
+   "git": "https://github.com/yuvraj108c/ComfyUI-Video-Depth-Anything",
+   "commit": "a0db08e63d1ea571601c45cde4aaee0acdd0544d",
+   "requirements": true
+  }
+ }
+}

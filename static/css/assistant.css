@@ -1,0 +1,87 @@
+/* Panneau ASSISTANT (static/js/assistant.js) — même verre dépoli que le reste de l'app */
+/* Le raton laveur (bouton) : dans le coin, ou la tête qui dépasse en haut à droite de l'encart de prompt */
+.ast-fab { position: fixed; right: 22px; bottom: 18px; z-index: 60; width: 56px; height: 46px; padding: 0; background: none;
+  filter: drop-shadow(0 6px 10px rgba(0, 0, 0, .16)); transition: transform .25s cubic-bezier(.3, 1.4, .5, 1); }
+.ast-fab.on-composer { position: absolute; right: 34px; bottom: auto; top: -36px; z-index: 1; filter: none; }
+.ast-fab:hover, .ast-fab:focus-visible { transform: translateY(-4px) rotate(-3deg); }
+.ast-fab:active { transform: translateY(-1px) scale(.97); }
+.ast-fab:focus-visible { outline: 2px solid var(--ink); outline-offset: 4px; border-radius: 12px; }
+.rac { display: block; width: 100%; height: 100%; overflow: visible; }
+.rac-fur { fill: #a7a29a; }
+.rac-mask { fill: var(--ink); }
+.rac-snout { fill: #f6f4ef; }
+.rac-eyes circle { fill: #fff; }
+.rac-eyes { transform-origin: 32px 29px; animation: rac-blink 6s infinite; }
+@keyframes rac-blink { 0%, 94%, 100% { transform: scaleY(1); } 96% { transform: scaleY(.1); } }
+.ast-fab.is-busy .rac { animation: rac-think 1.1s ease-in-out infinite; }
+@keyframes rac-think { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-3px); } }
+@media (prefers-reduced-motion: reduce) { .rac-eyes, .ast-fab.is-busy .rac, .ast-bubble { animation: none; transition: none; } }
+.ast-mini { width: 30px; height: 26px; display: inline-block; margin: -4px -2px -4px -4px; }
+body.ast-open .ast-fab { display: none; }
+.ast-panel { position: fixed; top: calc(var(--header-height) + 10px); right: 14px; bottom: 14px; width: min(440px, calc(100vw - 28px));
+  z-index: calc(var(--z-composer) + 5); display: flex; flex-direction: column; border-radius: var(--r-xl); background: var(--glass-strong);
+  border: 1px solid var(--glass-edge); box-shadow: var(--shadow-2); -webkit-backdrop-filter: var(--blur); backdrop-filter: var(--blur); overflow: hidden; }
+.ast-panel[hidden] { display: none; }
+.ast-head { display: flex; align-items: center; gap: 10px; padding: 14px 16px; border-bottom: 1px solid rgba(0, 0, 0, .06); }
+.ast-head b { font-size: 12px; letter-spacing: .18em; }
+.ast-head small { font-size: 10px; opacity: .5; }
+.ast-head nav { margin-left: auto; display: flex; gap: 4px; }
+.ast-head nav button { font-size: 10px; letter-spacing: .12em; padding: 6px 10px; border-radius: var(--r-pill); opacity: .55; }
+.ast-head nav button.is-on { background: var(--ink); color: #fff; opacity: 1; }
+.ast-x { font-size: 13px; padding: 4px 8px; opacity: .6; }
+.ast-chat, .ast-mem { flex: 1; display: flex; flex-direction: column; min-height: 0; }
+.ast-chat[hidden], .ast-mem[hidden] { display: none; }
+.ast-log { flex: 1; overflow-y: auto; padding: 14px 16px; display: flex; flex-direction: column; gap: 10px; }
+.ast-empty, .ast-hint { font-size: 12px; line-height: 1.5; opacity: .6; padding: 6px 2px; }
+.ast-msg { font-size: 13px; line-height: 1.5; padding: 10px 12px; border-radius: var(--r-md); max-width: 92%; }
+.ast-msg.me { align-self: flex-end; background: var(--ink); color: #fff; }
+.ast-msg.bot { align-self: flex-start; background: rgba(255, 255, 255, .75); border: 1px solid rgba(0, 0, 0, .05); }
+.ast-msg.is-wait { opacity: .6; font-style: italic; }
+.ast-trace { display: block; margin-top: 6px; font-size: 10px; opacity: .45; }
+.ast-prop { margin-top: 10px; padding: 10px; border-radius: var(--r-sm); border: 1.5px dashed var(--ink); background: #fff; }
+.ast-prop.is-done { border-style: solid; opacity: .55; }
+.ast-prop p { margin: 0 0 6px; }
+.ast-act { font-size: 12px; margin: 4px 0; }
+.ast-act details { margin-top: 4px; font-size: 11px; opacity: .8; }
+.ast-act ol { padding-left: 18px; margin: 4px 0; }
+.ast-row { display: flex; justify-content: flex-end; align-items: center; gap: 8px; margin-top: 8px; }
+.ast-row button[type=submit], .ast-row [data-apply] { padding: 7px 14px; border-radius: var(--r-pill); background: var(--ink); color: #fff;
+  font-size: 10px; letter-spacing: .14em; }
+.ast-fb { margin-top: 6px; display: flex; gap: 4px; }
+.ast-fb button { font-size: 13px; padding: 2px 6px; border-radius: var(--r-sm); opacity: .5; }
+.ast-fb button:hover { opacity: 1; background: rgba(0, 0, 0, .05); }
+.ast-fb small { font-size: 10px; opacity: .5; }
+.ast-ctx { font-size: 10px; letter-spacing: .08em; padding: 6px 16px 0; opacity: .55; }
+.ast-form { padding: 10px 16px 14px; }
+.ast-form textarea { width: 100%; resize: none; border-radius: var(--r-md); border: 1px solid rgba(0, 0, 0, .1); padding: 10px 12px;
+  font: inherit; font-size: 13px; background: #fff; }
+.ast-mem { overflow-y: auto; padding: 12px 16px; }
+.ast-add { display: flex; gap: 6px; margin: 6px 0 12px; }
+.ast-add input { flex: 1; min-width: 0; border-radius: var(--r-sm); border: 1px solid rgba(0, 0, 0, .1); padding: 8px 10px; font: inherit; font-size: 12px; }
+.ast-add select { border-radius: var(--r-sm); border: 1px solid rgba(0, 0, 0, .1); font-size: 11px; }
+.ast-add button { font-size: 10px; letter-spacing: .12em; padding: 0 10px; border-radius: var(--r-pill); background: var(--ink); color: #fff; }
+.ast-lesson { position: relative; padding: 8px 30px 8px 10px; margin-bottom: 6px; border-radius: var(--r-sm); background: rgba(255, 255, 255, .7);
+  border-left: 3px solid #999; }
+.ast-lesson.k-preference { border-left-color: var(--ink); }
+.ast-lesson.k-methode { border-left-color: #2f7d4f; }
+.ast-lesson.k-a_eviter { border-left-color: #9b2c1f; }
+.ast-lesson small { font-size: 9px; letter-spacing: .1em; opacity: .5; }
+.ast-lesson p { margin: 3px 0 0; font-size: 12px; line-height: 1.45; cursor: text; }
+.ast-del { position: absolute; top: 6px; right: 6px; font-size: 11px; opacity: .35; }
+.ast-del:hover { opacity: 1; color: #9b2c1f; }
+@media (max-width: 600px) { .ast-panel { top: 10px; } .ast-fab { right: 14px; bottom: 12px; } .ast-fab.on-composer { right: 18px; top: -42px; width: 50px; height: 41px; } }
+.ast-lesson.is-pending { background: #fff; border: 1.5px dashed var(--ink); border-left-width: 3px; }
+.ast-ok { margin-top: 6px; font-size: 9px; letter-spacing: .14em; padding: 4px 10px; border-radius: var(--r-pill); background: var(--ink); color: #fff; }
+/* Panneau ouvert sur un écran large : l'encart de prompt se décale à gauche pour rester entier à côté */
+@media (min-width: 1000px) {
+  .composer { transition: box-shadow .3s ease, left .3s ease, width .3s ease; }
+  body.ast-open .composer { left: calc((100vw - 468px) / 2); width: min(1180px, calc(100vw - 468px - 2 * var(--gutter))); }
+}
+/* Bulle du raton laveur */
+.ast-bubble { position: absolute; right: calc(100% + 8px); bottom: 55%; width: max-content; max-width: 230px; padding: 9px 13px;
+  border-radius: 14px 14px 4px 14px; background: var(--ink); color: #fff; font-size: 11.5px; line-height: 1.4; letter-spacing: .01em;
+  text-align: left; box-shadow: var(--shadow-2); opacity: 0; transform: translateY(4px) scale(.96); transform-origin: right bottom;
+  transition: opacity .25s ease, transform .25s ease; pointer-events: none; }
+.ast-bubble.is-on { opacity: 1; transform: none; pointer-events: auto; }
+.ast-bubble[hidden] { display: none; }
+@media (max-width: 600px) { .ast-bubble { max-width: 170px; font-size: 11px; } }

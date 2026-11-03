@@ -1,0 +1,237 @@
+[
+ {
+  "_name": "Angle 3D",
+  "workspace": "image-edit",
+  "model": "qwen-angles",
+  "method": "angles",
+  "image": "AI-STUDIO/z-image_00002_.png [output]",
+  "slots": [
+   "AI-STUDIO/z-image_00002_.png [output]"
+  ],
+  "angle_h": "90",
+  "angle_v": "0",
+  "angle_zoom": "5"
+ },
+ {
+  "_name": "Relight néons",
+  "workspace": "image-edit",
+  "model": "qwen-relight",
+  "method": "relight",
+  "image": "AI-STUDIO/z-image_00001_.png [output]",
+  "slots": [
+   "AI-STUDIO/z-image_00001_.png [output]"
+  ],
+  "light": "neon"
+ },
+ {
+  "_name": "Lumière de référence",
+  "workspace": "image-edit",
+  "model": "qwen-lightmig",
+  "method": "lightmig",
+  "slots": [
+   "AI-STUDIO/z-image_00001_.png [output]",
+   "AI-STUDIO/qwen-2512_00001_.png [output]"
+  ]
+ },
+ {
+  "_name": "Effet gonflé",
+  "workspace": "image-edit",
+  "model": "qwen-fx",
+  "method": "effect",
+  "image": "AI-STUDIO/z-image_00002_.png [output]",
+  "slots": [
+   "AI-STUDIO/z-image_00002_.png [output]"
+  ],
+  "imgfx": "inflate",
+  "prompt": "the man"
+ },
+ {
+  "_name": "Produit en main",
+  "workspace": "image-edit",
+  "model": "qwen-edit-2511",
+  "method": "recipe",
+  "slots": [
+   "AI-STUDIO/z-image_00001_.png [output]",
+   "AI-STUDIO/qwen-2512_00001_.png [output]"
+  ],
+  "recipe": "hold",
+  "prompt": "a small red door figurine"
+ },
+ {
+  "_name": "Panorama 360",
+  "workspace": "image",
+  "model": "qwen-360",
+  "method": "pano360",
+  "prompt": "the white salt flat at dawn with a red door in the distance"
+ },
+ {
+  "_name": "Étendre image 9:16",
+  "workspace": "image-edit",
+  "model": "qwen-outpaint",
+  "method": "outpaint",
+  "image": "AI-STUDIO/qwen-2512_00001_.png [output]",
+  "slots": [
+   "AI-STUDIO/qwen-2512_00001_.png [output]"
+  ],
+  "aspect": "9:16",
+  "prompt": "vast salt flat and wide sky"
+ },
+ {
+  "_name": "Détourer image",
+  "workspace": "post",
+  "model": "birefnet",
+  "method": "cutout",
+  "image": "AI-STUDIO/z-image_00002_.png [output]",
+  "slots": [
+   "AI-STUDIO/z-image_00002_.png [output]"
+  ]
+ },
+ {
+  "_name": "Multi-angles (4 vues)",
+  "workspace": "image-edit",
+  "model": "qwen-angles",
+  "method": "multiangles",
+  "image": "AI-STUDIO/z-image_00002_.png [output]",
+  "slots": [
+   "AI-STUDIO/z-image_00002_.png [output]"
+  ],
+  "angle_pack": "sheet4"
+ },
+ {
+  "_name": "Cinemagraph",
+  "workspace": "video",
+  "model": "ltx-cinemagraph",
+  "method": "cinemagraph",
+  "slots": [
+   "AI-STUDIO/qwen-2512_00001_.png [output]"
+  ],
+  "prompt": "the salt dust drifts slowly in the wind, the door stays still",
+  "aspect": "16:9",
+  "duration": 5
+ },
+ {
+  "_name": "Prolonger LTX",
+  "workspace": "video",
+  "model": "ltx-extend",
+  "method": "extend",
+  "video": "AI-STUDIO/h3_00001_.mp4 [output]",
+  "slots": [
+   "AI-STUDIO/h3_00001_.mp4 [output]"
+  ],
+  "prompt": "the door opens slowly",
+  "aspect": "16:9",
+  "duration": 5
+ },
+ {
+  "_name": "Avatar parlant",
+  "workspace": "video",
+  "model": "ltx-a2v",
+  "method": "talk",
+  "slots": [
+   "AI-STUDIO/z-image_00001_.png [output]",
+   "AI-STUDIO/test_audio.wav"
+  ],
+  "prompt": "the woman speaks to the camera on the windy beach",
+  "aspect": "4:5",
+  "duration": 5
+ },
+ {
+  "_name": "Effet vidéo colorisation",
+  "workspace": "video-edit",
+  "model": "ltx-vfx",
+  "method": "vfx",
+  "video": "AI-STUDIO/wan-i2v_00001_.mp4 [output]",
+  "slots": [
+   "AI-STUDIO/wan-i2v_00001_.mp4 [output]"
+  ],
+  "vidfx": "daynight"
+ },
+ {
+  "_name": "Upscale RTX",
+  "workspace": "post",
+  "model": "rtx-vsr",
+  "method": "rtx-upscale",
+  "video": "AI-STUDIO/wan-i2v_00001_.mp4 [output]",
+  "slots": [
+   "AI-STUDIO/wan-i2v_00001_.mp4 [output]"
+  ],
+  "factor": 2
+ },
+ {
+  "_name": "Ralenti RTX ×2",
+  "workspace": "post",
+  "model": "rtx-fg",
+  "method": "slowmo",
+  "video": "AI-STUDIO/wan-i2v_00001_.mp4 [output]",
+  "slots": [
+   "AI-STUDIO/wan-i2v_00001_.mp4 [output]"
+  ],
+  "factor": 2
+ },
+ {
+  "_name": "Ralenti FILM ×2",
+  "workspace": "post",
+  "model": "film",
+  "method": "slowmo",
+  "video": "AI-STUDIO/wan-i2v_00001_.mp4 [output]",
+  "slots": [
+   "AI-STUDIO/wan-i2v_00001_.mp4 [output]"
+  ],
+  "factor": 2
+ },
+ {
+  "_name": "SDR vers HDR",
+  "workspace": "post",
+  "model": "rtx-hdr",
+  "method": "hdr",
+  "video": "AI-STUDIO/wan-i2v_00001_.mp4 [output]",
+  "slots": [
+   "AI-STUDIO/wan-i2v_00001_.mp4 [output]"
+  ]
+ },
+ {
+  "_name": "Trajectoires",
+  "workspace": "video",
+  "model": "wan-move",
+  "method": "tracks",
+  "slots": [
+   "AI-STUDIO/z-image_00002_.png [output]"
+  ],
+  "tracks": [
+   [
+    0.5,
+    0.4,
+    0.2,
+    0.4
+   ]
+  ],
+  "prompt": "the man walks to the left"
+ },
+ {
+  "_name": "Storyboard 6 images",
+  "workspace": "video",
+  "model": "wan-storyboard",
+  "method": "storyboard",
+  "slots": [
+   "AI-STUDIO/qwen-2512_00001_.png [output]",
+   "AI-STUDIO/qwen-edit_00001.png [output]",
+   "AI-STUDIO/z-image_00001_.png [output]",
+   "AI-STUDIO/z-image_00002_.png [output]",
+   "AI-STUDIO/qwen-edit_00001.png [output]",
+   "AI-STUDIO/qwen-2512_00001_.png [output]"
+  ],
+  "prompt": "smooth cinematic transition",
+  "aspect": "16:9"
+ },
+ {
+  "_name": "Étendre vidéo 9:16",
+  "workspace": "video-edit",
+  "model": "ltx-reframe",
+  "method": "reframe",
+  "video": "AI-STUDIO/wan-i2v_00001_.mp4 [output]",
+  "slots": [
+   "AI-STUDIO/wan-i2v_00001_.mp4 [output]"
+  ],
+  "aspect": "9:16"
+ }
+]

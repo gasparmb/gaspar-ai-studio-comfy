@@ -1,0 +1,17 @@
+[
+ {"key": "VE_replace", "shot": "04 VIDÉO EDIT", "workspace": "video-edit", "model": "scail-2", "method": "replace", "video": "@V1", "slots": ["@V1", "@B6"], "target": "woman",
+  "prompt": "a woman with a short black bob in a flowing ivory linen dress walks along the edge of the pool"},
+ {"key": "VE_motion", "shot": "04 VIDÉO EDIT", "workspace": "video-edit", "model": "wan-animate", "method": "motion", "video": "@V1", "slots": ["@V1", "@B6"], "prompt": "the woman walks gracefully"},
+ {"key": "VE_vfx", "shot": "04 VIDÉO EDIT", "workspace": "video-edit", "model": "ltx-vfx", "method": "vfx", "video": "@V1", "slots": ["@V1"], "vidfx": "daynight"},
+ {"key": "VE_reframe", "shot": "04 VIDÉO EDIT", "workspace": "video-edit", "model": "ltx-reframe", "method": "reframe", "video": "@V1", "slots": ["@V1"], "aspect": "9:16"},
+ {"key": "P_upimg", "shot": "05 POST-PROD", "workspace": "post", "model": "seedvr2-image", "method": "upscale-image", "image": "@B2", "slots": ["@B2"], "factor": 2},
+ {"key": "P_cutout", "shot": "05 POST-PROD", "workspace": "post", "model": "birefnet", "method": "cutout", "image": "@B3", "slots": ["@B3"]},
+ {"key": "P_layers", "shot": "05 POST-PROD", "workspace": "post", "model": "qwen-layers", "method": "layers", "image": "@B5", "slots": ["@B5"], "nlayers": "3", "prompt": "an amber perfume bottle with a white stone cap on a curved white plaster plinth"},
+ {"key": "P_upvid", "shot": "05 POST-PROD", "workspace": "post", "model": "seedvr2-video", "method": "upscale-video", "video": "@V2", "slots": ["@V2"], "factor": 2},
+ {"key": "P_rtxup", "shot": "05 POST-PROD", "workspace": "post", "model": "rtx-vsr", "method": "rtx-upscale", "video": "@V2", "slots": ["@V2"], "factor": 2},
+ {"key": "P_slowmo", "shot": "05 POST-PROD", "workspace": "post", "model": "rtx-fg", "method": "slowmo", "video": "@V2", "slots": ["@V2"], "factor": 2},
+ {"key": "P_hdr", "shot": "05 POST-PROD", "workspace": "post", "model": "rtx-hdr", "method": "hdr", "video": "@V2", "slots": ["@V2"]},
+ {"key": "P_remove", "shot": "05 POST-PROD", "workspace": "post", "model": "void", "method": "remove", "video": "@V1", "slots": ["@V1"], "target": "woman",
+  "prompt": "an empty round turquoise infinity pool on a white sculptural villa terrace above the Mediterranean sea"},
+ {"key": "P_matte", "shot": "05 POST-PROD", "workspace": "post", "model": "alpha-gen", "method": "matte", "video": "@V1", "slots": ["@V1"]}
+]

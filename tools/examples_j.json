@@ -1,0 +1,4 @@
+[
+ {"key": "V_talk3", "shot": "03 VIDÉO", "workspace": "video", "model": "ltx-a2v", "method": "talk", "first": "@E_angles", "slots": ["@E_angles", "@A_voice"], "aspect": "4:5", "duration": 5,
+  "prompt": "The young woman in the blue hooded down jacket looks into the camera and speaks softly, clear natural lip movement matching the voice, light snow drifts, cinematic film look"}
+]

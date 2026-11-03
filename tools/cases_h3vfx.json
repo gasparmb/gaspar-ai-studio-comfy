@@ -1,0 +1,40 @@
+[
+ {
+  "_name": "H3 VFX Edit standard",
+  "workspace": "video-edit",
+  "model": "h3-vfx",
+  "method": "vfx",
+  "h3_vfx": "std",
+  "seed": 42,
+  "video": "h3cs/01_VOILIER_ROUSSE_source.mp4",
+  "slots": [
+   "h3cs/01_VOILIER_ROUSSE_source.mp4"
+  ],
+  "prompt": "the pages of her book turn into golden butterflies that fly away"
+ },
+ {
+  "_name": "H3 VFX Edit FFP, vidéo tournée",
+  "workspace": "video-edit",
+  "model": "h3-vfx",
+  "method": "vfx",
+  "h3_vfx": "ffp",
+  "seed": 42,
+  "video": "h3cs/rot90_test.mp4",
+  "slots": [
+   "h3cs/rot90_test.mp4"
+  ],
+  "prompt": "vfx_edit: light snow falls over the boat"
+ },
+ {
+  "_name": "H3 VFX Edit, source à 30 i/s",
+  "workspace": "video-edit",
+  "model": "h3-vfx",
+  "method": "vfx",
+  "seed": 42,
+  "video": "h3cs/test_30fps.mp4",
+  "slots": [
+   "h3cs/test_30fps.mp4"
+  ],
+  "prompt": "light snow falls over the boat <Picture 1>"
+ }
+]

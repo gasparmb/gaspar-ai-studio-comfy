@@ -1,0 +1,4701 @@
+{
+  "models": [
+    {
+      "id": "z-image-turbo",
+      "label": "Z-Image Turbo",
+      "kind": "image",
+      "methods": [
+        "text",
+        "personnage",
+        "inpaint"
+      ],
+      "template": "image_z_image_turbo.api.json",
+      "requires": [
+        "diffusion_models/z_image_turbo_bf16.safetensors"
+      ],
+      "license": "ok",
+      "license_note": "Apache 2.0 — usage commercial libre",
+      "speed": "≈ 10 s",
+      "blurb": "Photoréalisme rapide, idéal pour chercher.",
+      "workspaces": [
+        "image",
+        "image-edit"
+      ],
+      "dead_chips": {
+        "inpaint": [
+          "quality"
+        ],
+        "text": [
+          "quality"
+        ]
+      }
+    },
+    {
+      "id": "flux3-klein",
+      "label": "FLUX.3 Klein",
+      "kind": "image",
+      "methods": [
+        "text",
+        "personnage",
+        "refs",
+        "instruct",
+        "charsheet",
+        "objsheet",
+        "inpaint",
+        "lightmig"
+      ],
+      "template": "image_flux3_klein_distilled_t2i.api.json",
+      "template_refs": "image_flux3_klein_distilled_image_edit.api.json",
+      "requires": [
+        "diffusion_models/flux3_image_klein_sd_int8_convrot.safetensors"
+      ],
+      "license": "threshold",
+      "license_note": "FLUX Kommunity — gratuit sous 5 M$ de CA annuel",
+      "speed": "≈ 15 s",
+      "blurb": "Dernier modèle BFL (oct. 2026), texte et édition par référence.",
+      "workspaces": [
+        "image",
+        "image-edit"
+      ],
+      "dead_chips": {
+        "refs": [
+          "aspect",
+          "quality"
+        ],
+        "instruct": [
+          "quality"
+        ],
+        "inpaint": [
+          "quality"
+        ],
+        "lightmig": [
+          "quality"
+        ]
+      }
+    },
+    {
+      "id": "qwen-2512",
+      "label": "Qwen-Image 2512",
+      "kind": "image",
+      "methods": [
+        "text",
+        "personnage"
+      ],
+      "template": "image_qwen_Image_2512.api.json",
+      "requires": [
+        "diffusion_models/qwen_image_2512_fp8_e4m3fn.safetensors"
+      ],
+      "license": "ok",
+      "license_note": "Apache 2.0 — usage commercial libre",
+      "speed": "≈ 40 s (4 pas)",
+      "blurb": "Très bon en typographie et compositions complexes.",
+      "workspaces": [
+        "image"
+      ]
+    },
+    {
+      "id": "qwen-edit-2511",
+      "label": "Qwen-Image-Edit 2511",
+      "kind": "image",
+      "methods": [
+        "refs",
+        "instruct",
+        "recipe",
+        "charsheet",
+        "objsheet",
+        "inpaint",
+        "lightmig",
+        "angles"
+      ],
+      "max_refs": 3,
+      "template": "image_qwen_image_edit_2511_int8.api.json",
+      "requires": [
+        "diffusion_models/qwen_image_edit_2511_int8_convrot.safetensors"
+      ],
+      "license": "ok",
+      "license_note": "Apache 2.0 — usage commercial libre",
+      "speed": "≈ 30 s (4 pas)",
+      "blurb": "Édition et composition à partir de 1 à 3 références.",
+      "workspaces": [
+        "image",
+        "image-edit"
+      ],
+      "dead_chips": {
+        "refs": [
+          "aspect"
+        ]
+      }
+    },
+    {
+      "id": "qwen-inpaint",
+      "label": "Qwen-Image Inpaint",
+      "kind": "image",
+      "workspaces": [
+        "image-edit"
+      ],
+      "methods": [
+        "inpaint"
+      ],
+      "template": "image_qwen_image_instantx_inpainting_controlnet.api.json",
+      "requires": [
+        "diffusion_models/qwen_image_2512_fp8_e4m3fn.safetensors",
+        "controlnet/Qwen-Image-InstantX-ControlNet-Inpainting.safetensors"
+      ],
+      "license": "ok",
+      "license_note": "Apache 2.0 — usage commercial libre",
+      "speed": "≈ 1 min",
+      "blurb": "Repeint uniquement la zone masquée, le reste de l'image reste intact."
+    },
+    {
+      "id": "ltx-2.5",
+      "label": "LTX-2.5",
+      "kind": "video",
+      "methods": [
+        "text",
+        "first",
+        "firstlast"
+      ],
+      "template": "video_ltx2_5_t2v.api.json",
+      "template_first": "video_ltx2_5_i2v.api.json",
+      "template_firstlast": "video_ltx2_5_flf2v.api.json",
+      "requires": [
+        "diffusion_models/ltx-2.5-22b-distilled-transformer-comfy-int8-convrot.safetensors"
+      ],
+      "license": "threshold",
+      "license_note": "LTX-2 Community — gratuit sous 10 M$ de CA annuel",
+      "speed": "≈ 1–3 min",
+      "durations": [
+        3,
+        5,
+        8,
+        10
+      ],
+      "audio": true,
+      "blurb": "Vidéo + son, 1re image ou 1re/dernière image.",
+      "workspaces": [
+        "video"
+      ],
+      "dead_chips": {
+        "text": [
+          "quality"
+        ],
+        "first": [
+          "quality"
+        ],
+        "firstlast": [
+          "quality"
+        ]
+      }
+    },
+    {
+      "id": "wan-2.2",
+      "label": "Wan 2.2 14B",
+      "kind": "video",
+      "methods": [
+        "first"
+      ],
+      "template_first": "video_wan2_2_14B_i2v.api.json",
+      "requires": [
+        "diffusion_models/wan2.2_i2v_high_noise_14B_fp8_scaled.safetensors"
+      ],
+      "license": "ok",
+      "license_note": "Apache 2.0 — usage commercial libre",
+      "speed": "≈ 2–4 min (4 pas)",
+      "durations": [
+        3,
+        5
+      ],
+      "blurb": "Animation d'image robuste, mouvements physiques.",
+      "workspaces": [
+        "video"
+      ],
+      "dead_chips": {
+        "first": [
+          "enhance"
+        ]
+      }
+    },
+    {
+      "id": "minimax-h3",
+      "label": "MiniMax H3",
+      "kind": "video",
+      "workspaces": [
+        "video"
+      ],
+      "methods": [
+        "text",
+        "first",
+        "refs"
+      ],
+      "max_refs": 2,
+      "template": "video_minimax_h3_t2v.api.json",
+      "template_first": "video_minimax_h3_i2v.api.json",
+      "template_refs": "video_minimax_h3_r2v.api.json",
+      "requires": [
+        "diffusion_models/minimax_h3_fl2va_pruned_int8_convrot.safetensors",
+        "text_encoders/qwen3vl_32b_minimax_h3_nvfp4_awq.safetensors"
+      ],
+      "license": "eu",
+      "license_note": "Licence MiniMax H3 — UE exclue : pas d'usage commercial en France sans accord MiniMax",
+      "speed": "≈ 3–6 min",
+      "durations": [
+        3,
+        5,
+        8
+      ],
+      "audio": true,
+      "blurb": "La meilleure qualité de mouvement et de son, mais licence restrictive.",
+      "dead_chips": {
+        "text": [
+          "enhance"
+        ],
+        "first": [
+          "enhance"
+        ],
+        "refs": [
+          "enhance"
+        ]
+      }
+    },
+    {
+      "id": "h3-swap",
+      "label": "MiniMax H3 Character Swap",
+      "kind": "video",
+      "workspaces": [
+        "video-edit"
+      ],
+      "methods": [
+        "replace"
+      ],
+      "template": "video_h3_character_swap.api.json",
+      "requires": [
+        "diffusion_models/minimax_h3_ref2va_pruned_int8_convrot.safetensors",
+        "text_encoders/qwen3vl_32b_minimax_h3_nvfp4_awq.safetensors",
+        "loras/h3_character_swap_v1.5.safetensors",
+        "loras/minimax_h3_fl2v_turbo_8step_v1.0_768p_comfyui_bf16.safetensors",
+        "checkpoints/sam3.1_multiplex_fp16.safetensors"
+      ],
+      "license": "eu",
+      "license_note": "Licence MiniMax H3 — UE exclue : pas d'usage commercial en France sans accord MiniMax",
+      "speed": "≈ 3,5 min pour 5 s, ≈ 10 min pour 15 s",
+      "audio": true,
+      "blurb": "Le workflow d'OpenJutsu (Akatz Labs) : le personnage de l'image remplace la personne la plus grande du plan, tenue comprise ; jeu, décor, lumière et son d'origine gardés. 768p, un seul plan, les 15 premières secondes au plus.",
+      "dead_chips": {
+        "replace": [
+          "aspect"
+        ]
+      }
+    },
+    {
+      "id": "scail-2",
+      "label": "SCAIL-2",
+      "kind": "video",
+      "workspaces": [
+        "video-edit"
+      ],
+      "methods": [
+        "replace"
+      ],
+      "template": "video_wan21_scail2_character_replacement_int8.api.json",
+      "requires": [
+        "diffusion_models/wan2.1_14B_SCAIL_2_int8_convrot.safetensors",
+        "loras/wan2.1_SCAIL_2_DPO_lora_bf16.safetensors",
+        "loras/lightx2v_I2V_14B_480p_cfg_step_distill_rank64_bf16.safetensors"
+      ],
+      "license": "ok",
+      "license_note": "MIT (Zhipu AI) — usage commercial libre",
+      "speed": "≈ 5–10 min",
+      "blurb": "Remplace le personnage repéré par SAM3 par celui du character sheet, en gardant la scène et le mouvement."
+    },
+    {
+      "id": "void",
+      "label": "VOID",
+      "kind": "video",
+      "workspaces": [
+        "post"
+      ],
+      "methods": [
+        "remove"
+      ],
+      "template": "utility_void_video_inpainting.api.json",
+      "requires": [
+        "diffusion_models/void_pass1.safetensors",
+        "diffusion_models/void_pass2.safetensors",
+        "text_encoders/t5xxl_fp16.safetensors",
+        "vae/cogvideox_vae.safetensors"
+      ],
+      "license": "ok",
+      "license_note": "Apache 2.0 (Netflix) — usage commercial libre",
+      "speed": "≈ 5–10 min",
+      "durations": [
+        3,
+        5
+      ],
+      "blurb": "Retire un élément détecté par SAM3 et reconstruit le fond (672×384, à upscaler).",
+      "dead_chips": {
+        "remove": [
+          "factor"
+        ]
+      }
+    },
+    {
+      "id": "alpha-gen",
+      "label": "LTX Alpha Gen",
+      "kind": "video",
+      "workspaces": [
+        "post"
+      ],
+      "methods": [
+        "matte"
+      ],
+      "template": "alpha_gen_ltx25.api.json",
+      "requires": [
+        "loras/ltx-2.5-22b-ic-lora-alpha-gen-0.9.safetensors"
+      ],
+      "license": "threshold",
+      "license_note": "LTX-2 Community — gratuit sous 10 M$ de CA annuel",
+      "speed": "≈ 1–5 min",
+      "blurb": "Matte noir et blanc du sujet principal, cheveux et flous compris.",
+      "dead_chips": {
+        "matte": [
+          "factor",
+          "duration",
+          "seed"
+        ]
+      }
+    },
+    {
+      "id": "seedvr2-image",
+      "label": "SeedVR2 7B",
+      "kind": "image",
+      "workspaces": [
+        "post"
+      ],
+      "methods": [
+        "upscale-image"
+      ],
+      "template": "utility_seedvr2_7b_int8_upscale_image.api.json",
+      "requires": [
+        "diffusion_models/seedvr2_7b_int8_convrot.safetensors"
+      ],
+      "license": "ok",
+      "license_note": "Apache 2.0 — usage commercial libre",
+      "speed": "≈ 1–2 min",
+      "blurb": "Restauration et agrandissement d'image."
+    },
+    {
+      "id": "seedvr2-video",
+      "label": "SeedVR2 3B",
+      "kind": "video",
+      "workspaces": [
+        "post"
+      ],
+      "methods": [
+        "upscale-video"
+      ],
+      "template": "utility_seedvr2_3b_int8_upscale_video.api.json",
+      "requires": [
+        "diffusion_models/seedvr2_3b_int8_convrot.safetensors"
+      ],
+      "license": "ok",
+      "license_note": "Apache 2.0 — usage commercial libre",
+      "speed": "≈ 3–10 min",
+      "blurb": "Upscale vidéo cohérent dans le temps.",
+      "dead_chips": {
+        "upscale-video": [
+          "duration"
+        ]
+      }
+    },
+    {
+      "id": "qwen-360",
+      "label": "Qwen 360°",
+      "kind": "image",
+      "workspaces": [
+        "image"
+      ],
+      "methods": [
+        "pano360"
+      ],
+      "template": "template_qwen_Image_2512_360_lora.api.json",
+      "requires": [
+        "loras/qwen-360-diffusion-2512-int8-bf16-v2.safetensors"
+      ],
+      "license_note": "MIT (LoRA) + Apache (Qwen 2512) — usage commercial libre",
+      "speed": "≈ 1 min",
+      "blurb": "Panorama équirectangulaire 2048×1024.",
+      "license": "ok"
+    },
+    {
+      "id": "qwen-outpaint",
+      "label": "Qwen Outpaint",
+      "kind": "image",
+      "workspaces": [
+        "image-edit"
+      ],
+      "methods": [
+        "outpaint"
+      ],
+      "template": "image_qwen_image_instantx_inpainting_controlnet.api.json",
+      "requires": [
+        "controlnet/Qwen-Image-InstantX-ControlNet-Inpainting.safetensors"
+      ],
+      "speed": "≈ 1 min",
+      "blurb": "Agrandit le cadre vers le format choisi.",
+      "license": "ok",
+      "license_note": "Apache 2.0 — usage commercial libre",
+      "dead_chips": {
+        "outpaint": [
+          "quality"
+        ]
+      }
+    },
+    {
+      "id": "qwen-edit-outpaint",
+      "label": "Qwen-Edit Outpaint",
+      "kind": "image",
+      "workspaces": [
+        "image-edit"
+      ],
+      "methods": [
+        "outpaint"
+      ],
+      "requires": [
+        "diffusion_models/qwen_image_edit_2511_int8_convrot.safetensors"
+      ],
+      "speed": "≈ 30 s",
+      "license": "ok",
+      "license_note": "Apache 2.0 — usage commercial libre",
+      "blurb": "Autre méthode : Qwen-Edit remplit les bords, l'original est recollé au centre. À comparer avec Qwen Outpaint."
+    },
+    {
+      "id": "qwen-angles",
+      "label": "Qwen Multi-Angles",
+      "kind": "image",
+      "workspaces": [
+        "image-edit"
+      ],
+      "methods": [
+        "angles",
+        "multiangles"
+      ],
+      "template": "template_qwen_multiangle.app.api.json",
+      "requires": [
+        "loras/qwen-image-edit-2511-multiple-angles-lora.safetensors"
+      ],
+      "speed": "≈ 30 s / vue",
+      "blurb": "LoRA 96 points de vue sur Qwen-Edit 2511.",
+      "license": "ok",
+      "license_note": "Apache 2.0 — usage commercial libre"
+    },
+    {
+      "id": "qwen-relight",
+      "label": "Qwen Relight",
+      "kind": "image",
+      "workspaces": [
+        "image-edit"
+      ],
+      "methods": [
+        "relight"
+      ],
+      "template": "image_qwen_image_edit_2509_relight.api.json",
+      "requires": [
+        "loras/Qwen-Image-Edit-2509-Relight.safetensors"
+      ],
+      "speed": "≈ 30 s",
+      "blurb": "Rééclaire l'image en gardant le contenu.",
+      "license": "ok",
+      "license_note": "Apache 2.0 — usage commercial libre"
+    },
+    {
+      "id": "qwen-lightmig",
+      "label": "Qwen Light Migration (LoRA)",
+      "kind": "image",
+      "workspaces": [],
+      "methods": [
+        "lightmig"
+      ],
+      "template": "templates-portrait_light_migration.api.json",
+      "requires": [
+        "loras/Qwen-Image-Edit-2509-Light-Migration.safetensors"
+      ],
+      "license": "nc",
+      "license_note": "LoRA sans licence déclarée — à éviter en production client",
+      "speed": "≈ 40 s",
+      "blurb": "LoRA communautaire : artefacts (cercle) et recopie du décor constatés le 17/10. Préférer Qwen-Edit 2511."
+    },
+    {
+      "id": "qwen-fx",
+      "label": "Qwen Effets",
+      "kind": "image",
+      "workspaces": [
+        "image-edit"
+      ],
+      "methods": [
+        "effect"
+      ],
+      "template": "image-qwen_image_edit_2511_lora_inflation.api.json",
+      "requires": [
+        "loras/Qwen_Image_Edit_2511-SYSTMS_INFL8.safetensors"
+      ],
+      "speed": "≈ 2 min",
+      "blurb": "Effets stylisés par LoRA (gonflé…).",
+      "license": "ok",
+      "license_note": "Apache 2.0 — usage commercial libre"
+    },
+    {
+      "id": "ltx-a2v",
+      "label": "LTX-2.5 Audio → Vidéo",
+      "kind": "video",
+      "workspaces": [
+        "video"
+      ],
+      "methods": [
+        "talk"
+      ],
+      "template": "LTX-2.5_A2V_Two_Stage_Distilled.api.json",
+      "requires": [
+        "diffusion_models/ltx-2.5-22b-distilled-transformer-comfy-int8-convrot.safetensors"
+      ],
+      "license": "threshold",
+      "license_note": "LTX-2 Community — gratuit sous 10 M$ de CA annuel",
+      "speed": "≈ 3–5 min",
+      "durations": [
+        3,
+        5,
+        8,
+        10
+      ],
+      "blurb": "La vidéo suit l'audio fourni (voix, musique).",
+      "dead_chips": {
+        "talk": [
+          "aspect"
+        ]
+      }
+    },
+    {
+      "id": "wan-storyboard",
+      "label": "Wan 2.2 Storyboard",
+      "kind": "video",
+      "workspaces": [
+        "video"
+      ],
+      "methods": [
+        "storyboard"
+      ],
+      "template": "templates-6-key-frames.api.json",
+      "requires": [
+        "diffusion_models/wan2.2_i2v_high_noise_14B_fp8_scaled.safetensors"
+      ],
+      "speed": "≈ 5–8 min",
+      "blurb": "Enchaîne 5 transitions entre 6 images.",
+      "license": "ok",
+      "license_note": "Apache 2.0 — usage commercial libre"
+    },
+    {
+      "id": "wan-camera",
+      "label": "Wan 2.2 Fun Camera",
+      "kind": "video",
+      "workspaces": [
+        "video"
+      ],
+      "methods": [
+        "camera"
+      ],
+      "template": "video_wan2_2_14B_fun_camera.api.json",
+      "requires": [
+        "diffusion_models/wan2.2_fun_camera_high_noise_14B_fp8_scaled.safetensors",
+        "diffusion_models/wan2.2_fun_camera_low_noise_14B_fp8_scaled.safetensors"
+      ],
+      "speed": "≈ 3–6 min",
+      "blurb": "Pan, zoom, rotation exacts.",
+      "license": "ok",
+      "license_note": "Apache 2.0 — usage commercial libre"
+    },
+    {
+      "id": "wan-move",
+      "label": "Wan-Move",
+      "kind": "video",
+      "workspaces": [
+        "video"
+      ],
+      "methods": [
+        "tracks"
+      ],
+      "template": "video_wanmove_480p.api.json",
+      "requires": [
+        "diffusion_models/Wan21-WanMove_fp8_scaled_e4m3fn_KJ.safetensors"
+      ],
+      "speed": "≈ 3–5 min",
+      "blurb": "Les éléments suivent les flèches tracées.",
+      "license": "ok",
+      "license_note": "Apache 2.0 — usage commercial libre"
+    },
+    {
+      "id": "ltx-cinemagraph",
+      "label": "LTX-2.5 Cinemagraph",
+      "kind": "video",
+      "workspaces": [
+        "video"
+      ],
+      "methods": [
+        "cinemagraph"
+      ],
+      "template": "video_ltx2_5_i2v.api.json",
+      "requires": [
+        "loras/ltx-2.5-22b-lora-cinemagraph-0.9.safetensors"
+      ],
+      "license": "threshold",
+      "license_note": "LTX-2 Community — gratuit sous 10 M$ de CA annuel",
+      "speed": "≈ 1–3 min",
+      "durations": [
+        3,
+        5,
+        8
+      ],
+      "blurb": "Boucle partiellement animée."
+    },
+    {
+      "id": "ltx-extend",
+      "label": "LTX-2.5 Prolonger",
+      "kind": "video",
+      "workspaces": [
+        "post"
+      ],
+      "methods": [
+        "extend"
+      ],
+      "template": "video_ltx2_5_i2v.api.json",
+      "requires": [
+        "diffusion_models/ltx-2.5-22b-distilled-transformer-comfy-int8-convrot.safetensors"
+      ],
+      "license": "threshold",
+      "license_note": "LTX-2 Community — gratuit sous 10 M$ de CA annuel",
+      "speed": "≈ 1–3 min",
+      "durations": [
+        3,
+        5,
+        8,
+        10
+      ],
+      "blurb": "Repart de la dernière image."
+    },
+    {
+      "id": "h3-extend",
+      "label": "MiniMax H3 Prolonger",
+      "kind": "video",
+      "workspaces": [
+        "post"
+      ],
+      "methods": [
+        "extend"
+      ],
+      "template": "video_minimax_h3_i2v_continuation.api.json",
+      "requires": [
+        "diffusion_models/minimax_h3_fl2va_pruned_int8_convrot.safetensors"
+      ],
+      "license": "eu",
+      "license_note": "Licence MiniMax H3 — UE exclue : pas d'usage commercial en France sans accord MiniMax",
+      "speed": "≈ 3–6 min",
+      "durations": [
+        3,
+        5,
+        8
+      ],
+      "blurb": "Continuation H3 depuis la dernière image."
+    },
+    {
+      "id": "wan-animate",
+      "label": "Wan Animate 2",
+      "kind": "video",
+      "workspaces": [
+        "video-edit"
+      ],
+      "methods": [
+        "motion"
+      ],
+      "template": "video_wan_animate2_distilled.api.json",
+      "requires": [
+        "diffusion_models/wan_animate_2_distill_int8_convrot.safetensors"
+      ],
+      "speed": "≈ 4–8 min",
+      "blurb": "Transfert de mouvement d'une vidéo vers ton personnage.",
+      "license": "ok",
+      "license_note": "Apache 2.0 — usage commercial libre"
+    },
+    {
+      "id": "ltx-vfx",
+      "label": "LTX-2.5 IC-LoRA",
+      "kind": "video",
+      "workspaces": [
+        "video-edit"
+      ],
+      "methods": [
+        "vfx"
+      ],
+      "template": "alpha_gen_ltx25.api.json",
+      "requires": [
+        "loras/ltx-2.5-22b-ic-lora-day-to-night-0.9.safetensors"
+      ],
+      "license": "threshold",
+      "license_note": "LTX-2 Community — gratuit sous 10 M$ de CA annuel",
+      "speed": "≈ 1–4 min",
+      "blurb": "Effets vidéo → vidéo (jour/nuit, couleur, netteté…).",
+      "dead_chips": {
+        "vfx": [
+          "seed",
+          "h3_vfx"
+        ]
+      }
+    },
+    {
+      "id": "h3-vfx",
+      "label": "MiniMax H3 VFX Edit",
+      "kind": "video",
+      "workspaces": [
+        "video-edit"
+      ],
+      "methods": [
+        "vfx"
+      ],
+      "requires": [
+        "diffusion_models/minimax_h3_ref2va_pruned_int8_convrot.safetensors",
+        "text_encoders/qwen3vl_32b_minimax_h3_nvfp4_awq.safetensors",
+        "loras/minimax_h3_vfx_edit_v1.0_r128.safetensors",
+        "loras/minimax_h3_vfx_edit_v1.0_r128_ffp.safetensors",
+        "loras/minimax_h3_fl2v_turbo_8step_v1.0_768p_comfyui_bf16.safetensors"
+      ],
+      "license": "eu",
+      "license_note": "Licence MiniMax H3 — UE exclue ; LoRA VFX Edit d'Alissonerdx sans licence précisée (recherche)",
+      "speed": "≈ 2 min pour 5 s",
+      "audio": true,
+      "blurb": "Décris l'effet à ajouter (en anglais de préférence) : le reste du plan, le jeu et le son restent. 0,7 Mpx au format de la vidéo, 5 s au plus. VERSION › FFP : entraînée plus haut, parfois plus propre, peut changer la lumière.",
+      "dead_chips": {
+        "vfx": [
+          "vidfx"
+        ]
+      }
+    },
+    {
+      "id": "ltx-reframe",
+      "label": "LTX Outpaint",
+      "kind": "video",
+      "workspaces": [
+        "post"
+      ],
+      "methods": [
+        "reframe"
+      ],
+      "template": "LTX-2.5_ICLoRA_Outpaint_Two_Stage_Distilled.api.json",
+      "requires": [
+        "loras/ltx-2.3-22b-ic-lora-in-outpainting-0.9.safetensors"
+      ],
+      "license": "threshold",
+      "license_note": "LTX-2 Community — gratuit sous 10 M$ de CA annuel",
+      "speed": "≈ 5–10 min",
+      "blurb": "Étend les bords de la vidéo."
+    },
+    {
+      "id": "rtx-vsr",
+      "label": "NVIDIA RTX Video SR",
+      "kind": "video",
+      "workspaces": [],
+      "methods": [
+        "rtx-upscale"
+      ],
+      "template": "rtx_video_upscale.api.json",
+      "requires": [],
+      "license_note": "NVIDIA RTX (SDK propriétaire, gratuit) — usage commercial",
+      "speed": "≈ quelques s",
+      "blurb": "Upscale ×2 à ×4 très rapide.",
+      "license": "ok"
+    },
+    {
+      "id": "rtx-fg",
+      "label": "NVIDIA RTX Frame Gen",
+      "kind": "video",
+      "workspaces": [],
+      "methods": [
+        "slowmo"
+      ],
+      "template": "rtx_video_frame_generation.api.json",
+      "requires": [],
+      "license_note": "NVIDIA RTX (SDK propriétaire, gratuit) — usage commercial",
+      "speed": "≈ quelques s",
+      "blurb": "Images intermédiaires par le GPU.",
+      "license": "ok"
+    },
+    {
+      "id": "film",
+      "label": "FILM",
+      "kind": "video",
+      "workspaces": [
+        "post"
+      ],
+      "methods": [
+        "slowmo"
+      ],
+      "template": "utility_video_frame_interpolation.api.json",
+      "requires": [
+        "frame_interpolation/film_net_fp16.safetensors"
+      ],
+      "speed": "≈ 30 s",
+      "blurb": "Interpolation FILM (Google), plus douce sur les grands mouvements.",
+      "license": "ok",
+      "license_note": "Apache 2.0 — usage commercial libre"
+    },
+    {
+      "id": "rtx-hdr",
+      "label": "NVIDIA RTX Video HDR",
+      "kind": "video",
+      "workspaces": [],
+      "methods": [
+        "hdr"
+      ],
+      "template": "rtx_video_hdr.api.json",
+      "requires": [],
+      "license_note": "NVIDIA RTX (SDK propriétaire, gratuit) — usage commercial",
+      "speed": "≈ quelques s",
+      "blurb": "SDR → HDR BT.2020.",
+      "license": "ok"
+    },
+    {
+      "id": "birefnet",
+      "label": "BiRefNet",
+      "kind": "image",
+      "workspaces": [
+        "post"
+      ],
+      "methods": [
+        "cutout"
+      ],
+      "template": "utility_birefnet_remove_background.api.json",
+      "requires": [
+        "background_removal/birefnet.safetensors"
+      ],
+      "license_note": "MIT — usage commercial libre",
+      "speed": "≈ 2 s",
+      "blurb": "Détourage d'image précis.",
+      "license": "ok"
+    },
+    {
+      "id": "qwen-layers",
+      "label": "Qwen-Image-Layered",
+      "kind": "image",
+      "workspaces": [
+        "post"
+      ],
+      "methods": [
+        "layers"
+      ],
+      "template": "image_qwen_image_layered.api.json",
+      "requires": [
+        "diffusion_models/qwen_image_layered_fp8mixed.safetensors",
+        "vae/qwen_image_layered_vae.safetensors"
+      ],
+      "speed": "≈ 1–2 min",
+      "blurb": "Calques RGBA séparés, pratiques pour Flame.",
+      "license": "ok",
+      "license_note": "Apache 2.0 — usage commercial libre"
+    },
+    {
+      "id": "qwen-2.1",
+      "label": "Qwen-Image 2.1",
+      "kind": "image",
+      "methods": [
+        "text",
+        "personnage",
+        "refs",
+        "instruct",
+        "charsheet",
+        "objsheet"
+      ],
+      "max_refs": 3,
+      "requires": [
+        "diffusion_models/qwen_image_2.1_bf16.safetensors",
+        "text_encoders/qwen3vl_8b_bf16.safetensors",
+        "vae/qwen_image_2.1_vae_bf16.safetensors",
+        "loras/qwen_image_2.1_turbo_lora_avg_rank_178_bf16.safetensors"
+      ],
+      "license": "nc",
+      "license_note": "Licence recherche Qwen (qwen-research) — usage commercial interdit sans accord d'Alibaba",
+      "speed": "≈ 1 min rapide · ≈ 5 min qualité (2K)",
+      "blurb": "Le plus fidèle en retouche, 2K natif. Licence recherche : pas pour un livrable client.",
+      "workspaces": [
+        "image",
+        "image-edit"
+      ],
+      "dead_chips": {
+        "refs": [
+          "aspect"
+        ]
+      }
+    },
+    {
+      "id": "light-grade",
+      "label": "Étalonnage (couleur seule)",
+      "kind": "image",
+      "workspaces": [
+        "image-edit"
+      ],
+      "methods": [
+        "lightmig"
+      ],
+      "requires": [],
+      "speed": "≈ 1 s",
+      "license": "ok",
+      "license_note": "Aucun modèle génératif : transfert de couleurs (ColorMatch, KJNodes)",
+      "blurb": "Reprend les couleurs et le contraste de la 2e image, sans rien régénérer. La direction de la lumière ne change pas.",
+      "dead_chips": {
+        "lightmig": [
+          "quality",
+          "seed"
+        ]
+      }
+    },
+    {
+      "id": "ltx-union",
+      "label": "LTX-2.3 Union Control",
+      "kind": "video",
+      "workspaces": [
+        "video-edit"
+      ],
+      "methods": [
+        "tenue",
+        "objet",
+        "decor",
+        "genjutsu"
+      ],
+      "requires": [
+        "checkpoints/ltx-2.3-22b-distilled-fp8.safetensors",
+        "loras/ltx-2.3-22b-ic-lora-union-control-ref0.5.safetensors",
+        "diffusion_models/qwen_image_edit_2511_int8_convrot.safetensors"
+      ],
+      "license": "threshold",
+      "license_note": "LTX-2 Community — gratuit sous 10 M$ de CA annuel ; Qwen-Edit 2511 Apache 2.0",
+      "speed": "≈ 1,5 min (qualité ≈ 5 min)",
+      "blurb": "La 1re image retouchée devient la vraie 1re image du plan ; la vidéo d'origine guide le mouvement. 1280×704 avec le son ; MODE QUALITÉ : 2 passes, 1920×1024.",
+      "dead_chips": {}
+    },
+    {
+      "id": "wan-fun-control",
+      "label": "Wan 2.2 Fun Control",
+      "kind": "video",
+      "workspaces": [],
+      "methods": [
+        "genjutsu"
+      ],
+      "template": "video_wan2_2_14B_fun_camera.api.json",
+      "requires": [
+        "diffusion_models/wan2.2_fun_control_high_noise_14B_fp8_scaled.safetensors",
+        "diffusion_models/wan2.2_fun_control_low_noise_14B_fp8_scaled.safetensors",
+        "diffusion_models/qwen_image_edit_2511_int8_convrot.safetensors"
+      ],
+      "license": "ok",
+      "license_note": "Apache 2.0 (Wan 2.2 Fun, Qwen-Edit 2511) — usage commercial libre",
+      "speed": "≈ 3–6 min (qualité ≈ 15 min)",
+      "blurb": "1re image modifiée par Qwen-Edit, puis toute la vidéo régénérée en suivant la profondeur, la pose ou les contours de l'originale.",
+      "dead_chips": {
+        "genjutsu": [
+          "enhance"
+        ]
+      }
+    },
+    {
+      "id": "ltx-sketch",
+      "label": "Qwen-Edit → LTX-2.5",
+      "kind": "video",
+      "workspaces": [
+        "video"
+      ],
+      "methods": [
+        "sketch"
+      ],
+      "requires": [
+        "diffusion_models/qwen_image_edit_2511_int8_convrot.safetensors",
+        "diffusion_models/ltx-2.5-22b-distilled-transformer-comfy-int8-convrot.safetensors"
+      ],
+      "license": "threshold",
+      "license_note": "Qwen-Edit 2511 Apache 2.0 + LTX-2 Community — gratuit sous 10 M$ de CA annuel",
+      "speed": "≈ 2–3 min",
+      "blurb": "Le croquis devient une image réaliste (Qwen-Edit 2511), puis une vidéo avec son (LTX-2.5)."
+    },
+    {
+      "id": "infinitetalk",
+      "label": "InfiniteTalk",
+      "kind": "video",
+      "workspaces": [
+        "video",
+        "video-edit"
+      ],
+      "methods": [
+        "talk",
+        "dialogue",
+        "dub"
+      ],
+      "requires": [
+        "diffusion_models/Wan2_1-I2V-14B-480p_fp8_e4m3fn_scaled_KJ.safetensors",
+        "model_patches/wan2.1_infiniteTalk_multi_fp16.safetensors",
+        "audio_encoders/wav2vec2-chinese-base_fp16.safetensors"
+      ],
+      "license": "ok",
+      "license_note": "Apache 2.0 (InfiniteTalk, Wan 2.1) + MIT (wav2vec2) — usage commercial libre",
+      "speed": "≈ 5 min pour 5 s d'audio",
+      "blurb": "Lip-sync sur toute la durée de l'audio (20 s au plus), en 480p : la tête et le corps bougent avec la voix.",
+      "dead_chips": {
+        "talk": [
+          "duration",
+          "aspect"
+        ]
+      }
+    },
+    {
+      "id": "atmosphere",
+      "label": "Atmosphère (profondeur)",
+      "kind": "video",
+      "workspaces": [
+        "post"
+      ],
+      "methods": [
+        "atmosphere"
+      ],
+      "requires": [
+        "videodepthanything/video_depth_anything_vits.pth"
+      ],
+      "license": "ok",
+      "license_note": "Video Depth Anything Small Apache 2.0 ; avec INTÉGRER › LTX : LTX-2 Community (sous 10 M$ de CA)",
+      "speed": "≈ 1 à 3 min (intégré par LTX ≈ 4 min)",
+      "blurb": "Brume et neige posées d'après une passe de profondeur stable dans le temps ; passe de profondeur livrée."
+    },
+    {
+      "id": "wan-choreo",
+      "label": "Wan 2.2 Fun Camera · chorégraphie",
+      "kind": "video",
+      "workspaces": [
+        "video"
+      ],
+      "methods": [
+        "robot"
+      ],
+      "template": "video_wan2_2_14B_fun_camera.api.json",
+      "requires": [
+        "diffusion_models/wan2.2_fun_camera_high_noise_14B_fp8_scaled.safetensors",
+        "diffusion_models/wan2.2_fun_camera_low_noise_14B_fp8_scaled.safetensors"
+      ],
+      "license": "ok",
+      "license_note": "Apache 2.0 — usage commercial libre",
+      "speed": "≈ 3 min (qualité ≈ 15 min)",
+      "blurb": "Chorégraphie de caméra en étapes, une pose par image, appliquée par Wan 2.2 Fun Camera."
+    }
+  ],
+  "methods": {
+    "text": {
+      "label": "Texte vers image",
+      "hint": "Une description, rien d'autre.",
+      "slots": [],
+      "labels": {
+        "image": "Texte vers image",
+        "video": "Texte vers vidéo"
+      }
+    },
+    "refs": {
+      "label": "Références",
+      "hint": "1 à 3 images à combiner — cite-les « image 1 », « image 2 »…",
+      "slots": "refs"
+    },
+    "first": {
+      "label": "1re image",
+      "hint": "La vidéo part de cette image.",
+      "slots": [
+        {
+          "label": "1RE IMAGE",
+          "type": "image"
+        }
+      ]
+    },
+    "firstlast": {
+      "label": "1re + dernière",
+      "hint": "La vidéo relie deux images.",
+      "slots": [
+        {
+          "label": "1RE IMAGE",
+          "type": "image"
+        },
+        {
+          "label": "DERNIÈRE",
+          "type": "image"
+        }
+      ]
+    },
+    "instruct": {
+      "label": "Retouche",
+      "hint": "Décris la modification : « change le ciel en coucher de soleil »…",
+      "slots": [
+        {
+          "label": "IMAGE",
+          "type": "image"
+        }
+      ]
+    },
+    "inpaint": {
+      "label": "Inpaint",
+      "hint": "Peins la zone à refaire, puis décris ce qu'elle doit contenir. Optionnel : une 2e image comme référence de l'élément voulu.",
+      "slots": [
+        {
+          "label": "IMAGE",
+          "type": "image",
+          "mask": true
+        },
+        {
+          "label": "RÉFÉRENCE",
+          "type": "image"
+        }
+      ],
+      "optional_slots": 1
+    },
+    "remove": {
+      "label": "Retirer un élément",
+      "hint": "Indique l'élément à retirer (en anglais) ; le prompt décrit la scène sans lui.",
+      "slots": [
+        {
+          "label": "VIDÉO",
+          "type": "video"
+        }
+      ],
+      "target": true,
+      "target_placeholder": "ÉLÉMENT À RETIRER — EN ANGLAIS : person, car, logo…"
+    },
+    "matte": {
+      "label": "Détourer une vidéo",
+      "hint": "Le modèle choisit seul le sujet principal ; 145 images maximum.",
+      "slots": [
+        {
+          "label": "VIDÉO",
+          "type": "video"
+        }
+      ],
+      "noprompt": true
+    },
+    "upscale-image": {
+      "label": "Upscale image",
+      "hint": "Restauration et agrandissement SeedVR2.",
+      "slots": [
+        {
+          "label": "IMAGE",
+          "type": "image"
+        }
+      ],
+      "noprompt": true
+    },
+    "upscale-video": {
+      "label": "Upscale vidéo",
+      "hint": "SeedVR2 3B, image par image avec cohérence temporelle.",
+      "slots": [
+        {
+          "label": "VIDÉO",
+          "type": "video"
+        }
+      ],
+      "noprompt": true
+    },
+    "replace": {
+      "label": "Changer de personnage",
+      "hint": "Vidéo + photo ou character sheet du nouveau personnage : il prend la place de la personne indiquée, la scène et le mouvement restent. Par défaut MiniMax H3 Character Swap : la personne la plus grande du plan, tenue comprise, avec le son d'origine ; SCAIL-2 en 2e choix.",
+      "slots": [
+        {
+          "label": "VIDÉO",
+          "type": "video"
+        },
+        {
+          "label": "PERSONNAGE",
+          "type": "image"
+        }
+      ],
+      "target": true,
+      "target_placeholder": "PERSONNE À REMPLACER DANS LA VIDÉO — EN ANGLAIS : woman, man, girl…",
+      "chips": [
+        "model",
+        "aspect",
+        "seed"
+      ],
+      "default_model": "h3-swap"
+    },
+    "pano360": {
+      "label": "Panorama 360°",
+      "hint": "Image équirectangulaire 2:1, pour la VR ou les décors 360°.",
+      "slots": [],
+      "chips": [
+        "model",
+        "dp_lumiere",
+        "dp_etalonnage",
+        "seed"
+      ]
+    },
+    "outpaint": {
+      "label": "Agrandir le cadre",
+      "hint": "Agrandit l'image vers le format choisi ; le prompt décrit ce qui apparaît autour.",
+      "slots": [
+        {
+          "label": "IMAGE",
+          "type": "image"
+        }
+      ],
+      "chips": [
+        "model",
+        "aspect",
+        "quality",
+        "seed"
+      ]
+    },
+    "angles": {
+      "label": "Angle de caméra",
+      "hint": "Même scène, autre point de vue : fais glisser la caméra autour de l'image (molette = distance, flèches = position voisine, ou les curseurs). MODÈLE › Qwen Multi-Angles (par défaut) lit l'une de ses 96 positions, dite sous la sphère ; Qwen-Edit 2511 reçoit une consigne écrite par le schéma (meilleur en gros plan, plus timide en plongée). VUES › un jeu de vues (tour 360°, hauteurs, couverture) en lance plusieurs d'un coup.",
+      "slots": [
+        {
+          "label": "IMAGE",
+          "type": "image"
+        }
+      ],
+      "noprompt": true,
+      "chips": [
+        "model",
+        "angle_pack",
+        "seed"
+      ],
+      "camera3d": "angle",
+      "default_model": "qwen-angles"
+    },
+    "multiangles": {
+      "label": "Multi-angles",
+      "hint": "Plusieurs vues d'un coup (personnage ou décor) — à ranger dans les refs du plan.",
+      "slots": [
+        {
+          "label": "IMAGE",
+          "type": "image"
+        }
+      ],
+      "noprompt": true,
+      "chips": [
+        "model",
+        "angle_pack",
+        "seed"
+      ]
+    },
+    "relight": {
+      "label": "Relight",
+      "hint": "Change la lumière de l'image : choisis un éclairage ou décris-le.",
+      "slots": [
+        {
+          "label": "IMAGE",
+          "type": "image"
+        }
+      ],
+      "chips": [
+        "model",
+        "light",
+        "seed"
+      ]
+    },
+    "lightmig": {
+      "label": "Raccord lumière",
+      "hint": "Reprend la lumière et l'étalonnage de la 2e image sur la 1re.",
+      "slots": [
+        {
+          "label": "SUJET",
+          "type": "image"
+        },
+        {
+          "label": "LUMIÈRE",
+          "type": "image"
+        }
+      ],
+      "noprompt": true,
+      "chips": [
+        "model",
+        "quality",
+        "seed"
+      ]
+    },
+    "effect": {
+      "label": "Gonflette",
+      "hint": "Effet stylisé sur le sujet indiqué dans le prompt (ex. « the man », « the car »).",
+      "slots": [
+        {
+          "label": "IMAGE",
+          "type": "image"
+        }
+      ],
+      "chips": [
+        "model",
+        "imgfx",
+        "seed"
+      ]
+    },
+    "recipe": {
+      "label": "Recettes produit",
+      "hint": "Recettes prêtes : produit en main, placement, tenue, fond, packshot.",
+      "slots": [
+        {
+          "label": "SUJET / SCÈNE",
+          "type": "image"
+        },
+        {
+          "label": "PRODUIT / TENUE",
+          "type": "image"
+        }
+      ],
+      "chips": [
+        "model",
+        "recipe",
+        "resolution",
+        "quality",
+        "seed"
+      ],
+      "optional_slots": 1
+    },
+    "storyboard": {
+      "label": "Storyboard",
+      "hint": "Une vidéo continue qui passe par 6 images clés, dans l'ordre.",
+      "slots": [
+        {
+          "label": "IMAGE 1",
+          "type": "image"
+        },
+        {
+          "label": "IMAGE 2",
+          "type": "image"
+        },
+        {
+          "label": "IMAGE 3",
+          "type": "image"
+        },
+        {
+          "label": "IMAGE 4",
+          "type": "image"
+        },
+        {
+          "label": "IMAGE 5",
+          "type": "image"
+        },
+        {
+          "label": "IMAGE 6",
+          "type": "image"
+        }
+      ],
+      "chips": [
+        "model",
+        "seed"
+      ]
+    },
+    "talk": {
+      "label": "Avatar parlant",
+      "hint": "Un visage + un audio : la vidéo suit la voix (lip-sync).",
+      "slots": [
+        {
+          "label": "VISAGE",
+          "type": "image"
+        },
+        {
+          "label": "AUDIO",
+          "type": "audio"
+        }
+      ],
+      "chips": [
+        "model",
+        "duration",
+        "aspect",
+        "seed"
+      ]
+    },
+    "camera": {
+      "label": "Mouvement de caméra",
+      "hint": "Mouvement de caméra exact. Mode rapide pour essayer (≈ 2 min), MODE QUALITÉ pour le plan final (≈ 15 min, toujours utilisé pour le zoom avant).",
+      "slots": [
+        {
+          "label": "1RE IMAGE",
+          "type": "image"
+        }
+      ],
+      "chips": [
+        "model",
+        "campose",
+        "aspect",
+        "quality",
+        "seed"
+      ]
+    },
+    "tracks": {
+      "label": "Tracer le mouvement",
+      "hint": "Trace jusqu'à 5 flèches sur l'image : les éléments suivent ces trajectoires. Choisis un format proche de l'image.",
+      "slots": [
+        {
+          "label": "1RE IMAGE",
+          "type": "image",
+          "tracks": true
+        }
+      ],
+      "chips": [
+        "model",
+        "aspect",
+        "quality",
+        "seed"
+      ]
+    },
+    "cinemagraph": {
+      "label": "Cinemagraph",
+      "hint": "Peins la zone qui doit bouger (l'eau, les cheveux…) : elle s'anime en boucle, tout le reste reste figé sur l'image d'origine.",
+      "slots": [
+        {
+          "label": "IMAGE",
+          "type": "image",
+          "mask": true
+        }
+      ],
+      "chips": [
+        "model",
+        "duration",
+        "aspect",
+        "seed"
+      ]
+    },
+    "extend": {
+      "label": "Prolonger",
+      "hint": "Repart de la dernière image de la vidéo et continue l'action décrite.",
+      "slots": [
+        {
+          "label": "VIDÉO",
+          "type": "video"
+        }
+      ],
+      "chips": [
+        "model",
+        "duration",
+        "aspect",
+        "seed"
+      ]
+    },
+    "motion": {
+      "label": "Transfert de mouvement",
+      "hint": "Ton personnage refait le mouvement de la vidéo, dans son propre décor.",
+      "slots": [
+        {
+          "label": "MOUVEMENT",
+          "type": "video"
+        },
+        {
+          "label": "PERSONNAGE",
+          "type": "image"
+        }
+      ],
+      "chips": [
+        "model",
+        "seed"
+      ]
+    },
+    "vfx": {
+      "label": "Effets spéciaux",
+      "hint": "Jour → nuit, colorisation, défloutage, eau, restauration… MODÈLE › MiniMax H3 VFX Edit : décris l'effet que tu veux (« les pages du livre deviennent des papillons dorés qui s'envolent »), le reste du plan reste.",
+      "slots": [
+        {
+          "label": "VIDÉO",
+          "type": "video"
+        }
+      ],
+      "chips": [
+        "model",
+        "vidfx",
+        "h3_vfx",
+        "seed"
+      ]
+    },
+    "reframe": {
+      "label": "Étendre le cadre",
+      "hint": "Recadre la vidéo vers un autre format en inventant les bords.",
+      "slots": [
+        {
+          "label": "VIDÉO",
+          "type": "video"
+        }
+      ],
+      "chips": [
+        "model",
+        "aspect",
+        "seed"
+      ]
+    },
+    "rtx-upscale": {
+      "label": "Upscale RTX rapide",
+      "hint": "Super-résolution NVIDIA en temps quasi réel (moins créatif que SeedVR2).",
+      "slots": [
+        {
+          "label": "VIDÉO",
+          "type": "video"
+        }
+      ],
+      "noprompt": true,
+      "chips": [
+        "model",
+        "factor"
+      ]
+    },
+    "slowmo": {
+      "label": "Slow motion",
+      "hint": "Crée les images intermédiaires : ×2 à ×4 plus d'images.",
+      "slots": [
+        {
+          "label": "VIDÉO",
+          "type": "video"
+        }
+      ],
+      "noprompt": true,
+      "chips": [
+        "model",
+        "factor"
+      ]
+    },
+    "hdr": {
+      "label": "SDR → HDR",
+      "hint": "Conversion HDR (BT.2020) par NVIDIA RTX Video HDR.",
+      "slots": [
+        {
+          "label": "VIDÉO",
+          "type": "video"
+        }
+      ],
+      "noprompt": true,
+      "chips": [
+        "model"
+      ]
+    },
+    "cutout": {
+      "label": "Détourer une image",
+      "hint": "PNG avec transparence, en une seconde.",
+      "slots": [
+        {
+          "label": "IMAGE",
+          "type": "image"
+        }
+      ],
+      "noprompt": true,
+      "chips": [
+        "model"
+      ]
+    },
+    "layers": {
+      "label": "Calques",
+      "hint": "Décompose l'image en calques RGBA séparés ; le prompt décrit l'image.",
+      "slots": [
+        {
+          "label": "IMAGE",
+          "type": "image"
+        }
+      ],
+      "chips": [
+        "model",
+        "nlayers",
+        "quality",
+        "seed"
+      ]
+    },
+    "charsheet": {
+      "label": "Character sheet",
+      "hint": "Une photo du VISAGE, et si tu les as une photo du CORPS et une photo de la TENUE à porter. Sort la planche 3 vues (visage de face, corps de face sans la tête, dos) ou 6 vues (plus visage de 3/4 et de profil, corps de profil), sur fond gris clair.",
+      "slots": [
+        {
+          "label": "VISAGE",
+          "type": "image"
+        },
+        {
+          "label": "CORPS",
+          "type": "image"
+        },
+        {
+          "label": "TENUE",
+          "type": "image"
+        }
+      ],
+      "chips": [
+        "model",
+        "sheet",
+        "quality",
+        "seed"
+      ],
+      "quality_default": true,
+      "optional_slots": 2
+    },
+    "objsheet": {
+      "label": "Object sheet",
+      "slots": "refs",
+      "chips": [
+        "model",
+        "objsheet",
+        "batch",
+        "quality",
+        "seed"
+      ],
+      "hint": "1 à 3 photos d'un objet ou d'un produit → vues packshot séparées sur fond blanc et la planche. Précise la matière et ce qui doit rester exact (logo, texte).",
+      "quality_default": true
+    },
+    "personnage": {
+      "label": "Créateur de Personnages",
+      "slots": [],
+      "chips": [
+        "model",
+        "perso_sortie",
+        "perso_genre",
+        "perso_age",
+        "perso_origine",
+        "perso_morpho",
+        "perso_visage",
+        "perso_yeux",
+        "perso_cheveux",
+        "perso_coiffure",
+        "perso_traits",
+        "perso_tenue",
+        "perso_caractere",
+        "batch",
+        "quality",
+        "seed"
+      ],
+      "hint": "Compose un personnage par ses caractéristiques (Libre = le modèle choisit) et sort sa planche 3 ou 6 vues sur fond gris clair : gros plan du visage, puis les vues du corps (face sans la tête, dos, et profil en 6 vues). Le prompt peut aussi le décrire : visage, cheveux, allure, puis « Tenue : » et la tenue."
+    },
+    "genjutsu": {
+      "label": "Changer ce qu'on veut",
+      "hint": "Change un objet, un décor, un personnage ou le style d'une vidéo en gardant son mouvement et son timing. Décris le changement (« remplace la voiture par une calèche », « la scène se passe sous la neige ») ; RÉFÉRENCE facultative = l'objet, le décor ou le personnage à mettre ; 1RE IMAGE facultative = ta propre 1re image déjà retouchée (la consigne sert alors de description).",
+      "slots": [
+        {
+          "label": "VIDÉO",
+          "type": "video"
+        },
+        {
+          "label": "RÉFÉRENCE",
+          "type": "image"
+        },
+        {
+          "label": "1RE IMAGE PRÊTE",
+          "type": "image"
+        }
+      ],
+      "optional_slots": 2,
+      "chips": [
+        "model",
+        "controle",
+        "enhance",
+        "quality",
+        "seed"
+      ],
+      "target": true,
+      "target_optional": true,
+      "target_placeholder": "ZONE QUI CHANGE (facultatif, en anglais : clothes, car, bag…) — tout le reste garde les pixels d'origine"
+    },
+    "sketch": {
+      "label": "Croquis → vidéo",
+      "hint": "Un dessin, même grossier, ou une case de storyboard : il devient une image réaliste avec la même composition, puis une vidéo. Décris la scène et l'action. RÉFÉRENCE facultative = le look, les personnes, les couleurs.",
+      "slots": [
+        {
+          "label": "CROQUIS",
+          "type": "image"
+        },
+        {
+          "label": "RÉFÉRENCE",
+          "type": "image"
+        }
+      ],
+      "optional_slots": 1,
+      "chips": [
+        "model",
+        "aspect",
+        "duration",
+        "quality",
+        "seed"
+      ]
+    },
+    "dub": {
+      "label": "Post-synchro",
+      "hint": "Une vidéo où une personne parle + un nouvel audio : la bouche suit le nouvel audio, le plan reste le même. La vidéo doit durer au moins autant que l'audio (20 s au plus).",
+      "slots": [
+        {
+          "label": "VIDÉO",
+          "type": "video"
+        },
+        {
+          "label": "NOUVEL AUDIO",
+          "type": "audio"
+        }
+      ],
+      "chips": [
+        "model",
+        "seed"
+      ]
+    },
+    "dialogue": {
+      "label": "Dialogue à deux",
+      "hint": "Une image avec deux personnes + un audio par personne : celle de GAUCHE dit l'audio 1, puis celle de DROITE l'audio 2. 20 s au plus en tout.",
+      "slots": [
+        {
+          "label": "IMAGE",
+          "type": "image"
+        },
+        {
+          "label": "AUDIO GAUCHE",
+          "type": "audio"
+        },
+        {
+          "label": "AUDIO DROITE",
+          "type": "audio"
+        }
+      ],
+      "chips": [
+        "model",
+        "seed"
+      ]
+    },
+    "tenue": {
+      "label": "Changer la tenue",
+      "hint": "Décris la nouvelle tenue (« une longue robe en soie rouge »). La personne, son visage, ses gestes et le décor gardent les pixels d'origine ; seuls les vêtements changent. TENUE facultative = photo du vêtement.",
+      "slots": [
+        {
+          "label": "VIDÉO",
+          "type": "video"
+        },
+        {
+          "label": "TENUE",
+          "type": "image"
+        },
+        {
+          "label": "1RE IMAGE PRÊTE",
+          "type": "image"
+        }
+      ],
+      "optional_slots": 2,
+      "chips": [
+        "model",
+        "quality",
+        "seed"
+      ],
+      "preset": {
+        "controle": "pose",
+        "target": "clothes"
+      }
+    },
+    "objet": {
+      "label": "Changer un objet",
+      "hint": "Indique l'objet à changer (en anglais, champ du haut) et décris le nouveau (« une Mercedes Pagode vert sapin »). Tout le reste garde les pixels d'origine. OBJET facultatif = photo du nouvel objet ou produit.",
+      "slots": [
+        {
+          "label": "VIDÉO",
+          "type": "video"
+        },
+        {
+          "label": "OBJET",
+          "type": "image"
+        },
+        {
+          "label": "1RE IMAGE PRÊTE",
+          "type": "image"
+        }
+      ],
+      "optional_slots": 2,
+      "chips": [
+        "model",
+        "quality",
+        "seed"
+      ],
+      "target": true,
+      "target_placeholder": "OBJET À CHANGER — EN ANGLAIS : car, bag, bottle, chair…",
+      "preset": {
+        "controle": "depth"
+      }
+    },
+    "decor": {
+      "label": "Changer le décor",
+      "hint": "Décris le nouveau décor (« une terrasse de chalet sous la neige »). Les personnes et leurs gestes restent ; décris aussi leur tenue complète si elle doit s'adapter (manteau, pantalon…).",
+      "slots": [
+        {
+          "label": "VIDÉO",
+          "type": "video"
+        },
+        {
+          "label": "DÉCOR",
+          "type": "image"
+        },
+        {
+          "label": "1RE IMAGE PRÊTE",
+          "type": "image"
+        }
+      ],
+      "optional_slots": 2,
+      "chips": [
+        "model",
+        "enhance",
+        "quality",
+        "seed"
+      ],
+      "preset": {
+        "controle": "pose",
+        "target": ""
+      }
+    },
+    "atmosphere": {
+      "label": "Atmosphère",
+      "hint": "Neige et/ou brume posées d'après la profondeur du plan, en mètres : les flocons, plus nombreux au loin, passent derrière ce qui est plus près, avec flou de bougé et de profondeur ; la brume s'épaissit au loin, au ras du sol en volumétrique, et dérive avec le vent. Livré aussi : les passes NEIGE et BRUME sur fond noir (ProRes 4444 avec alpha, couleur prémultipliée ; plate → brume → neige = le résultat) et la passe de profondeur. INTÉGRER › LTX : un 2e passage fond la lumière et la neige dans la scène (≈ 5 s).",
+      "slots": [
+        {
+          "label": "VIDÉO",
+          "type": "video"
+        }
+      ],
+      "chips": [
+        "model",
+        "atmo",
+        "atmo_neige",
+        "atmo_vent",
+        "atmo_brume",
+        "atmo_volume",
+        "integrer",
+        "seed"
+      ]
+    },
+    "robot": {
+      "label": "Motion control (expérimental)",
+      "hint": "EXPÉRIMENTAL — une chorégraphie de caméra en étapes (tenir, glisser, orbiter, zoomer…) appliquée à ton image par Wan 2.2 Fun Camera. Les mouvements doux passent ; les orbites rapides ou amples cassent (test du 25/10). Une version par positions clés (Qwen Multi-Angles) et transitions (LTX 1re + dernière image) est à l'étude.",
+      "slots": [
+        {
+          "label": "1RE IMAGE",
+          "type": "image"
+        }
+      ],
+      "chips": [
+        "model",
+        "choreo",
+        "quality",
+        "seed"
+      ],
+      "camera3d": "choreo"
+    }
+  },
+  "aspects": [
+    {
+      "id": "16:9",
+      "label": "16:9",
+      "comfy": "16:9 (Widescreen)",
+      "w": 16,
+      "h": 9
+    },
+    {
+      "id": "9:16",
+      "label": "9:16",
+      "comfy": "9:16 (Portrait Widescreen)",
+      "w": 9,
+      "h": 16
+    },
+    {
+      "id": "1:1",
+      "label": "1:1",
+      "comfy": "1:1 (Square)",
+      "w": 1,
+      "h": 1
+    },
+    {
+      "id": "4:5",
+      "label": "4:5",
+      "comfy": "3:4 (Portrait Standard)",
+      "w": 4,
+      "h": 5
+    },
+    {
+      "id": "21:9",
+      "label": "21:9",
+      "comfy": "21:9 (Ultrawide)",
+      "w": 21,
+      "h": 9
+    },
+    {
+      "id": "3:2",
+      "label": "3:2",
+      "comfy": "3:2 (Photo)",
+      "w": 3,
+      "h": 2
+    }
+  ],
+  "cameras": [
+    {
+      "id": "none",
+      "label": "Libre",
+      "prompt": ""
+    },
+    {
+      "id": "alexa35",
+      "label": "ARRI Alexa 35",
+      "tag": "Cinéma numérique",
+      "prompt": "shot on ARRI Alexa 35, natural cinematic color science, wide dynamic range"
+    },
+    {
+      "id": "alexalf",
+      "label": "ARRI Alexa Mini LF",
+      "tag": "Grand format",
+      "prompt": "shot on ARRI Alexa Mini LF large format sensor, shallow depth of field, smooth highlight roll-off"
+    },
+    {
+      "id": "venice2",
+      "label": "Sony Venice 2",
+      "tag": "Cinéma numérique",
+      "prompt": "shot on Sony Venice 2, clean rich colors, full-frame cinema look"
+    },
+    {
+      "id": "vraptor",
+      "label": "RED V-Raptor",
+      "tag": "Cinéma numérique",
+      "prompt": "shot on RED V-Raptor 8K, crisp detail, punchy contrast"
+    },
+    {
+      "id": "film35",
+      "label": "Film 35 mm",
+      "tag": "Pellicule",
+      "prompt": "shot on 35mm motion picture film, organic film grain, halation on highlights"
+    },
+    {
+      "id": "film16",
+      "label": "Film 16 mm",
+      "tag": "Pellicule",
+      "prompt": "shot on 16mm film with an Arriflex SR3, visible grain, soft vintage texture"
+    },
+    {
+      "id": "super8",
+      "label": "Super 8",
+      "tag": "Pellicule",
+      "prompt": "Super 8 home movie footage, heavy grain, light leaks, gate weave"
+    },
+    {
+      "id": "vhs",
+      "label": "Caméscope VHS",
+      "tag": "Vintage",
+      "prompt": "1990s VHS camcorder footage, scanlines, color bleeding, timestamp-free"
+    },
+    {
+      "id": "iphone",
+      "label": "iPhone",
+      "tag": "Smartphone",
+      "prompt": "shot on iPhone, handheld social media look, natural mobile HDR"
+    },
+    {
+      "id": "gopro",
+      "label": "GoPro",
+      "tag": "Action",
+      "prompt": "GoPro action camera footage, ultra wide, slight fisheye distortion"
+    },
+    {
+      "id": "drone",
+      "label": "Drone DJI",
+      "tag": "Aérien",
+      "prompt": "aerial footage from a DJI cinema drone, smooth stabilized flight"
+    }
+  ],
+  "lenses": [
+    {
+      "id": "none",
+      "label": "Libre",
+      "prompt": ""
+    },
+    {
+      "id": "fish",
+      "label": "Fisheye 8 mm",
+      "prompt": "8mm fisheye lens, strong barrel distortion"
+    },
+    {
+      "id": "14",
+      "label": "14 mm",
+      "prompt": "14mm ultra wide angle lens, exaggerated perspective"
+    },
+    {
+      "id": "24",
+      "label": "24 mm",
+      "prompt": "24mm wide angle lens"
+    },
+    {
+      "id": "35",
+      "label": "35 mm",
+      "prompt": "35mm lens, natural perspective"
+    },
+    {
+      "id": "50",
+      "label": "50 mm",
+      "prompt": "50mm lens, f/1.8"
+    },
+    {
+      "id": "85",
+      "label": "85 mm portrait",
+      "prompt": "85mm portrait lens at f/1.4, creamy bokeh, compressed background"
+    },
+    {
+      "id": "135",
+      "label": "135 mm télé",
+      "prompt": "135mm telephoto lens, strong background compression"
+    },
+    {
+      "id": "anamo",
+      "label": "Anamorphique 40 mm",
+      "prompt": "40mm anamorphic lens, oval bokeh, horizontal blue lens flares, cinematic widescreen"
+    },
+    {
+      "id": "macro",
+      "label": "Macro 100 mm",
+      "prompt": "100mm macro lens, extreme close detail, razor thin focus"
+    },
+    {
+      "id": "helios",
+      "label": "Vintage Helios 44",
+      "prompt": "vintage Helios 44-2 lens, swirly bokeh, soft glow"
+    },
+    {
+      "id": "tilt",
+      "label": "Tilt-shift",
+      "prompt": "tilt-shift lens, miniature effect, selective focus band"
+    }
+  ],
+  "shots": [
+    {
+      "id": "none",
+      "label": "Libre",
+      "prompt": ""
+    },
+    {
+      "id": "ecu",
+      "label": "Très gros plan",
+      "prompt": "extreme close-up shot"
+    },
+    {
+      "id": "cu",
+      "label": "Gros plan",
+      "prompt": "close-up shot"
+    },
+    {
+      "id": "ms",
+      "label": "Plan rapproché",
+      "prompt": "medium close-up shot"
+    },
+    {
+      "id": "amer",
+      "label": "Plan américain",
+      "prompt": "medium cowboy shot, framed from mid-thigh up"
+    },
+    {
+      "id": "full",
+      "label": "Plan pied",
+      "prompt": "full body shot"
+    },
+    {
+      "id": "wide",
+      "label": "Plan large",
+      "prompt": "wide shot"
+    },
+    {
+      "id": "ews",
+      "label": "Plan d'ensemble",
+      "prompt": "extreme wide establishing shot"
+    },
+    {
+      "id": "ots",
+      "label": "Par-dessus l'épaule",
+      "prompt": "over-the-shoulder shot"
+    },
+    {
+      "id": "pov",
+      "label": "Point de vue",
+      "prompt": "first-person POV shot"
+    },
+    {
+      "id": "top",
+      "label": "Plongée zénithale",
+      "prompt": "top-down bird's-eye view"
+    },
+    {
+      "id": "low",
+      "label": "Contre-plongée",
+      "prompt": "low angle shot looking up"
+    },
+    {
+      "id": "high",
+      "label": "Plongée",
+      "prompt": "high angle shot looking down"
+    },
+    {
+      "id": "dutch",
+      "label": "Plan cassé",
+      "prompt": "dutch angle, tilted horizon"
+    },
+    {
+      "id": "insert",
+      "label": "Insert / détail",
+      "prompt": "insert shot of a detail"
+    }
+  ],
+  "moves": [
+    {
+      "id": "none",
+      "label": "Libre",
+      "prompt": ""
+    },
+    {
+      "id": "static",
+      "label": "Fixe",
+      "prompt": "the camera is completely static, locked-off tripod shot"
+    },
+    {
+      "id": "pushin",
+      "label": "Push in lent",
+      "prompt": "slow push in toward the subject"
+    },
+    {
+      "id": "dollyin",
+      "label": "Travelling avant",
+      "prompt": "smooth dolly in"
+    },
+    {
+      "id": "dollyout",
+      "label": "Travelling arrière",
+      "prompt": "smooth dolly out revealing the scene"
+    },
+    {
+      "id": "truck",
+      "label": "Travelling latéral",
+      "prompt": "lateral tracking shot moving left to right"
+    },
+    {
+      "id": "pan",
+      "label": "Panoramique",
+      "prompt": "slow horizontal pan"
+    },
+    {
+      "id": "tilt",
+      "label": "Tilt vertical",
+      "prompt": "slow tilt up"
+    },
+    {
+      "id": "craneup",
+      "label": "Grue montante",
+      "prompt": "crane shot rising up and over the scene"
+    },
+    {
+      "id": "orbit",
+      "label": "Orbite 360",
+      "prompt": "camera orbits 360 degrees around the subject"
+    },
+    {
+      "id": "arc",
+      "label": "Arc",
+      "prompt": "camera arcs halfway around the subject"
+    },
+    {
+      "id": "hand",
+      "label": "Caméra épaule",
+      "prompt": "handheld camera with subtle natural shake"
+    },
+    {
+      "id": "steady",
+      "label": "Steadicam suivi",
+      "prompt": "steadicam follow shot behind the subject"
+    },
+    {
+      "id": "fpv",
+      "label": "Drone FPV",
+      "prompt": "fast FPV drone dive, swooping through the space"
+    },
+    {
+      "id": "reveal",
+      "label": "Drone révélation",
+      "prompt": "aerial drone rises to reveal the landscape"
+    },
+    {
+      "id": "crash",
+      "label": "Crash zoom",
+      "prompt": "sudden crash zoom into the subject"
+    },
+    {
+      "id": "vertigo",
+      "label": "Effet Vertigo",
+      "prompt": "dolly zoom vertigo effect, background stretches while subject stays the same size"
+    },
+    {
+      "id": "whip",
+      "label": "Whip pan",
+      "prompt": "fast whip pan with motion blur"
+    },
+    {
+      "id": "bullet",
+      "label": "Bullet time",
+      "prompt": "bullet time, frozen moment while the camera circles"
+    },
+    {
+      "id": "focus",
+      "label": "Bascule de point",
+      "prompt": "rack focus from foreground to background"
+    }
+  ],
+  "styles": [
+    {
+      "id": "none",
+      "label": "Libre",
+      "prompt": ""
+    },
+    {
+      "id": "500t",
+      "label": "Kodak 500T",
+      "prompt": "Kodak Vision3 500T film look, tungsten balanced, rich shadows"
+    },
+    {
+      "id": "portra",
+      "label": "Portra 400",
+      "prompt": "Kodak Portra 400 look, warm skin tones, soft pastel contrast"
+    },
+    {
+      "id": "eterna",
+      "label": "Fuji Eterna",
+      "prompt": "Fujifilm Eterna look, muted greens, low contrast cinematic grade"
+    },
+    {
+      "id": "bw",
+      "label": "Noir & blanc",
+      "prompt": "black and white, Kodak Tri-X grain, deep blacks"
+    },
+    {
+      "id": "editorial",
+      "label": "Éditorial mode",
+      "prompt": "high-fashion editorial photography, direct flash, glossy magazine look"
+    },
+    {
+      "id": "packshot",
+      "label": "Packshot studio",
+      "prompt": "premium product packshot, seamless studio backdrop, softbox lighting, crisp reflections"
+    },
+    {
+      "id": "golden",
+      "label": "Heure dorée",
+      "prompt": "golden hour backlight, warm sun flare"
+    },
+    {
+      "id": "blue",
+      "label": "Heure bleue",
+      "prompt": "blue hour twilight, cool ambient light"
+    },
+    {
+      "id": "overcast",
+      "label": "Ciel couvert",
+      "prompt": "soft overcast daylight, diffuse shadows"
+    },
+    {
+      "id": "neon",
+      "label": "Néons de nuit",
+      "prompt": "night city neon lights, wet reflective streets"
+    },
+    {
+      "id": "docu",
+      "label": "Documentaire",
+      "prompt": "natural light documentary realism, unposed"
+    },
+    {
+      "id": "dream",
+      "label": "Onirique",
+      "prompt": "dreamy soft focus, pastel haze, ethereal atmosphere"
+    }
+  ],
+  "workspaces": [
+    {
+      "id": "image",
+      "label": "Image",
+      "sub": "Création",
+      "kind": "image",
+      "methods": [
+        "text",
+        "refs",
+        "personnage",
+        "charsheet",
+        "objsheet",
+        "pano360"
+      ],
+      "chips": [
+        "model",
+        "dp_plan",
+        "dp_angle",
+        "dp_focale",
+        "dp_ouverture",
+        "dp_objectif",
+        "dp_camera",
+        "dp_lumiere",
+        "dp_etalonnage",
+        "aspect",
+        "resolution",
+        "batch",
+        "quality",
+        "seed"
+      ]
+    },
+    {
+      "id": "image-edit",
+      "label": "Retouche image",
+      "sub": "Consigne · Inpaint · Angles · Relight…",
+      "kind": "image",
+      "methods": [
+        "instruct",
+        "inpaint",
+        "outpaint",
+        "angles",
+        "relight",
+        "lightmig",
+        "effect",
+        "recipe"
+      ],
+      "chips": [
+        "model",
+        "dp_etalonnage",
+        "resolution",
+        "batch",
+        "quality",
+        "seed"
+      ]
+    },
+    {
+      "id": "video",
+      "label": "Vidéo",
+      "sub": "Création",
+      "kind": "video",
+      "methods": [
+        "text",
+        "first",
+        "firstlast",
+        "sketch",
+        "refs",
+        "storyboard",
+        "talk",
+        "dialogue",
+        "camera",
+        "tracks",
+        "cinemagraph"
+      ],
+      "chips": [
+        "model",
+        "move",
+        "dp_plan",
+        "dp_angle",
+        "dp_focale",
+        "dp_ouverture",
+        "dp_objectif",
+        "dp_camera",
+        "dp_lumiere",
+        "dp_etalonnage",
+        "aspect",
+        "duration",
+        "batch",
+        "enhance",
+        "quality",
+        "seed"
+      ]
+    },
+    {
+      "id": "video-edit",
+      "label": "Retouche vidéo",
+      "sub": "Tenue · Objet · Décor · Personnage · Doubler · Mouvement · Effets",
+      "kind": "video",
+      "methods": [
+        "tenue",
+        "objet",
+        "decor",
+        "replace",
+        "genjutsu",
+        "dub",
+        "motion",
+        "vfx"
+      ],
+      "chips": [
+        "model",
+        "aspect",
+        "seed"
+      ]
+    },
+    {
+      "id": "post",
+      "label": "Post-prod",
+      "sub": "Upscale · Durée · Cadre · Ralenti · HDR · Atmosphère · Détourage · Calques",
+      "kind": "post",
+      "methods": [
+        "upscale-image",
+        "upscale-video",
+        "extend",
+        "reframe",
+        "slowmo",
+        "atmosphere",
+        "remove",
+        "matte",
+        "cutout",
+        "layers"
+      ],
+      "chips": [
+        "model",
+        "factor",
+        "duration",
+        "seed"
+      ]
+    }
+  ],
+  "factors": [
+    2,
+    3,
+    4
+  ],
+  "options": {
+    "angle_h": {
+      "title": "AZIMUT",
+      "items": [
+        {
+          "id": "0",
+          "label": "Face"
+        },
+        {
+          "id": "45",
+          "label": "3/4 droit"
+        },
+        {
+          "id": "90",
+          "label": "Profil droit"
+        },
+        {
+          "id": "135",
+          "label": "3/4 dos droit"
+        },
+        {
+          "id": "180",
+          "label": "Dos"
+        },
+        {
+          "id": "225",
+          "label": "3/4 dos gauche"
+        },
+        {
+          "id": "270",
+          "label": "Profil gauche"
+        },
+        {
+          "id": "315",
+          "label": "3/4 gauche"
+        }
+      ]
+    },
+    "angle_v": {
+      "title": "HAUTEUR",
+      "items": [
+        {
+          "id": "-30",
+          "label": "Contre-plongée"
+        },
+        {
+          "id": "0",
+          "label": "Hauteur d'yeux"
+        },
+        {
+          "id": "30",
+          "label": "Plongée"
+        },
+        {
+          "id": "60",
+          "label": "Vue de dessus"
+        }
+      ]
+    },
+    "angle_zoom": {
+      "title": "DISTANCE",
+      "items": [
+        {
+          "id": "1",
+          "label": "Plan large"
+        },
+        {
+          "id": "5",
+          "label": "Plan moyen"
+        },
+        {
+          "id": "9",
+          "label": "Gros plan"
+        }
+      ]
+    },
+    "angle_pack": {
+      "title": "VUES",
+      "items": [
+        {
+          "id": "une",
+          "label": "Une vue",
+          "desc": "La position choisie dans le schéma"
+        },
+        {
+          "id": "turn8",
+          "label": "Tour 360° (8 vues)",
+          "desc": "Face, 3/4, profils, 3/4 dos, dos",
+          "views": [
+            [
+              0,
+              0,
+              5
+            ],
+            [
+              45,
+              0,
+              5
+            ],
+            [
+              90,
+              0,
+              5
+            ],
+            [
+              135,
+              0,
+              5
+            ],
+            [
+              180,
+              0,
+              5
+            ],
+            [
+              225,
+              0,
+              5
+            ],
+            [
+              270,
+              0,
+              5
+            ],
+            [
+              315,
+              0,
+              5
+            ]
+          ]
+        },
+        {
+          "id": "heights3",
+          "label": "Hauteurs (3 vues)",
+          "desc": "Contre-plongée, yeux, plongée",
+          "views": [
+            [
+              0,
+              -30,
+              5
+            ],
+            [
+              0,
+              0,
+              5
+            ],
+            [
+              0,
+              30,
+              5
+            ]
+          ]
+        },
+        {
+          "id": "cover6",
+          "label": "Couverture de plan (6)",
+          "desc": "Plan large, moyen, gros plan × 2 axes",
+          "views": [
+            [
+              0,
+              0,
+              1
+            ],
+            [
+              0,
+              0,
+              5
+            ],
+            [
+              0,
+              0,
+              9
+            ],
+            [
+              45,
+              15,
+              1
+            ],
+            [
+              45,
+              15,
+              5
+            ],
+            [
+              45,
+              15,
+              9
+            ]
+          ]
+        }
+      ]
+    },
+    "light": {
+      "title": "LUMIÈRE",
+      "items": [
+        {
+          "id": "free",
+          "label": "Libre (prompt)",
+          "prompt": ""
+        },
+        {
+          "id": "golden",
+          "label": "Heure dorée",
+          "prompt": "relight the image with warm golden hour sunlight from the side, long soft shadows"
+        },
+        {
+          "id": "blue",
+          "label": "Heure bleue",
+          "prompt": "relight the image with cool blue hour twilight, soft ambient light"
+        },
+        {
+          "id": "backlight",
+          "label": "Contre-jour",
+          "prompt": "relight the image with strong backlight rim light, glowing edges, darker front"
+        },
+        {
+          "id": "studio",
+          "label": "Studio 3 points",
+          "prompt": "relight the image with clean three-point studio lighting, soft key light, fill and rim"
+        },
+        {
+          "id": "softbox",
+          "label": "Softbox douce",
+          "prompt": "relight the image with a large soft box from the front left, soft diffuse shadows"
+        },
+        {
+          "id": "neon",
+          "label": "Néons",
+          "prompt": "relight the image with colorful neon lights, magenta and cyan, night atmosphere"
+        },
+        {
+          "id": "candle",
+          "label": "Bougie",
+          "prompt": "relight the image with warm candle light, low key, deep shadows"
+        },
+        {
+          "id": "overcast",
+          "label": "Ciel couvert",
+          "prompt": "relight the image with soft overcast daylight, no hard shadows"
+        },
+        {
+          "id": "hard",
+          "label": "Soleil dur de midi",
+          "prompt": "relight the image with harsh midday sun, hard shadows, high contrast"
+        },
+        {
+          "id": "night",
+          "label": "Nuit lune",
+          "prompt": "relight the image with cold moonlight, night scene, low exposure"
+        }
+      ]
+    },
+    "imgfx": {
+      "title": "EFFET",
+      "items": [
+        {
+          "id": "inflate",
+          "label": "Gonflé (INFL8)",
+          "prompt": "inflate"
+        }
+      ]
+    },
+    "recipe": {
+      "title": "RECETTE",
+      "items": [
+        {
+          "id": "hold",
+          "label": "Produit en main",
+          "prompt": "The person from image 1 is holding the product from image 2 naturally in their hand, product clearly visible and exactly as in image 2, do not add any label, logo or text that is not on the product"
+        },
+        {
+          "id": "place",
+          "label": "Placement produit",
+          "prompt": "Place the product from image 2 naturally in the scene of image 1, correct scale, matching perspective, lighting and shadows"
+        },
+        {
+          "id": "outfit",
+          "label": "Essayage de tenue",
+          "prompt": "The person from image 1 wears the outfit from image 2, same pose and face, realistic fabric and fit"
+        },
+        {
+          "id": "bg",
+          "label": "Changer le fond",
+          "prompt": "Keep the subject of image 1 exactly as is and replace the background with:"
+        },
+        {
+          "id": "packshot",
+          "label": "Packshot studio",
+          "prompt": "Turn the product from image 1 into a premium studio packshot on a seamless background, soft box lighting, crisp reflections"
+        }
+      ]
+    },
+    "campose": {
+      "title": "MOUVEMENT",
+      "items": [
+        {
+          "id": "Static",
+          "label": "Fixe"
+        },
+        {
+          "id": "Zoom In",
+          "label": "Zoom avant"
+        },
+        {
+          "id": "Zoom Out",
+          "label": "Zoom arrière"
+        },
+        {
+          "id": "Pan Left",
+          "label": "Pano gauche"
+        },
+        {
+          "id": "Pan Right",
+          "label": "Pano droite"
+        },
+        {
+          "id": "Pan Up",
+          "label": "Tilt haut"
+        },
+        {
+          "id": "Pan Down",
+          "label": "Tilt bas"
+        },
+        {
+          "id": "ClockWise (CW)",
+          "label": "Rotation horaire"
+        },
+        {
+          "id": "Anti Clockwise (ACW)",
+          "label": "Rotation anti-horaire"
+        }
+      ]
+    },
+    "vidfx": {
+      "title": "EFFET VIDÉO",
+      "items": [
+        {
+          "id": "daynight",
+          "label": "Jour → nuit",
+          "lora": "ltx-2.5-22b-ic-lora-day-to-night-0.9.safetensors",
+          "prompt": "the same scene at night"
+        },
+        {
+          "id": "color",
+          "label": "Colorisation N&B",
+          "lora": "ltx-2.5-22b-ic-lora-colorization-0.9.safetensors",
+          "prompt": ""
+        },
+        {
+          "id": "deblur",
+          "label": "Défloutage",
+          "lora": "ltx-2.5-22b-ic-lora-deblur-0.9.safetensors",
+          "prompt": ""
+        },
+        {
+          "id": "restore",
+          "label": "Restauration",
+          "lora": "ltx-2.5-22b-ic-lora-restore-1.0.safetensors",
+          "prompt": ""
+        },
+        {
+          "id": "details",
+          "label": "Plus de détails",
+          "lora": "ltx-2.5-22b-ic-lora-refine-details-1.0.safetensors",
+          "prompt": ""
+        },
+        {
+          "id": "decomp",
+          "label": "Décompression",
+          "lora": "ltx-2.5-22b-ic-lora-decompression-0.9.safetensors",
+          "prompt": ""
+        },
+        {
+          "id": "water",
+          "label": "Simulation d'eau",
+          "lora": "ltx-2.5-22b-ic-lora-water-simulation-0.9.safetensors",
+          "prompt": "realistic water simulation"
+        }
+      ]
+    },
+    "nlayers": {
+      "title": "CALQUES",
+      "items": [
+        {
+          "id": "2",
+          "label": "2 calques"
+        },
+        {
+          "id": "3",
+          "label": "3 calques"
+        },
+        {
+          "id": "4",
+          "label": "4 calques"
+        },
+        {
+          "id": "5",
+          "label": "5 calques"
+        },
+        {
+          "id": "6",
+          "label": "6 calques"
+        }
+      ]
+    },
+    "sheet": {
+      "title": "PLANCHE",
+      "items": [
+        {
+          "id": "vues3",
+          "label": "3 vues",
+          "desc": "Visage de face, corps de face sans la tête, corps de dos — chaque vue + la planche"
+        },
+        {
+          "id": "vues6",
+          "label": "6 vues",
+          "desc": "Visage de face, de 3/4 et de profil ; corps de face sans la tête, de profil et de dos — chaque vue + la planche"
+        }
+      ]
+    },
+    "objsheet": {
+      "title": "VUES",
+      "items": [
+        {
+          "id": "vues6",
+          "label": "6 vues",
+          "cols": 3,
+          "desc": "Face, 3/4, profil, dos, dessus, détail matière — chaque vue + la planche",
+          "views": [
+            {
+              "label": "Face",
+              "w": 1024,
+              "h": 1024,
+              "prompt": "Studio product photograph of the exact same object shown in the reference images, seen straight from the front at eye level, centered with generous margins, plain seamless pure white background, soft diffused softbox lighting with a gentle contact shadow, identical shape, proportions, colors, materials, finish, labels and printed text as in the references, sharp focus from front to back, photorealistic, no added props, no extra text"
+            },
+            {
+              "label": "3/4",
+              "w": 1024,
+              "h": 1024,
+              "prompt": "Studio product photograph of the exact same object shown in the reference images, seen in three-quarter view from the front left, slightly above eye level, centered with generous margins, plain seamless pure white background, soft diffused softbox lighting with a gentle contact shadow, identical shape, proportions, colors, materials, finish, labels and printed text as in the references, sharp focus from front to back, photorealistic, no added props, no extra text"
+            },
+            {
+              "label": "Profil",
+              "w": 1024,
+              "h": 1024,
+              "prompt": "Studio product photograph of the exact same object shown in the reference images, seen in strict side profile, centered with generous margins, plain seamless pure white background, soft diffused softbox lighting with a gentle contact shadow, identical shape, proportions, colors, materials, finish, labels and printed text as in the references, sharp focus from front to back, photorealistic, no added props, no extra text"
+            },
+            {
+              "label": "Dos",
+              "w": 1024,
+              "h": 1024,
+              "prompt": "Studio product photograph of the exact same object shown in the reference images, seen straight from the back at eye level, centered with generous margins, plain seamless pure white background, soft diffused softbox lighting with a gentle contact shadow, identical shape, proportions, colors, materials, finish, labels and printed text as in the references, sharp focus from front to back, photorealistic, no added props, no extra text"
+            },
+            {
+              "label": "Dessus",
+              "w": 1024,
+              "h": 1024,
+              "prompt": "Studio product photograph of the exact same object shown in the reference images, seen from directly above in a top-down view, centered with generous margins, plain seamless pure white background, soft diffused softbox lighting with a gentle contact shadow, identical shape, proportions, colors, materials, finish, labels and printed text as in the references, sharp focus from front to back, photorealistic, no added props, no extra text"
+            },
+            {
+              "label": "Détail matière",
+              "w": 1024,
+              "h": 1024,
+              "prompt": "Extreme close-up macro product photograph of the exact same object shown in the reference images, filling the frame with its most characteristic surface: material, texture, finish, edges and any printed or engraved detail, identical to the references, soft diffused softbox lighting raking slightly across the surface, crisp detail, photorealistic, no extra text"
+            }
+          ]
+        },
+        {
+          "id": "vues4",
+          "label": "4 vues",
+          "cols": 2,
+          "desc": "Face, 3/4, profil, dos — chaque vue + la planche",
+          "views": [
+            {
+              "label": "Face",
+              "w": 1024,
+              "h": 1024,
+              "prompt": "Studio product photograph of the exact same object shown in the reference images, seen straight from the front at eye level, centered with generous margins, plain seamless pure white background, soft diffused softbox lighting with a gentle contact shadow, identical shape, proportions, colors, materials, finish, labels and printed text as in the references, sharp focus from front to back, photorealistic, no added props, no extra text"
+            },
+            {
+              "label": "3/4",
+              "w": 1024,
+              "h": 1024,
+              "prompt": "Studio product photograph of the exact same object shown in the reference images, seen in three-quarter view from the front left, slightly above eye level, centered with generous margins, plain seamless pure white background, soft diffused softbox lighting with a gentle contact shadow, identical shape, proportions, colors, materials, finish, labels and printed text as in the references, sharp focus from front to back, photorealistic, no added props, no extra text"
+            },
+            {
+              "label": "Profil",
+              "w": 1024,
+              "h": 1024,
+              "prompt": "Studio product photograph of the exact same object shown in the reference images, seen in strict side profile, centered with generous margins, plain seamless pure white background, soft diffused softbox lighting with a gentle contact shadow, identical shape, proportions, colors, materials, finish, labels and printed text as in the references, sharp focus from front to back, photorealistic, no added props, no extra text"
+            },
+            {
+              "label": "Dos",
+              "w": 1024,
+              "h": 1024,
+              "prompt": "Studio product photograph of the exact same object shown in the reference images, seen straight from the back at eye level, centered with generous margins, plain seamless pure white background, soft diffused softbox lighting with a gentle contact shadow, identical shape, proportions, colors, materials, finish, labels and printed text as in the references, sharp focus from front to back, photorealistic, no added props, no extra text"
+            }
+          ]
+        }
+      ]
+    },
+    "perso_genre": {
+      "title": "GENRE",
+      "items": [
+        {
+          "id": "none",
+          "label": "Libre",
+          "prompt": ""
+        },
+        {
+          "id": "femme",
+          "label": "Femme",
+          "prompt": "a woman"
+        },
+        {
+          "id": "homme",
+          "label": "Homme",
+          "prompt": "a man"
+        },
+        {
+          "id": "androgyne",
+          "label": "Androgyne",
+          "prompt": "an androgynous person"
+        }
+      ]
+    },
+    "perso_age": {
+      "title": "ÂGE",
+      "items": [
+        {
+          "id": "none",
+          "label": "Libre",
+          "prompt": ""
+        },
+        {
+          "id": "20-ans",
+          "label": "20 ans",
+          "prompt": "aged around 20"
+        },
+        {
+          "id": "30-ans",
+          "label": "30 ans",
+          "prompt": "aged around 30"
+        },
+        {
+          "id": "40-ans",
+          "label": "40 ans",
+          "prompt": "aged around 40"
+        },
+        {
+          "id": "50-ans",
+          "label": "50 ans",
+          "prompt": "aged around 50"
+        },
+        {
+          "id": "60-ans",
+          "label": "60 ans",
+          "prompt": "aged around 60"
+        },
+        {
+          "id": "75-ans",
+          "label": "75 ans",
+          "prompt": "aged around 75, with natural signs of age"
+        }
+      ]
+    },
+    "perso_origine": {
+      "title": "ORIGINE",
+      "items": [
+        {
+          "id": "none",
+          "label": "Libre",
+          "prompt": ""
+        },
+        {
+          "id": "méditerranéenne",
+          "label": "Méditerranéenne",
+          "prompt": "of Mediterranean descent"
+        },
+        {
+          "id": "nord-européenne",
+          "label": "Nord-européenne",
+          "prompt": "of Northern European descent"
+        },
+        {
+          "id": "afrique-de-l'ouest",
+          "label": "Afrique de l'Ouest",
+          "prompt": "of West African descent"
+        },
+        {
+          "id": "afrique-de-l'est",
+          "label": "Afrique de l'Est",
+          "prompt": "of East African descent"
+        },
+        {
+          "id": "est-asiatique",
+          "label": "Est-asiatique",
+          "prompt": "of East Asian descent"
+        },
+        {
+          "id": "sud-asiatique",
+          "label": "Sud-asiatique",
+          "prompt": "of South Asian descent"
+        },
+        {
+          "id": "moyen-orientale",
+          "label": "Moyen-orientale",
+          "prompt": "of Middle Eastern descent"
+        },
+        {
+          "id": "latino-américaine",
+          "label": "Latino-américaine",
+          "prompt": "of Latin American descent"
+        },
+        {
+          "id": "métisse",
+          "label": "Métisse",
+          "prompt": "of mixed heritage"
+        }
+      ]
+    },
+    "perso_morpho": {
+      "title": "MORPHOLOGIE",
+      "items": [
+        {
+          "id": "none",
+          "label": "Libre",
+          "prompt": ""
+        },
+        {
+          "id": "mince",
+          "label": "Mince",
+          "prompt": "slim build"
+        },
+        {
+          "id": "athlétique",
+          "label": "Athlétique",
+          "prompt": "athletic build with toned shoulders"
+        },
+        {
+          "id": "moyenne",
+          "label": "Moyenne",
+          "prompt": "average build"
+        },
+        {
+          "id": "ronde",
+          "label": "Ronde",
+          "prompt": "full-figured, curvy build"
+        },
+        {
+          "id": "grande-et-élancée",
+          "label": "Grande et élancée",
+          "prompt": "tall and lanky build"
+        },
+        {
+          "id": "trapue",
+          "label": "Trapue",
+          "prompt": "stocky, broad-shouldered build"
+        }
+      ]
+    },
+    "perso_visage": {
+      "title": "VISAGE",
+      "items": [
+        {
+          "id": "none",
+          "label": "Libre",
+          "prompt": ""
+        },
+        {
+          "id": "ovale",
+          "label": "Ovale",
+          "prompt": "oval face with balanced features"
+        },
+        {
+          "id": "anguleux",
+          "label": "Anguleux",
+          "prompt": "angular face with high cheekbones and a strong jawline"
+        },
+        {
+          "id": "rond",
+          "label": "Rond",
+          "prompt": "round face with soft features"
+        },
+        {
+          "id": "carré",
+          "label": "Carré",
+          "prompt": "square face with a defined jaw"
+        },
+        {
+          "id": "long",
+          "label": "Long",
+          "prompt": "long narrow face"
+        },
+        {
+          "id": "en-cœur",
+          "label": "En cœur",
+          "prompt": "heart-shaped face with a pointed chin"
+        }
+      ]
+    },
+    "perso_yeux": {
+      "title": "YEUX",
+      "items": [
+        {
+          "id": "none",
+          "label": "Libre",
+          "prompt": ""
+        },
+        {
+          "id": "marron",
+          "label": "Marron",
+          "prompt": "deep brown eyes"
+        },
+        {
+          "id": "noisette",
+          "label": "Noisette",
+          "prompt": "hazel eyes"
+        },
+        {
+          "id": "verts",
+          "label": "Verts",
+          "prompt": "green eyes"
+        },
+        {
+          "id": "bleus",
+          "label": "Bleus",
+          "prompt": "light blue eyes"
+        },
+        {
+          "id": "gris",
+          "label": "Gris",
+          "prompt": "grey eyes"
+        },
+        {
+          "id": "très-foncés",
+          "label": "Très foncés",
+          "prompt": "very dark, almost black eyes"
+        }
+      ]
+    },
+    "perso_cheveux": {
+      "title": "CHEVEUX",
+      "items": [
+        {
+          "id": "none",
+          "label": "Libre",
+          "prompt": ""
+        },
+        {
+          "id": "noirs",
+          "label": "Noirs",
+          "prompt": "black"
+        },
+        {
+          "id": "brun-foncé",
+          "label": "Brun foncé",
+          "prompt": "dark brown"
+        },
+        {
+          "id": "châtains",
+          "label": "Châtains",
+          "prompt": "chestnut brown"
+        },
+        {
+          "id": "blonds",
+          "label": "Blonds",
+          "prompt": "golden blond"
+        },
+        {
+          "id": "blond-polaire",
+          "label": "Blond polaire",
+          "prompt": "platinum blond"
+        },
+        {
+          "id": "roux",
+          "label": "Roux",
+          "prompt": "copper red"
+        },
+        {
+          "id": "poivre-et-sel",
+          "label": "Poivre et sel",
+          "prompt": "salt-and-pepper"
+        },
+        {
+          "id": "gris-argent",
+          "label": "Gris argent",
+          "prompt": "silver grey"
+        },
+        {
+          "id": "blancs",
+          "label": "Blancs",
+          "prompt": "white"
+        }
+      ]
+    },
+    "perso_coiffure": {
+      "title": "COIFFURE",
+      "items": [
+        {
+          "id": "none",
+          "label": "Libre",
+          "prompt": ""
+        },
+        {
+          "id": "rasés",
+          "label": "Rasés",
+          "prompt": "buzz-cut"
+        },
+        {
+          "id": "très-courts",
+          "label": "Très courts",
+          "prompt": "very short cropped"
+        },
+        {
+          "id": "courts",
+          "label": "Courts",
+          "prompt": "short tousled"
+        },
+        {
+          "id": "carré",
+          "label": "Coupe au carré",
+          "prompt": "chin-length bob-cut"
+        },
+        {
+          "id": "mi-longs",
+          "label": "Mi-longs",
+          "prompt": "shoulder-length"
+        },
+        {
+          "id": "longs-lisses",
+          "label": "Longs lisses",
+          "prompt": "long straight"
+        },
+        {
+          "id": "longs-ondulés",
+          "label": "Longs ondulés",
+          "prompt": "long wavy"
+        },
+        {
+          "id": "bouclés",
+          "label": "Bouclés",
+          "prompt": "voluminous natural curly"
+        },
+        {
+          "id": "tressés",
+          "label": "Tressés",
+          "prompt": "braided"
+        },
+        {
+          "id": "attachés",
+          "label": "Attachés",
+          "prompt": "neatly tied-back"
+        },
+        {
+          "id": "plaqués",
+          "label": "Plaqués",
+          "prompt": "slicked-back"
+        }
+      ]
+    },
+    "perso_traits": {
+      "title": "SIGNE PARTICULIER",
+      "items": [
+        {
+          "id": "none",
+          "label": "Libre",
+          "prompt": ""
+        },
+        {
+          "id": "taches-de-rousseur",
+          "label": "Taches de rousseur",
+          "prompt": "light freckles across the nose and cheeks"
+        },
+        {
+          "id": "grain-de-beauté",
+          "label": "Grain de beauté",
+          "prompt": "a small beauty mark near the lips"
+        },
+        {
+          "id": "barbe-courte",
+          "label": "Barbe courte",
+          "prompt": "a short well-groomed beard"
+        },
+        {
+          "id": "barbe-de-3-jours",
+          "label": "Barbe de 3 jours",
+          "prompt": "light stubble"
+        },
+        {
+          "id": "moustache",
+          "label": "Moustache",
+          "prompt": "a neat moustache"
+        },
+        {
+          "id": "sourcils-épais",
+          "label": "Sourcils épais",
+          "prompt": "thick natural eyebrows"
+        },
+        {
+          "id": "lunettes",
+          "label": "Lunettes",
+          "prompt": "thin metal-rimmed glasses"
+        },
+        {
+          "id": "cicatrice",
+          "label": "Cicatrice",
+          "prompt": "a faint thin scar through one eyebrow"
+        },
+        {
+          "id": "peau-marquée",
+          "label": "Peau marquée",
+          "prompt": "weathered skin with fine lines"
+        }
+      ]
+    },
+    "perso_tenue": {
+      "title": "TENUE",
+      "items": [
+        {
+          "id": "none",
+          "label": "Libre",
+          "prompt": ""
+        },
+        {
+          "id": "basique",
+          "label": "Basique",
+          "prompt": "wearing a plain fitted white t-shirt"
+        },
+        {
+          "id": "chemise-en-lin",
+          "label": "Chemise en lin",
+          "prompt": "wearing a loose cream linen shirt"
+        },
+        {
+          "id": "maille",
+          "label": "Maille",
+          "prompt": "wearing a fine-knit beige sweater"
+        },
+        {
+          "id": "tailleur",
+          "label": "Tailleur",
+          "prompt": "wearing a tailored charcoal suit jacket"
+        },
+        {
+          "id": "robe-noire",
+          "label": "Robe noire",
+          "prompt": "wearing a simple black slip dress"
+        },
+        {
+          "id": "cuir",
+          "label": "Cuir",
+          "prompt": "wearing a black leather jacket"
+        },
+        {
+          "id": "sport",
+          "label": "Sport",
+          "prompt": "wearing technical athletic sportswear"
+        },
+        {
+          "id": "travail",
+          "label": "Travail",
+          "prompt": "wearing a worn canvas work jacket"
+        },
+        {
+          "id": "soirée",
+          "label": "Soirée",
+          "prompt": "wearing an elegant evening outfit"
+        }
+      ]
+    },
+    "perso_caractere": {
+      "title": "CARACTÈRE",
+      "items": [
+        {
+          "id": "none",
+          "label": "Libre",
+          "prompt": ""
+        },
+        {
+          "id": "neutre",
+          "label": "Neutre",
+          "prompt": "neutral relaxed expression, calm posture"
+        },
+        {
+          "id": "confiant",
+          "label": "Confiant",
+          "prompt": "confident, self-assured expression, upright posture, steady gaze"
+        },
+        {
+          "id": "doux",
+          "label": "Doux",
+          "prompt": "gentle warm expression with a faint smile"
+        },
+        {
+          "id": "mystérieux",
+          "label": "Mystérieux",
+          "prompt": "reserved, enigmatic expression, head slightly tilted"
+        },
+        {
+          "id": "sévère",
+          "label": "Sévère",
+          "prompt": "serious, stern expression, tight jaw"
+        },
+        {
+          "id": "joyeux",
+          "label": "Joyeux",
+          "prompt": "open joyful smile, relaxed shoulders"
+        },
+        {
+          "id": "mélancolique",
+          "label": "Mélancolique",
+          "prompt": "pensive, melancholic expression, soft distant gaze"
+        },
+        {
+          "id": "las",
+          "label": "Las",
+          "prompt": "tired, world-weary look, slightly slumped shoulders"
+        }
+      ]
+    },
+    "perso_sortie": {
+      "title": "SORTIE",
+      "items": [
+        {
+          "id": "chaine",
+          "label": "Planche 3 vues",
+          "desc": "Gros plan du visage, corps de face sans la tête, corps de dos"
+        },
+        {
+          "id": "chaine6",
+          "label": "Planche 6 vues",
+          "desc": "Visage de face, de 3/4 et de profil ; corps de face sans la tête, de profil et de dos"
+        },
+        {
+          "id": "portrait",
+          "label": "Portrait seul",
+          "desc": "Le portrait de référence en plan taille"
+        }
+      ]
+    },
+    "dp_plan": {
+      "title": "PLAN",
+      "items": [
+        {
+          "id": "none",
+          "label": "Libre",
+          "desc": "Le modèle décide"
+        },
+        {
+          "id": "tgp",
+          "label": "Très gros plan",
+          "desc": "Un détail du visage remplit le cadre",
+          "prompt": "Extreme close-up: the camera is a few centimetres from the main subject; only a single detail, such as the eyes, nose and lips of a face, fills the whole frame, with no background visible",
+          "apercu": "/static/apercus/dp_plan/tgp.jpg"
+        },
+        {
+          "id": "gp",
+          "label": "Gros plan",
+          "desc": "Le visage remplit le cadre",
+          "prompt": "Close-up: the main subject's face fills the frame from the top of the forehead to just below the chin and takes up about 80 percent of the frame height; the shoulders and the setting are out of frame, only a hint of blurred background at the edges",
+          "apercu": "/static/apercus/dp_plan/gp.jpg"
+        },
+        {
+          "id": "prp",
+          "label": "Plan rapproché poitrine",
+          "desc": "Tête et épaules, jusqu'à la poitrine",
+          "prompt": "Medium close-up, head and shoulders: the main subject is framed from just above the head down to the middle of the chest; the waist, hips and legs are out of frame; the head takes up about a third of the frame height",
+          "apercu": "/static/apercus/dp_plan/prp.jpg"
+        },
+        {
+          "id": "prt",
+          "label": "Plan taille",
+          "desc": "Jusqu'à la taille",
+          "prompt": "Medium shot: the main subject is framed from just above the head down to the waist; the hips and legs are out of frame; the subject fills most of the frame height",
+          "apercu": "/static/apercus/dp_plan/prt.jpg"
+        },
+        {
+          "id": "pa",
+          "label": "Plan américain",
+          "desc": "Jusqu'à mi-cuisse",
+          "prompt": "Medium long shot, cowboy shot: the main subject is framed from just above the head down to mid-thigh; the knees, lower legs and feet are out of frame",
+          "apercu": "/static/apercus/dp_plan/pa.jpg"
+        },
+        {
+          "id": "pp",
+          "label": "Plan pied",
+          "desc": "Le corps entier, de la tête aux pieds",
+          "prompt": "Full shot: the main subject's whole body is visible from head to feet and fills most of the frame height, with a little space above the head and below the feet",
+          "apercu": "/static/apercus/dp_plan/pp.jpg"
+        },
+        {
+          "id": "pl",
+          "label": "Plan large",
+          "desc": "La silhouette, petite, dans son décor",
+          "prompt": "Wide shot: the main subject is small, about a third of the frame height, clearly placed in the surroundings, and the setting dominates the image",
+          "apercu": "/static/apercus/dp_plan/pl.jpg"
+        },
+        {
+          "id": "pe",
+          "label": "Plan d'ensemble",
+          "desc": "Le lieu entier, le sujet minuscule",
+          "prompt": "Extreme wide establishing shot: a vast view of the whole location, in which the main subject is a tiny figure less than a tenth of the frame height",
+          "apercu": "/static/apercus/dp_plan/pe.jpg"
+        },
+        {
+          "id": "insert",
+          "label": "Insert",
+          "desc": "Un objet ou une main, isolés",
+          "prompt": "Insert shot: a tight view of a single small detail of the scene, such as a hand or an object, isolated from everything else",
+          "apercu": "/static/apercus/dp_plan/insert.jpg"
+        }
+      ]
+    },
+    "dp_angle": {
+      "title": "ANGLE",
+      "items": [
+        {
+          "id": "none",
+          "label": "Libre",
+          "desc": "Le modèle décide"
+        },
+        {
+          "id": "yeux",
+          "label": "À hauteur d'yeux",
+          "desc": "Caméra à hauteur du regard",
+          "prompt": "Eye-level shot: the camera stands about 1.6 metres above the ground, exactly at the main subject's eye height, perfectly level and facing it straight on; the horizon crosses the frame at eye height, no downward or upward tilt, all vertical lines perfectly vertical",
+          "apercu": "/static/apercus/dp_angle/yeux.jpg"
+        },
+        {
+          "id": "plongee",
+          "label": "Plongée",
+          "desc": "La caméra domine et regarde en bas",
+          "prompt": "High-angle shot: the camera is well above the main subject, looking down at it at about 45 degrees, so the ground is visible all around it",
+          "apercu": "/static/apercus/dp_angle/plongee.jpg"
+        },
+        {
+          "id": "contre",
+          "label": "Contre-plongée",
+          "desc": "La caméra au sol regarde en haut",
+          "prompt": "Low-angle shot: the camera is near the ground looking up at the main subject, who towers against the sky",
+          "apercu": "/static/apercus/dp_angle/contre.jpg"
+        },
+        {
+          "id": "zenith",
+          "label": "Plongée zénithale",
+          "desc": "Vue d'en haut, à la verticale",
+          "prompt": "Top-down overhead shot: the camera looks straight down from directly above, so the scene is seen as a flat map from the sky",
+          "apercu": "/static/apercus/dp_angle/zenith.jpg",
+          "evite": [
+            "z-image-turbo"
+          ]
+        },
+        {
+          "id": "ras",
+          "label": "Ras du sol",
+          "desc": "Caméra posée au sol",
+          "prompt": "Worm's-eye view from ground level: the lens rests on the ground just in front of the main subject, the ground fills the bottom of the frame in the immediate foreground, the subject towers above the camera, seen from below, and the sky or ceiling fills the top of the frame",
+          "apercu": "/static/apercus/dp_angle/ras.jpg",
+          "evite": [
+            "z-image-turbo"
+          ]
+        },
+        {
+          "id": "debullee",
+          "label": "Plan débullé",
+          "desc": "Horizon incliné",
+          "prompt": "Dutch angle: the camera is tilted sideways by 25 degrees, so the whole picture is rotated; the horizon and every vertical line are clearly slanted, running diagonally across the frame, and the main subject leans at the same strong diagonal",
+          "sans_reecriture": true,
+          "apercu": "/static/apercus/dp_angle/debullee.jpg",
+          "evite": [
+            "z-image-turbo"
+          ]
+        },
+        {
+          "id": "epaule",
+          "label": "Par-dessus l'épaule",
+          "desc": "Une épaule floue au premier plan",
+          "prompt": "Over-the-shoulder shot: the out-of-focus back of another person's head and shoulder fills one side of the near foreground, looking toward the main subject",
+          "apercu": "/static/apercus/dp_angle/epaule.jpg"
+        },
+        {
+          "id": "subjectif",
+          "label": "Subjectif",
+          "desc": "Par les yeux du personnage",
+          "prompt": "First-person point of view, as if seen through the viewer's own eyes at standing height: the viewer's two hands and forearms enter naturally from the bottom edge of the frame, reaching toward the scene",
+          "apercu": "/static/apercus/dp_angle/subjectif.jpg",
+          "evite": [
+            "z-image-turbo"
+          ]
+        },
+        {
+          "id": "aerien",
+          "label": "Vue aérienne",
+          "desc": "Vue de drone, de haut",
+          "prompt": "Aerial view from about thirty metres up, looking down at an angle over the whole location",
+          "apercu": "/static/apercus/dp_angle/aerien.jpg"
+        }
+      ]
+    },
+    "dp_focale": {
+      "title": "FOCALE",
+      "items": [
+        {
+          "id": "none",
+          "label": "Libre",
+          "desc": "Le modèle décide"
+        },
+        {
+          "id": "8",
+          "label": "Fisheye 8 mm",
+          "desc": "Image ronde, lignes courbées",
+          "prompt": "Fisheye lens: a circular, strongly curved image in which straight lines bow outward, with an extremely wide 180-degree view",
+          "apercu": "/static/apercus/dp_focale/8.jpg"
+        },
+        {
+          "id": "14",
+          "label": "14 mm",
+          "desc": "Très grand angle, perspective exagérée",
+          "prompt": "Ultra-wide 14mm lens very close to the subject: exaggerated perspective, nearby objects look huge and distant ones tiny, straight lines lean at the edges of the frame",
+          "apercu": "/static/apercus/dp_focale/14.jpg"
+        },
+        {
+          "id": "24",
+          "label": "24 mm",
+          "desc": "Grand angle, beaucoup de décor",
+          "prompt": "Wide-angle 24mm lens close to the subject: a broad view of the surroundings with strong depth and visible perspective",
+          "apercu": "/static/apercus/dp_focale/24.jpg"
+        },
+        {
+          "id": "35",
+          "label": "35 mm",
+          "desc": "Perspective naturelle de reportage",
+          "prompt": "35mm lens: natural documentary perspective, subject and surroundings in balance",
+          "apercu": "/static/apercus/dp_focale/35.jpg"
+        },
+        {
+          "id": "50",
+          "label": "50 mm",
+          "desc": "Vision de l'œil, proportions neutres",
+          "prompt": "50mm lens: natural human-eye perspective with neutral proportions",
+          "apercu": "/static/apercus/dp_focale/50.jpg"
+        },
+        {
+          "id": "85",
+          "label": "85 mm",
+          "desc": "Portrait, arrière-plan rapproché",
+          "prompt": "85mm portrait lens from a few metres away: flattering, slightly compressed perspective, the background looks closer and larger behind the subject",
+          "apercu": "/static/apercus/dp_focale/85.jpg"
+        },
+        {
+          "id": "135",
+          "label": "135 mm",
+          "desc": "Téléobjectif, plans écrasés",
+          "prompt": "135mm telephoto lens from far away: strongly compressed perspective, distant background elements appear stacked right behind the subject, narrow field of view",
+          "apercu": "/static/apercus/dp_focale/135.jpg"
+        }
+      ]
+    },
+    "dp_ouverture": {
+      "title": "OUVERTURE",
+      "items": [
+        {
+          "id": "none",
+          "label": "Libre",
+          "desc": "Le modèle décide"
+        },
+        {
+          "id": "f14",
+          "label": "f/1.4",
+          "desc": "Seul le sujet est net",
+          "prompt": "Very shallow depth of field: only the main subject is sharp, the background dissolves into a smooth creamy blur with large round bokeh",
+          "apercu": "/static/apercus/dp_ouverture/f14.jpg",
+          "evite": [
+            "z-image-turbo",
+            "qwen-2.1"
+          ]
+        },
+        {
+          "id": "f28",
+          "label": "f/2.8",
+          "desc": "Arrière-plan doux mais lisible",
+          "prompt": "Shallow depth of field: the main subject is sharp and the background is softly out of focus but still recognisable",
+          "apercu": "/static/apercus/dp_ouverture/f28.jpg"
+        },
+        {
+          "id": "f56",
+          "label": "f/5.6",
+          "desc": "Le sujet et ses abords nets",
+          "prompt": "Moderate depth of field: the main subject and its immediate surroundings are sharp, the far background only slightly soft",
+          "apercu": "/static/apercus/dp_ouverture/f56.jpg"
+        },
+        {
+          "id": "f11",
+          "label": "f/11",
+          "desc": "Tout est net, du premier plan au loin",
+          "prompt": "Deep focus: everything from the nearest foreground to the far distance is sharp",
+          "apercu": "/static/apercus/dp_ouverture/f11.jpg"
+        }
+      ]
+    },
+    "dp_objectif": {
+      "title": "OBJECTIF",
+      "items": [
+        {
+          "id": "none",
+          "label": "Libre",
+          "desc": "Le modèle décide"
+        },
+        {
+          "id": "master",
+          "label": "Zeiss Master Prime",
+          "desc": "Très net bord à bord, neutre",
+          "prompt": "Rendered through modern ultra-sharp cinema optics: crisp detail from edge to edge, high micro-contrast, neutral slightly cool color, no flare and no distortion, a smooth round background blur",
+          "avant": false,
+          "apercu": "/static/apercus/dp_objectif/master.jpg"
+        },
+        {
+          "id": "cooke",
+          "label": "Cooke S4",
+          "desc": "Chaud, doux, chute de net douce",
+          "prompt": "Rendered through classic British cinema primes: warm, flattering skin, gentle contrast, focus that falls off smoothly and gradually behind the main subject, soft round background blur",
+          "avant": false,
+          "apercu": "/static/apercus/dp_objectif/cooke.jpg"
+        },
+        {
+          "id": "signature",
+          "label": "ARRI Signature Prime",
+          "desc": "Propre, flou de fond crémeux",
+          "prompt": "Rendered through large-format modern cinema primes: very clean yet gentle rendering of skin, the smoothest creamy background blur, a hint of warmth, no harshness",
+          "avant": false,
+          "apercu": "/static/apercus/dp_objectif/signature.jpg"
+        },
+        {
+          "id": "k35",
+          "label": "Canon K-35",
+          "desc": "Contraste bas, reflets ambrés",
+          "prompt": "Rendered through 1970s vintage cinema primes shot wide open: low contrast, warm pastel skin tones, a soft warm veiling glow over the image, large golden and amber flares and ghost reflections from the sun, gently soft edges",
+          "avant": false,
+          "apercu": "/static/apercus/dp_objectif/k35.jpg"
+        },
+        {
+          "id": "helios",
+          "label": "Helios 44-2",
+          "desc": "Flou de fond en tourbillon",
+          "prompt": "Rendered through a vintage Soviet 58mm portrait optic wide open: the out-of-focus background swirls in a circular pattern around the sharp subject, soft corners, slightly low contrast, a mild vignette",
+          "avant": false,
+          "apercu": "/static/apercus/dp_objectif/helios.jpg",
+          "evite": [
+            "z-image-turbo"
+          ]
+        },
+        {
+          "id": "petzval",
+          "label": "Petzval",
+          "desc": "Centre net, tourbillon, coins sombres",
+          "prompt": "Rendered through a 19th-century brass portrait optic: a very sharp centre, a strong swirling blur and heavy darkening towards the edges and corners, warm vintage rendering",
+          "avant": false,
+          "apercu": "/static/apercus/dp_objectif/petzval.jpg",
+          "evite": [
+            "z-image-turbo"
+          ]
+        },
+        {
+          "id": "lensbaby",
+          "label": "Lensbaby",
+          "desc": "Une seule zone nette",
+          "prompt": "Rendered through a selective-focus optic: a single small sweet spot of sharpness on the main subject, everything else blurring progressively towards the edges with a soft dreamy glow",
+          "avant": false,
+          "apercu": "/static/apercus/dp_objectif/lensbaby.jpg",
+          "evite": [
+            "z-image-turbo"
+          ]
+        },
+        {
+          "id": "panavision",
+          "label": "Panavision anamorphique",
+          "desc": "Traînées bleues, flou étiré en hauteur",
+          "prompt": "Widescreen cinema look with a low light source behind the scene: long horizontal blue streaks of light run straight across the bright highlights, out-of-focus lights in the background are stretched vertically into tall soft capsules, organic medium contrast. Rectangular full-bleed image: the scene fills the frame right into the corners, bright corners",
+          "avant": true,
+          "apercu": "/static/apercus/dp_objectif/panavision.jpg"
+        },
+        {
+          "id": "hawk",
+          "label": "Anamorphique moderne",
+          "desc": "Flou étiré en hauteur, sujet net",
+          "prompt": "Widescreen cinema look: the background melts into a strong blur whose out-of-focus lights are stretched vertically into tall soft capsules, the main subject is crisp, high contrast, a thin straight horizontal blue streak of light. Rectangular full-bleed image: the scene fills the frame right into the corners, bright corners",
+          "avant": true,
+          "apercu": "/static/apercus/dp_objectif/hawk.jpg"
+        },
+        {
+          "id": "promist",
+          "label": "Filtre Black Pro-Mist",
+          "desc": "Halo des hautes lumières",
+          "prompt": "Shot through a black diffusion filter: bright highlights bloom into a soft glow, light sources and their reflections are surrounded by a gentle halo, contrast is softened in the highlights while the blacks stay deep, skin looks smooth",
+          "avant": false,
+          "apercu": "/static/apercus/dp_objectif/promist.jpg"
+        },
+        {
+          "id": "macro",
+          "label": "Macro 100 mm",
+          "desc": "Détail agrandi, net très fin",
+          "prompt": "Macro close-up at 1:1 magnification: an extreme close detail of the main subject's surface and texture, a razor-thin plane of focus, everything else dissolving into smooth blur",
+          "avant": true,
+          "apercu": "/static/apercus/dp_objectif/macro.jpg"
+        },
+        {
+          "id": "tiltshift",
+          "label": "Tilt-shift",
+          "desc": "Bande nette, effet maquette",
+          "prompt": "Single tilt-shift photograph taken from a high vantage point looking down: one narrow horizontal zone of sharp focus runs through the main subject, and the image gets smoothly and progressively blurrier toward the top and the bottom edges, vivid colors, so the whole real scene looks like a tiny scale model; one continuous photo, not a collage",
+          "avant": true,
+          "apercu": "/static/apercus/dp_objectif/tiltshift.jpg",
+          "evite": [
+            "qwen-2512",
+            "z-image-turbo"
+          ]
+        }
+      ]
+    },
+    "dp_camera": {
+      "title": "CAMÉRA",
+      "items": [
+        {
+          "id": "none",
+          "label": "Libre",
+          "desc": "Le modèle décide"
+        },
+        {
+          "id": "alexa35",
+          "label": "ARRI Alexa 35",
+          "desc": "Peau douce, hautes lumières douces",
+          "support": "cinematic digital motion-picture frame in Super 35 format",
+          "optique": "35mm-equivalent field of view; the subject is sharp and the background falls gently out of focus but stays readable",
+          "couleur": "natural, gently warm color with true-to-life soft skin tones and restrained saturation; highlights roll off smoothly into white without clipping and the deep shadows keep their detail",
+          "texture": "clean image with a barely visible fine organic noise and soft, unsharpened detail",
+          "prompt": "Cinematic digital motion-picture frame in Super 35 format. 35mm-equivalent field of view; the subject is sharp and the background falls gently out of focus but stays readable. Natural, gently warm color with true-to-life soft skin tones and restrained saturation; highlights roll off smoothly into white without clipping and the deep shadows keep their detail. Clean image with a barely visible fine organic noise and soft, unsharpened detail",
+          "apercu": "/static/apercus/dp_camera/alexa35.jpg"
+        },
+        {
+          "id": "minilf",
+          "label": "ARRI Alexa Mini LF",
+          "desc": "Grand format, fond très flou",
+          "support": "large-format cinematic digital motion-picture frame",
+          "optique": "wide, immersive large-format perspective with a very shallow depth of field: the subject is sharp while the background melts into a soft creamy blur",
+          "couleur": "natural, gently warm color with true-to-life soft skin tones and restrained saturation; very smooth highlight roll-off",
+          "texture": "smooth tonality, fine clean detail, no sharpening",
+          "prompt": "Large-format cinematic digital motion-picture frame. Wide, immersive large-format perspective with a very shallow depth of field: the subject is sharp while the background melts into a soft creamy blur. Natural, gently warm color with true-to-life soft skin tones and restrained saturation; very smooth highlight roll-off. Smooth tonality, fine clean detail, no sharpening",
+          "apercu": "/static/apercus/dp_camera/minilf.jpg"
+        },
+        {
+          "id": "venice2",
+          "label": "Sony Venice 2",
+          "desc": "Couleurs riches, noirs denses",
+          "support": "full-frame cinematic digital motion-picture frame",
+          "optique": "full-frame shallow depth of field: sharp subject, smoothly blurred background",
+          "couleur": "rich, deep, saturated yet natural color, glowing healthy skin tones, clean neutral whites and dense clean black shadows",
+          "texture": "very clean, noise-free image with smooth gradients",
+          "prompt": "Full-frame cinematic digital motion-picture frame. Full-frame shallow depth of field: sharp subject, smoothly blurred background. Rich, deep, saturated yet natural color, glowing healthy skin tones, clean neutral whites and dense clean black shadows. Very clean, noise-free image with smooth gradients",
+          "apercu": "/static/apercus/dp_camera/venice2.jpg"
+        },
+        {
+          "id": "vraptor",
+          "label": "RED V-Raptor",
+          "desc": "Très net, contrasté",
+          "support": "8K large-format digital motion-picture frame",
+          "optique": "shallow depth of field, sharp subject against a blurred background",
+          "couleur": "natural, balanced contrast with open, detailed shadows and a soft highlight roll-off, rich true-to-life color and neutral whites",
+          "texture": "hyper-detailed, razor-sharp micro-detail on skin, hair and stone, crisp edges, no grain",
+          "prompt": "8K large-format digital motion-picture frame. Shallow depth of field, sharp subject against a blurred background. Natural, balanced contrast with open, detailed shadows and a soft highlight roll-off, rich true-to-life color and neutral whites. Hyper-detailed, razor-sharp micro-detail on skin, hair and stone, crisp edges, no grain",
+          "apercu": "/static/apercus/dp_camera/vraptor.jpg"
+        },
+        {
+          "id": "film35",
+          "label": "Pellicule 35 mm",
+          "desc": "Grain fin, couleurs de tirage",
+          "support": "photographed on 35mm color negative motion-picture film and printed on film",
+          "optique": "moderate depth of field, the background softly out of focus",
+          "couleur": "warm film-print colors: creamy highlights, slightly teal-green shadows, rich but natural saturation, gentle contrast with a soft shoulder in the highlights",
+          "texture": "fine organic film grain visible in the midtones and the sky, a faint red halation glow around the brightest highlights",
+          "prompt": "Photographed on 35mm color negative motion-picture film and printed on film. Moderate depth of field, the background softly out of focus. Warm film-print colors: creamy highlights, slightly teal-green shadows, rich but natural saturation, gentle contrast with a soft shoulder in the highlights. Fine organic film grain visible in the midtones and the sky, a faint red halation glow around the brightest highlights",
+          "apercu": "/static/apercus/dp_camera/film35.jpg"
+        },
+        {
+          "id": "film16",
+          "label": "Pellicule 16 mm",
+          "desc": "Grain marqué, doux, noirs laiteux",
+          "support": "photographed on 16mm color negative film",
+          "optique": "deeper focus than 35mm, the background only slightly soft",
+          "couleur": "muted, slightly faded colors, lifted milky blacks and a warm cast",
+          "texture": "clearly visible coarse film grain across the whole image, slightly soft overall sharpness, reddish halation on highlights, full-frame image with no black border",
+          "prompt": "Photographed on 16mm color negative film. Deeper focus than 35mm, the background only slightly soft. Muted, slightly faded colors, lifted milky blacks and a warm cast. Clearly visible coarse film grain across the whole image, slightly soft overall sharpness, reddish halation on highlights, full-frame image with no black border",
+          "apercu": "/static/apercus/dp_camera/film16.jpg"
+        },
+        {
+          "id": "super8",
+          "label": "Super 8",
+          "desc": "Gros grain, couleurs passées",
+          "support": "Super 8 reversal-film home-movie frame from the 1970s",
+          "optique": "everything roughly in focus through a small soft lens",
+          "couleur": "warm but natural colors with slightly faded reds, deep contrasty shadows, no strong yellow cast",
+          "texture": "heavy coarse grain and soft blurry detail, full-frame image with no black border, no vignette and no film-gate edges",
+          "prompt": "Super 8 reversal-film home-movie frame from the 1970s. Everything roughly in focus through a small soft lens. Warm but natural colors with slightly faded reds, deep contrasty shadows, no strong yellow cast. Heavy coarse grain and soft blurry detail, full-frame image with no black border, no vignette and no film-gate edges",
+          "apercu": "/static/apercus/dp_camera/super8.jpg"
+        },
+        {
+          "id": "imax",
+          "label": "IMAX 65 mm",
+          "desc": "Détail immense, fond flou",
+          "support": "photographed on 65mm large-format motion-picture film",
+          "optique": "immense depth and scale with an extremely shallow depth of field: razor-sharp subject, background dissolving into soft blur",
+          "couleur": "rich, natural film colors with deep blacks and creamy highlights",
+          "texture": "astonishing fine detail and an extremely fine, almost invisible grain",
+          "prompt": "Photographed on 65mm large-format motion-picture film. Immense depth and scale with an extremely shallow depth of field: razor-sharp subject, background dissolving into soft blur. Rich, natural film colors with deep blacks and creamy highlights. Astonishing fine detail and an extremely fine, almost invisible grain",
+          "apercu": "/static/apercus/dp_camera/imax.jpg"
+        },
+        {
+          "id": "iphone",
+          "label": "iPhone",
+          "desc": "Tout net, HDR, surnetteté",
+          "support": "casual eye-level snapshot with a wide 26mm-equivalent field of view",
+          "optique": "deep focus: foreground and background both sharp",
+          "couleur": "bright computational HDR: lifted shadows, flattened contrast, vivid saturated colors and smoothed skin",
+          "texture": "crisp over-sharpened edges, clean digital image without grain",
+          "prompt": "Casual eye-level snapshot with a wide 26mm-equivalent field of view. Deep focus: foreground and background both sharp. Bright computational HDR: lifted shadows, flattened contrast, vivid saturated colors and smoothed skin. Crisp over-sharpened edges, clean digital image without grain",
+          "apercu": "/static/apercus/dp_camera/iphone.jpg"
+        },
+        {
+          "id": "gopro",
+          "label": "Caméra d'action",
+          "desc": "Ultra grand angle déformé, saturé",
+          "support": "action-cam frame: ultra-wide 150-degree view held very close to the subject",
+          "optique": "strong barrel distortion bending straight lines near the edges, a curved horizon, everything in sharp focus from near to far",
+          "couleur": "punchy, highly saturated colors with a vivid blue sky and high contrast",
+          "texture": "crisp digital sharpening and slight noise in the shadows",
+          "prompt": "Action-cam frame: ultra-wide 150-degree view held very close to the subject. Strong barrel distortion bending straight lines near the edges, a curved horizon, everything in sharp focus from near to far. Punchy, highly saturated colors with a vivid blue sky and high contrast. Crisp digital sharpening and slight noise in the shadows",
+          "apercu": "/static/apercus/dp_camera/gopro.jpg",
+          "evite": [
+            "qwen-2512"
+          ]
+        },
+        {
+          "id": "drone",
+          "label": "Drone",
+          "desc": "Vue aérienne, tout net",
+          "support": "aerial drone frame, seen from about 20 metres up and 30 metres away, looking down at 30 degrees",
+          "optique": "deep focus, the whole landscape sharp, wide view",
+          "couleur": "vivid saturated landscape colors, a bright clean HDR look and a slightly hazy distance",
+          "texture": "crisp digital detail with slight sharpening",
+          "prompt": "Aerial drone frame, seen from about 20 metres up and 30 metres away, looking down at 30 degrees. Deep focus, the whole landscape sharp, wide view. Vivid saturated landscape colors, a bright clean HDR look and a slightly hazy distance. Crisp digital detail with slight sharpening",
+          "apercu": "/static/apercus/dp_camera/drone.jpg"
+        },
+        {
+          "id": "vhs",
+          "label": "Caméscope VHS",
+          "desc": "Basse définition, couleurs qui bavent",
+          "support": "frame from a worn-out 1990s home-video camcorder tape",
+          "optique": "everything in focus through a small wide lens",
+          "couleur": "faded, washed-out colors bleeding sideways past their edges, a magenta and green color cast, milky grey blacks and blown-out highlights",
+          "texture": "very low resolution and blurry, smeared soft detail, heavy color noise, wavy horizontal tracking lines and a band of rolling distortion across the bottom of the frame, slight ghosting on edges",
+          "prompt": "Frame from a worn-out 1990s home-video camcorder tape. Everything in focus through a small wide lens. Faded, washed-out colors bleeding sideways past their edges, a magenta and green color cast, milky grey blacks and blown-out highlights. Very low resolution and blurry, smeared soft detail, heavy color noise, wavy horizontal tracking lines and a band of rolling distortion across the bottom of the frame, slight ghosting on edges",
+          "apercu": "/static/apercus/dp_camera/vhs.jpg"
+        }
+      ]
+    },
+    "dp_lumiere": {
+      "title": "LUMIÈRE",
+      "items": [
+        {
+          "id": "none",
+          "label": "Libre",
+          "desc": "Le modèle décide"
+        },
+        {
+          "id": "doree",
+          "label": "Heure dorée",
+          "desc": "Soleil bas et chaud",
+          "prompt": "Golden hour: a low warm sun near the horizon, long soft shadows and orange light raking across the scene",
+          "apercu": "/static/apercus/dp_lumiere/doree.jpg"
+        },
+        {
+          "id": "bleue",
+          "label": "Heure bleue",
+          "desc": "Crépuscule bleu",
+          "prompt": "Blue hour just after sunset: deep blue twilight, no direct sunlight, warm artificial lights glowing in the scene",
+          "apercu": "/static/apercus/dp_lumiere/bleue.jpg"
+        },
+        {
+          "id": "couvert",
+          "label": "Ciel couvert",
+          "desc": "Lumière douce et égale",
+          "prompt": "Overcast sky: soft, even, shadowless daylight and muted contrast",
+          "apercu": "/static/apercus/dp_lumiere/couvert.jpg"
+        },
+        {
+          "id": "midi",
+          "label": "Midi dur",
+          "desc": "Soleil dur au zénith",
+          "prompt": "Harsh midday sun straight overhead: hard, short, dark shadows and bright, almost blown highlights",
+          "apercu": "/static/apercus/dp_lumiere/midi.jpg"
+        },
+        {
+          "id": "contrejour",
+          "label": "Contre-jour",
+          "desc": "Le soleil derrière le sujet",
+          "prompt": "Backlit by the sun behind the main subject: a glowing rim of light outlines its edges, the side facing the camera in soft shadow, a light haze in the air",
+          "apercu": "/static/apercus/dp_lumiere/contrejour.jpg"
+        },
+        {
+          "id": "lateral",
+          "label": "Clair-obscur",
+          "desc": "Une moitié dans l'ombre",
+          "prompt": "Low-key side light: a single hard light from one side lights half of the main subject, the other half falls into deep shadow",
+          "apercu": "/static/apercus/dp_lumiere/lateral.jpg"
+        },
+        {
+          "id": "nuit",
+          "label": "Nuit éclairée",
+          "desc": "Seulement les lampes",
+          "prompt": "Night scene lit only by practical lights: glowing windows, small lamps and street lights, colored reflections, deep shadows",
+          "apercu": "/static/apercus/dp_lumiere/nuit.jpg"
+        },
+        {
+          "id": "silhouette",
+          "label": "Silhouette",
+          "desc": "Le sujet en ombre chinoise",
+          "prompt": "Silhouette: a bright sky behind the main subject turns it into a dark outline with almost no detail",
+          "apercu": "/static/apercus/dp_lumiere/silhouette.jpg",
+          "evite": [
+            "z-image-turbo"
+          ]
+        }
+      ]
+    },
+    "dp_etalonnage": {
+      "title": "ÉTALONNAGE",
+      "items": [
+        {
+          "id": "none",
+          "label": "Libre",
+          "desc": "Le modèle décide"
+        },
+        {
+          "id": "naturel",
+          "label": "Naturel",
+          "desc": "Couleurs fidèles",
+          "prompt": "Natural, true-to-life color with a neutral white balance",
+          "apercu": "/static/apercus/dp_etalonnage/naturel.jpg"
+        },
+        {
+          "id": "pastel",
+          "label": "Chaud pastel",
+          "desc": "Doux, chaud, pastel",
+          "prompt": "Warm pastel color palette: creamy highlights, warm skin tones, soft low contrast, gentle saturation",
+          "apercu": "/static/apercus/dp_etalonnage/pastel.jpg"
+        },
+        {
+          "id": "tungstene",
+          "label": "Tungstène",
+          "desc": "Ombres bleues, lumières ambrées",
+          "prompt": "Cool blue-cyan shadows against warm amber highlights, rich deep blacks",
+          "apercu": "/static/apercus/dp_etalonnage/tungstene.jpg"
+        },
+        {
+          "id": "desature",
+          "label": "Désaturé doux",
+          "desc": "Couleurs sourdes, contraste bas",
+          "prompt": "Muted low-saturation palette: soft greens and teals, low contrast, matte shadows",
+          "apercu": "/static/apercus/dp_etalonnage/desature.jpg"
+        },
+        {
+          "id": "tealorange",
+          "label": "Teal & orange",
+          "desc": "Ombres bleu-vert, peau orangée",
+          "prompt": "Teal shadows and warm orange skin tones, a cinematic blockbuster color grade",
+          "apercu": "/static/apercus/dp_etalonnage/tealorange.jpg"
+        },
+        {
+          "id": "bleach",
+          "label": "Sans blanchiment",
+          "desc": "Contrasté et désaturé",
+          "prompt": "Bleach-bypass look, almost monochrome: every color is reduced to faint traces, high contrast, silvery highlights and dense blacks",
+          "avant": true,
+          "support": "Bleach-bypass photograph, almost monochrome",
+          "apercu": "/static/apercus/dp_etalonnage/bleach.jpg"
+        },
+        {
+          "id": "nb",
+          "label": "Noir & blanc",
+          "desc": "Noir et blanc",
+          "prompt": "Strictly monochrome black-and-white photograph, every part of the image is a shade of gray, including the sky, any water and the skin; every color named in the description, on clothing, swimwear and objects, appears only as a lighter or darker gray; no color at all and no tint: rich gray tones, deep blacks and bright whites",
+          "avant": true,
+          "support": "Black-and-white photograph",
+          "apercu": "/static/apercus/dp_etalonnage/nb.jpg"
+        }
+      ]
+    },
+    "resolution": {
+      "title": "RÉSOLUTION",
+      "items": [
+        {
+          "id": "1k",
+          "label": "1K",
+          "desc": "1024 px de long"
+        },
+        {
+          "id": "2k",
+          "label": "2K",
+          "desc": "2048 px de long"
+        },
+        {
+          "id": "4k",
+          "label": "4K",
+          "desc": "4096 px · 2K + SeedVR2"
+        }
+      ]
+    },
+    "controle": {
+      "title": "SUIVRE",
+      "items": [
+        {
+          "id": "canny",
+          "label": "Contours",
+          "hint": "le plus fidèle au dessin de l'original"
+        },
+        {
+          "id": "depth",
+          "label": "Profondeur",
+          "hint": "garde la géométrie : décor, style, objet de même forme"
+        },
+        {
+          "id": "pose",
+          "label": "Pose",
+          "hint": "garde seulement le corps des personnes : la tenue et le décor peuvent changer (conseillé avec LTX)"
+        },
+        {
+          "id": "mixte",
+          "label": "Pose + profondeur",
+          "hint": "le corps des personnes est libre, le décor garde sa géométrie"
+        }
+      ]
+    },
+    "atmo": {
+      "title": "EFFET",
+      "items": [
+        {
+          "id": "brume",
+          "label": "Brume",
+          "couleur": "#d9dee5",
+          "prompt": "soft atmospheric mist, haze deepening with distance, diffused light"
+        },
+        {
+          "id": "neige",
+          "label": "Neige",
+          "couleur": "#e6ebf2",
+          "prompt": "gentle snowfall, snowflakes drifting through the air, cold winter light"
+        },
+        {
+          "id": "neige_brume",
+          "label": "Neige + brume",
+          "couleur": "#e1e6ee",
+          "prompt": "snowfall in a cold winter mist, snowflakes drifting, haze deepening with distance"
+        }
+      ]
+    },
+    "integrer": {
+      "title": "INTÉGRER",
+      "items": [
+        {
+          "id": "non",
+          "label": "Compositing seul"
+        },
+        {
+          "id": "ltx",
+          "label": "Intégré par LTX"
+        }
+      ]
+    },
+    "atmo_neige": {
+      "title": "NEIGE",
+      "items": [
+        {
+          "id": "tres_legere",
+          "label": "Très légère",
+          "value": 40,
+          "voile": 3000
+        },
+        {
+          "id": "legere",
+          "label": "Légère",
+          "value": 100,
+          "voile": 1500
+        },
+        {
+          "id": "moderee",
+          "label": "Modérée",
+          "value": 250,
+          "voile": 900
+        },
+        {
+          "id": "moyenne",
+          "label": "Moyenne",
+          "value": 400,
+          "voile": 600
+        },
+        {
+          "id": "soutenue",
+          "label": "Soutenue",
+          "value": 650,
+          "voile": 400
+        },
+        {
+          "id": "forte",
+          "label": "Forte",
+          "value": 900,
+          "voile": 250
+        },
+        {
+          "id": "tres_forte",
+          "label": "Très forte",
+          "value": 1400,
+          "voile": 150
+        },
+        {
+          "id": "tempete",
+          "label": "Tempête",
+          "value": 2500,
+          "voile": 90
+        }
+      ]
+    },
+    "atmo_vent": {
+      "title": "VENT",
+      "items": [
+        {
+          "id": "aucun",
+          "label": "Aucun",
+          "value": 0.0
+        },
+        {
+          "id": "brise",
+          "label": "Brise",
+          "value": 0.7
+        },
+        {
+          "id": "leger",
+          "label": "Léger",
+          "value": 1.5
+        },
+        {
+          "id": "modere",
+          "label": "Modéré",
+          "value": 2.5
+        },
+        {
+          "id": "moyen",
+          "label": "Moyen",
+          "value": 4.0
+        },
+        {
+          "id": "fort",
+          "label": "Fort",
+          "value": 6.5
+        },
+        {
+          "id": "tres_fort",
+          "label": "Très fort",
+          "value": 9.0
+        },
+        {
+          "id": "tempete",
+          "label": "Tempête",
+          "value": 13.0
+        }
+      ]
+    },
+    "atmo_brume": {
+      "title": "BRUME",
+      "items": [
+        {
+          "id": "tres_legere",
+          "label": "Très légère",
+          "value": 500
+        },
+        {
+          "id": "legere",
+          "label": "Légère",
+          "value": 250
+        },
+        {
+          "id": "moderee",
+          "label": "Modérée",
+          "value": 150
+        },
+        {
+          "id": "moyenne",
+          "label": "Moyenne",
+          "value": 90
+        },
+        {
+          "id": "epaisse",
+          "label": "Épaisse",
+          "value": 55
+        },
+        {
+          "id": "dense",
+          "label": "Dense",
+          "value": 35
+        },
+        {
+          "id": "tres_dense",
+          "label": "Très dense",
+          "value": 20
+        },
+        {
+          "id": "puree",
+          "label": "Purée de pois",
+          "value": 10
+        }
+      ]
+    },
+    "atmo_volume": {
+      "title": "VOLUME",
+      "items": [
+        {
+          "id": "lisse",
+          "label": "Lisse",
+          "value": 0.0
+        },
+        {
+          "id": "nappes",
+          "label": "Nappes",
+          "value": 0.5
+        },
+        {
+          "id": "volumetrique",
+          "label": "Volumétrique",
+          "value": 1.0
+        }
+      ]
+    },
+    "choreo": {
+      "title": "CHORÉGRAPHIE",
+      "items": [
+        {
+          "id": "revelation",
+          "label": "Révélation 3/4 contre-plongée",
+          "desc": "Face 2 s · glisse vite à droite · recule 1 s · orbite éclair derrière jusqu'au 3/4, en contre-plongée",
+          "etapes": [
+            {
+              "duree": 2,
+              "vitesse": "tenir"
+            },
+            {
+              "duree": 0.4,
+              "vitesse": "rapide",
+              "vers": {
+                "truck": 0.8
+              }
+            },
+            {
+              "duree": 1.0,
+              "vitesse": "continue",
+              "vers": {
+                "dist": 1.2
+              }
+            },
+            {
+              "duree": 1.0,
+              "vitesse": "rapide",
+              "vers": {
+                "orbit": 300,
+                "elev": -20
+              }
+            }
+          ],
+          "prompt": "fast precise motion-control robot camera move: the camera holds, snaps to the right, pulls back, then whips around behind the subject to a low-angle three-quarter view"
+        },
+        {
+          "id": "whip_pan",
+          "label": "Whip pan",
+          "desc": "Tient 1,5 s · panoramique éclair vers la droite",
+          "etapes": [
+            {
+              "duree": 1.5,
+              "vitesse": "tenir"
+            },
+            {
+              "duree": 0.35,
+              "vitesse": "rapide",
+              "vers": {
+                "pan": 70
+              }
+            },
+            {
+              "duree": 3,
+              "vitesse": "tenir"
+            }
+          ],
+          "prompt": "whip pan, very fast camera pan to the right with motion blur, robot camera"
+        },
+        {
+          "id": "push_eclair",
+          "label": "Push-in éclair",
+          "desc": "Tient 1 s · fonce sur le sujet en 0,5 s · arrêt net",
+          "etapes": [
+            {
+              "duree": 1,
+              "vitesse": "tenir"
+            },
+            {
+              "duree": 0.5,
+              "vitesse": "rapide",
+              "vers": {
+                "dist": 0.45
+              }
+            },
+            {
+              "duree": 3.5,
+              "vitesse": "tenir"
+            }
+          ],
+          "prompt": "snap push-in, the robot camera rushes toward the subject and stops dead, precise and fast"
+        },
+        {
+          "id": "orbite_180",
+          "label": "Orbite 180° rapide",
+          "desc": "Tient 1 s · demi-tour autour du sujet en 1,2 s",
+          "etapes": [
+            {
+              "duree": 1,
+              "vitesse": "tenir"
+            },
+            {
+              "duree": 1.2,
+              "vitesse": "rapide",
+              "vers": {
+                "orbit": 180
+              }
+            },
+            {
+              "duree": 2.8,
+              "vitesse": "tenir"
+            }
+          ],
+          "prompt": "fast 180-degree orbit around the subject, robotic precise camera move"
+        },
+        {
+          "id": "plongee_contre",
+          "label": "Plongée → contre-plongée",
+          "desc": "Part d'en haut et descend sous le sujet en continu",
+          "etapes": [
+            {
+              "duree": 0.01,
+              "vitesse": "rapide",
+              "vers": {
+                "elev": 45,
+                "dist": 0.9
+              }
+            },
+            {
+              "duree": 3.5,
+              "vitesse": "continue",
+              "vers": {
+                "elev": -25,
+                "dist": 0.8
+              }
+            },
+            {
+              "duree": 1.5,
+              "vitesse": "tenir"
+            }
+          ],
+          "prompt": "the camera sweeps smoothly from a high angle down to a low angle around the subject, motion-control rig"
+        },
+        {
+          "id": "snap_zoom",
+          "label": "Snap zoom",
+          "desc": "Tient 1,5 s · zoom éclair ×2 · tient · dézoome doucement",
+          "etapes": [
+            {
+              "duree": 1.5,
+              "vitesse": "tenir"
+            },
+            {
+              "duree": 0.3,
+              "vitesse": "rapide",
+              "vers": {
+                "zoom": 2.2
+              }
+            },
+            {
+              "duree": 1.2,
+              "vitesse": "tenir"
+            },
+            {
+              "duree": 2.0,
+              "vitesse": "douce",
+              "vers": {
+                "zoom": 1.3
+              }
+            }
+          ],
+          "prompt": "snap zoom, the lens zooms in instantly then eases back out, robot camera"
+        },
+        {
+          "id": "tour_complet",
+          "label": "Tour complet 360°",
+          "desc": "Un tour entier autour du sujet, vitesse constante",
+          "etapes": [
+            {
+              "duree": 5.0,
+              "vitesse": "continue",
+              "vers": {
+                "orbit": 360
+              }
+            }
+          ],
+          "prompt": "continuous 360-degree orbit around the subject at constant speed, motion-control rig"
+        },
+        {
+          "id": "travelling_eclair",
+          "label": "Travelling éclair aller-retour",
+          "desc": "Glisse vite à gauche · arrêt net · revient vite",
+          "etapes": [
+            {
+              "duree": 0.8,
+              "vitesse": "tenir"
+            },
+            {
+              "duree": 0.5,
+              "vitesse": "rapide",
+              "vers": {
+                "truck": -0.9,
+                "viser": 0
+              }
+            },
+            {
+              "duree": 1.2,
+              "vitesse": "tenir"
+            },
+            {
+              "duree": 0.5,
+              "vitesse": "rapide",
+              "vers": {
+                "truck": 0.3,
+                "viser": 0
+              }
+            },
+            {
+              "duree": 2,
+              "vitesse": "tenir"
+            }
+          ],
+          "prompt": "fast lateral robot camera slide to the left, hard stop, then snaps back to the right"
+        },
+        {
+          "id": "grue_orbite",
+          "label": "Grue + orbite",
+          "desc": "Monte en tournant autour du sujet",
+          "etapes": [
+            {
+              "duree": 4.0,
+              "vitesse": "douce",
+              "vers": {
+                "crane": 1.0,
+                "orbit": 70,
+                "elev": 25
+              }
+            },
+            {
+              "duree": 1,
+              "vitesse": "tenir"
+            }
+          ],
+          "prompt": "the camera cranes up while orbiting around the subject, elegant motion-control move"
+        },
+        {
+          "id": "vertigo_robot",
+          "label": "Vertigo robot",
+          "desc": "Recule et zoome en même temps : le décor se dilate",
+          "etapes": [
+            {
+              "duree": 0.8,
+              "vitesse": "tenir"
+            },
+            {
+              "duree": 3.2,
+              "vitesse": "continue",
+              "vers": {
+                "dist": 1.8,
+                "zoom": 1.8
+              }
+            },
+            {
+              "duree": 1,
+              "vitesse": "tenir"
+            }
+          ],
+          "prompt": "dolly zoom vertigo effect, the camera pulls back while zooming in, the background stretches"
+        }
+      ]
+    },
+    "h3_vfx": {
+      "title": "VERSION",
+      "items": [
+        {
+          "id": "std",
+          "label": "Standard",
+          "desc": "Garde mieux la lumière et le ciel d'origine"
+        },
+        {
+          "id": "ffp",
+          "label": "FFP",
+          "desc": "Entraînée en plus haute définition ; effet parfois plus propre, lumière parfois changée"
+        }
+      ]
+    }
+  },
+  "resolution_methods": [
+    "text",
+    "refs",
+    "instruct",
+    "recipe"
+  ],
+  "option_defaults": {
+    "angle_h": "45",
+    "angle_v": "0",
+    "angle_zoom": "5",
+    "angle_pack": "une",
+    "light": "golden",
+    "imgfx": "inflate",
+    "recipe": "hold",
+    "campose": "Zoom In",
+    "vidfx": "daynight",
+    "nlayers": "3",
+    "sheet": "vues3",
+    "dp_plan": "none",
+    "dp_angle": "none",
+    "dp_focale": "none",
+    "dp_ouverture": "none",
+    "dp_objectif": "none",
+    "dp_camera": "none",
+    "dp_lumiere": "none",
+    "dp_etalonnage": "none",
+    "resolution": "2k",
+    "controle": "canny",
+    "atmo": "brume",
+    "integrer": "non",
+    "atmo_neige": "moyenne",
+    "atmo_vent": "leger",
+    "atmo_brume": "moyenne",
+    "atmo_volume": "volumetrique",
+    "choreo": "revelation",
+    "h3_vfx": "std"
+  }
+}
